@@ -1,0 +1,31 @@
+/* Realizations.css - Realizations page styles */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  padding-top: 0;
+  /* Account for fixed navbar height */
+  background: transparent !important;
+}
+
+/* Ensure proper spacing for the timeline */
+.main>* {
+  flex-shrink: 0;
+  /* Prevent children from shrinking */
+}
+
+/* New styles for the scroll boundaries */
+.scroll-boundary {
+  /* This creates a 50% viewport height space for scrolling */
+  /* It acts as a buffer zone where the snap-scroll is disabled */
+  height: 5vh;
+  width: 100%;
+}

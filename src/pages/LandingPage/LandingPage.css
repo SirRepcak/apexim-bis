@@ -1,0 +1,77 @@
+/* src/pages/LandingPage/LandingPage.css */
+
+.landing-page-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.landing-page-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 900px;
+    /* === ZMIANA: Podnosimy z-index, aby był nad efektem hover === */
+    z-index: 20;
+    text-align: center;
+    padding: 4vh 20px 0;
+    pointer-events: none;
+}
+
+.logo-container {
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.landing-main-logo {
+    display: block;
+    max-height: 80px;
+    width: auto;
+}
+
+.landing-title {
+    font-family: 'externalFont', sans-serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    font-weight: normal;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin: 0 0 10px;
+}
+
+.landing-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.landing-choice-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .landing-choice-wrapper {
+        flex-direction: column;
+    }
+    .landing-title {
+        font-size: 2.5rem;
+    }
+    .landing-subtitle {
+        font-size: 1.1rem;
+    }
+    .logo-container {
+        padding: 15px;
+    }
+    .landing-main-logo {
+        max-height: 60px;
+    }
+}

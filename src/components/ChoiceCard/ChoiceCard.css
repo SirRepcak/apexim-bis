@@ -1,0 +1,89 @@
+/* src/components/ChoiceCard/ChoiceCard.css */
+
+.choice-mui-card {
+    flex: 1;
+    position: relative !important;
+    text-decoration: none !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease-in-out;
+}
+
+.choice-mui-card:hover {
+    transform: scale(1.02);
+    z-index: 10;
+}
+
+.choice-card-media {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease-in-out;
+}
+
+.choice-mui-card:hover .choice-card-media {
+    filter: brightness(0.6);
+}
+
+.choice-card-content {
+    position: relative;
+    background-color: rgba(5, 145, 198, 0.75);
+    height: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 24px !important;
+}
+
+.choice-logo-wrapper {
+    /* <<< ZMIANA: Zwiększamy rozmiar okręgu na desktopie >>> */
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* <<< ZMIANA: Lekko zwiększamy margines dla lepszych proporcji >>> */
+    margin-bottom: 35px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.choice-mui-card:hover .choice-logo-wrapper {
+    transform: scale(1.05);
+}
+
+.choice-logo-image {
+    max-width: 65%;
+    max-height: 65%;
+    object-fit: contain;
+}
+
+.choice-title {
+    color: white !important;
+    font-weight: bold !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .choice-logo-wrapper {
+        /* <<< ZMIANA: Zwiększamy rozmiar okręgu również na mobilce >>> */
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* === STYLE DLA KARTY "OCHRONA I CZYSTOŚĆ" === */
+.choice-mui-card.security-choice .choice-card-content {
+    background-color: rgba(255, 156, 0, 0.75) !important;
+}
+
+.choice-mui-card.security-choice:hover .choice-card-content {
+    background-color: rgba(230, 141, 0, 0.85) !important;
+}

@@ -1,0 +1,134 @@
+/* src/components/ExpandableFeatureSection/ExpandableFeatureSection.css */
+
+.efs-container {
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    padding: 40px;
+    transition: align-items 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+/* GŁÓWNA SIATKA */
+.efs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    /* Domyślnie centrujemy, ale animujemy do góry */
+    align-items: center;
+    transition: align-items 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.efs-grid.efs-image-right {
+    direction: rtl;
+}
+.efs-grid.efs-image-right > * {
+    direction: ltr;
+}
+
+/* === OBRAZEK === */
+.efs-image-wrapper {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top left;
+}
+.efs-grid.efs-image-right .efs-image-wrapper {
+    transform-origin: top right;
+}
+.efs-image {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* === KONTENER Z TREŚCIĄ (PRAWA/LEWA STRONA) === */
+.efs-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centruje w pionie */
+    min-height: 250px;
+}
+.efs-main-content {
+    flex-grow: 1; /* Powoduje, że treść wypełnia dostępną przestrzeń */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.efs-header { display: flex; align-items: center; margin-bottom: 20px; }
+.efs-icon { font-size: 3rem; margin-right: 20px; color: #0591c6; }
+.efs-title { font-size: 2rem; margin: 0; }
+.efs-intro-text { line-height: 1.6; }
+
+.efs-trigger-wrapper {
+    margin-top: 20px; /* Stały margines od treści */
+}
+
+
+/* === TREŚĆ ROZWIJANA (POD SPODEM) === */
+.efs-expandable-area {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease-in 0.1s,
+    margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.efs-bottom-trigger-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+
+/* ================== STAN ROZWINIĘTY ================== */
+
+.efs-container.efs-expanded .efs-grid {
+    /* KLUCZ: Wyrównujemy wszystko do góry! */
+    align-items: flex-start;
+}
+
+.efs-container.efs-expanded .efs-image-wrapper {
+    transform: scale(0.65);
+}
+
+.efs-container.efs-expanded .efs-expandable-area {
+    max-height: 2000px;
+    opacity: 1;
+    /* Już nie używamy ujemnego marginesu, co naprawia błąd */
+    margin-top: 0;
+}
+
+.efs-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Stan, gdy komponent jest widoczny na ekranie */
+.efs-container.efs-is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .efs-grid {
+        grid-template-columns: 1fr;
+        direction: ltr !important;
+        align-items: flex-start; /* Zawsze od góry na mobilce */
+    }
+    .efs-content-wrapper { justify-content: flex-start; }
+    .efs-main-content { justify-content: flex-start; }
+    .efs-container.efs-expanded .efs-image-wrapper {
+        transform: scale(1);
+        max-height: 200px;
+    }
+    .efs-container.efs-expanded .efs-expandable-area {
+        margin-top: 20px;
+    }
+}

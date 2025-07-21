@@ -1,0 +1,89 @@
+/* src/pages/Offer/Offer.css */
+
+body{
+    padding: 0;
+}
+.app{
+    padding: 150px 0 0 0;
+}
+
+/* === GŁÓWNY UKŁAD STRONY === */
+
+.main-content-wrapper {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Odstęp między głównymi sekcjami */
+}
+
+/* Zapewnienie, że sekcja z ID ma odpowiedni margines górny dla kotwicy (nagłówek nie zasłania tytułu) */
+.content-section-anchor {
+    padding-top: 100px;
+    margin-top: -100px;
+}
+
+
+/* === GÓRNA BELKA NAWIGACYJNA === */
+
+.top-nav-grid-wrapper {
+    display: flex; /* Klucz do centrowania */
+    justify-content: center; /* Centruje siatkę wewnątrz */
+    padding: 0 20px;
+}
+
+.top-nav-grid {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Styl dla kompaktowych kart w nawigacji */
+.nav-card .fs-content-box {
+    padding: 20px;
+    background-color: #f8f9fa; /* Jaśniejsze tło dla odróżnienia */
+}
+.nav-card .fs-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+.nav-card .fs-icon {
+    font-size: 2.5rem;
+    margin-right: 15px;
+}
+
+
+/* === KLASY POMOCNICZE === */
+
+/* Lista z "ptaszkami" używana wewnątrz FeatureGrid */
+.feature-section-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.feature-section-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.feature-section-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: #0591c6;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.fs-image.fs-logo-image {
+    max-width: 180px;  /* Maksymalna szerokość logo */
+    max-height: 120px; /* Maksymalna wysokość logo */
+    height: auto;      /* Wysokość automatyczna, aby zachować proporcje */
+    width: auto;       /* Szerokość automatyczna */
+    object-fit: contain; /* Gwarantuje, że logo nie zostanie przycięte ani rozciągnięte */
+    margin: auto;      /* Centruje logo wewnątrz jego kontenera */
+}

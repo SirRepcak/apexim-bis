@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './/pages/home/Home';
+import Realizations from './/pages/realizations/Realizations';
+import Contact from './/pages/contact/Contact';
+import About from './/pages/about/About';
+import FeatureDemo from './/pages/featuredemo/FeatureDemo';
+import Offer from './/pages/offer/Offer';
+import LandingPage from "./pages/LandingPage/LandingPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => (
+    <BrowserRouter>
+        <Routes>
+            {/* Redirect root to /home */}
+            <Route path="/" element={<LandingPage/>}/>
+            <Route path="/home" element={<Home/>}/>
+            <Route path="/realizations" element={<Realizations/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/feature-demo" element={<FeatureDemo/>}/>
+            <Route path="/offer" element={<Offer/>}/>
+            {/* Add more routes here as needed */}
+        </Routes>
+    </BrowserRouter>
+);
 
 export default App;
