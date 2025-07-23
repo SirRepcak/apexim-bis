@@ -10,7 +10,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 
 
 const App = () => (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
             {/* Redirect root to /home */}
             <Route path="/" element={<LandingPage/>}/>
