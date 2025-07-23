@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/apexim-bis/static/css/main.fead098d.css",
-    "main.js": "/apexim-bis/static/js/main.3f9e71e7.js",
+    "main.js": "/apexim-bis/static/js/main.991807f3.js",
     "static/js/453.da5561b8.chunk.js": "/apexim-bis/static/js/453.da5561b8.chunk.js",
     "static/media/hand-shake.jpg": "/apexim-bis/static/media/hand-shake.df0703dce11e9bb666da.jpg",
     "static/media/logo.png": "/apexim-bis/static/media/logo.ca3716367cd00e8985ea.png",
@@ -18,11 +18,11 @@
     "static/media/lg.woff2?io9a6k": "/apexim-bis/static/media/lg.64b800aa30714fd916dc.woff2",
     "index.html": "/apexim-bis/index.html",
     "main.fead098d.css.map": "/apexim-bis/static/css/main.fead098d.css.map",
-    "main.3f9e71e7.js.map": "/apexim-bis/static/js/main.3f9e71e7.js.map",
+    "main.991807f3.js.map": "/apexim-bis/static/js/main.991807f3.js.map",
     "453.da5561b8.chunk.js.map": "/apexim-bis/static/js/453.da5561b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fead098d.css",
-    "static/js/main.3f9e71e7.js"
+    "static/js/main.991807f3.js"
   ]
 }
