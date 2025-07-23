@@ -1,5 +1,75 @@
 /* src/pages/LandingPage/LandingPage.css */
 
+/* === DEFINICJE ANIMACJI (KEYFRAMES) === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* === KLASY ANIMACJI === */
+.animate-entry {
+    opacity: 0;
+    /* animation-fill-mode jest teraz częścią głównej animacji */
+}
+
+/* Aplikujemy animacje do odpowiednich elementów z dodanym "forwards" */
+.logo-container.animate-entry {
+    animation: fadeInUp 0.6s ease-out forwards; /* <<< POPRAWKA */
+}
+.landing-title.animate-entry {
+    animation: fadeInUp 0.6s ease-out forwards; /* <<< POPRAWKA */
+}
+.landing-subtitle.animate-entry {
+    animation: fadeInUp 0.6s ease-out forwards; /* <<< POPRAWKA */
+}
+
+/* Opóźnienia dla efektu sekwencyjnego */
+.animate-entry.delay-1 { animation-delay: 0.2s; }
+.animate-entry.delay-2 { animation-delay: 0.4s; }
+.animate-entry.delay-3 { animation-delay: 0.6s; }
+
+/* Animacje dla kart wyboru */
+.choice-card-wrapper {
+    flex: 1;
+    display: flex;
+}
+.choice-card-wrapper.left.animate-entry {
+    animation: slideInFromLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* <<< POPRAWKA */
+}
+.choice-card-wrapper.right.animate-entry {
+    animation: slideInFromRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* <<< POPRAWKA */
+}
+
+
+/* === POZOSTAŁE STYLE (BEZ ZMIAN) === */
 .landing-page-container {
     position: relative;
     height: 100vh;
@@ -14,7 +84,6 @@
     transform: translateX(-50%);
     width: 100%;
     max-width: 900px;
-    /* === ZMIANA: Podnosimy z-index, aby był nad efektem hover === */
     z-index: 20;
     text-align: center;
     padding: 4vh 20px 0;
@@ -59,19 +128,15 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-    .landing-choice-wrapper {
-        flex-direction: column;
-    }
-    .landing-title {
-        font-size: 2.5rem;
-    }
-    .landing-subtitle {
-        font-size: 1.1rem;
-    }
-    .logo-container {
-        padding: 15px;
-    }
-    .landing-main-logo {
-        max-height: 60px;
+    .landing-choice-wrapper { flex-direction: column; }
+    .landing-title { font-size: 2.5rem; }
+    .landing-subtitle { font-size: 1.1rem; }
+    .logo-container { padding: 15px; }
+    .landing-main-logo { max-height: 60px; }
+
+    /* Na mobilce obie karty wjeżdżają od dołu */
+    .choice-card-wrapper.left.animate-entry,
+    .choice-card-wrapper.right.animate-entry {
+        animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* <<< POPRAWKA */
     }
 }
