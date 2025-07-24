@@ -1,4 +1,20 @@
 /* src/components/OfferNavigation/OfferNavigation.css */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Start 20px above its final position */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at its normal position */
+    }
+}
+
+/* === STEP 3: Apply the animation to our container === */
+.offer-navigation-container {
+    animation: fadeInDown 0.7s ease-out backwards;
+}
 .collapsible-container {
     margin-top: 20px;
 }
