@@ -7,7 +7,7 @@ export const items = [
     galleryImages: [
       "https://placehold.co/1280x720?text=Realizacja+1+-+Zdjęcie+1",
       "https://placehold.co/1280x720?text=Realizacja+1+-+Zdjęcie+2",
-      "https://placehold.co/1280x720?text=Realizacja+1+-+Zdjęcie+3",
+      "https://placehold.co/720x720?text=Realizacja+1+-+Zdjęcie+3",
     ]
   },
   {

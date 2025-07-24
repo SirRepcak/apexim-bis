@@ -29,10 +29,11 @@ const Header = forwardRef((props, ref) => {
           <ul className="nav-links">
             {/* 2. Change all navigation links from <a> to <Link> */}
             {/*<li><Link to="/home">Home</Link></li>*/}
-            <li><Link to="/realizations">Realizacje</Link></li>
-            <li><Link to="/contact">Kontakt</Link></li>
+
             <li><Link to="/about">O Firmie</Link></li>
             <li><Link to="/offer">Oferta</Link></li>
+            <li><Link to="/realizations">Realizacje</Link></li>
+            <li><Link to="/contact">Kontakt</Link></li>
             {/* <li><Link to="/feature-demo">Demo Funkcjonalności</Link></li> */}
             <li><Link to="/">Start</Link></li>
           </ul>

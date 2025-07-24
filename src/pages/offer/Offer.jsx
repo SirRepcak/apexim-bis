@@ -1,5 +1,10 @@
 // src/pages/Offer/Offer.js
 import React, {useState} from 'react';
+// =======================================================
+// === STEP 1: ADD THIS IMPORT ===
+// =======================================================
+import { Link } from 'react-router-dom';
+// =======================================================
 import Header from '../../components/NavHeader/NavHeader';
 import Footer from '../../components/NavFooter/NavFooter';
 import './Offer.css';
@@ -51,7 +56,8 @@ const InvestmentsDetails = ({ onPermissionsClick }) => (
         ]} gap="30px" />
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 4 }}>
             <Button variant="outlined" href="#permissions" onClick={onPermissionsClick} startIcon={<FaCertificate />} sx={{ color: '#0591c6', borderColor: '#0591c6', '&:hover': { borderColor: '#0477a2', backgroundColor: 'rgba(5, 145, 198, 0.04)'} }}>Nasze Uprawnienia</Button>
-            <Button variant="contained" href="/contact?open=3" startIcon={<TbMail />} sx={{ backgroundColor: '#0591c6', '&:hover': { backgroundColor: '#0477a2' } }}>Zapytaj o Ofertę</Button>
+            {/* ======================= ZMIANA TUTAJ ======================= */}
+            <Button component={Link} to="/contact?open=3" variant="contained" startIcon={<TbMail />} sx={{ backgroundColor: '#0591c6', '&:hover': { backgroundColor: '#0477a2' } }}>Zapytaj o Ofertę</Button>
         </Box>
     </>
 );
@@ -68,7 +74,8 @@ const ServiceDetails = ({ onPermissionsClick }) => (
         <Box sx={{ mt: 4 }}><FeatureSection key="section-service-react" title="Dostępność i Szybki Czas Reakcji" titleColor="#0591c6" backgroundColor="#f8f9fa" icon={<TbClockHour4 />} contentAlign="center"><p>Rozumiemy, jak ważna jest ciągłość działania Twojego biznesu. Oferujemy elastyczne umowy serwisowe i gwarantujemy szybki czas reakcji naszego zespołu technicznego w przypadku awarii.</p></FeatureSection></Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 4 }}>
             <Button variant="outlined" href="#permissions" onClick={onPermissionsClick} startIcon={<FaCertificate />} sx={{ color: '#0591c6', borderColor: '#0591c6', '&:hover': { borderColor: '#0477a2', backgroundColor: 'rgba(5, 145, 198, 0.04)'} }}>Nasze Uprawnienia</Button>
-            <Button variant="contained" href="/contact?open=4" startIcon={<TbMail />} sx={{ backgroundColor: '#0591c6', '&:hover': { backgroundColor: '#0477a2' } }}>Zapytaj o Ofertę</Button>
+            {/* ======================= ZMIANA TUTAJ ======================= */}
+            <Button component={Link} to="/contact?open=4" variant="contained" startIcon={<TbMail />} sx={{ backgroundColor: '#0591c6', '&:hover': { backgroundColor: '#0477a2' } }}>Zapytaj o Ofertę</Button>
         </Box>
     </>
 );
@@ -109,7 +116,8 @@ const Offer = () => {
                     <FeatureSection title="Profesjonalne Doradztwo Techniczne" titleColor="#0591c6" icon={<TbBrain/>} iconColor="#0591c6" image={consultingImage} imagePosition="right" contentWidth="50%" >
                         <p>Fundamentem każdej udanej inwestycji jest trafna diagnoza potrzeb i precyzyjny dobór technologii. Nasz proces doradczy to nie tylko rozmowa, ale kompleksowy audyt, który pozwala zrozumieć Państwa cele biznesowe i specyfikę obiektu.</p>
                         <p>Na podstawie analizy ryzyka i Państwa oczekiwań, tworzymy <strong>szczegółową koncepcję systemu</strong>. Rekomendujemy rozwiązania, które są nie tylko skuteczne, ale również skalowalne i zoptymalizowane kosztowo. Zapewniamy pełną jasność co do możliwości i funkcjonalności, aby mogli Państwo podjąć najlepszą decyzję.</p>
-                        <Box sx={{ mt: 3 }}><Button variant="contained" href="/contact?open=3" startIcon={<TbMail />} sx={{ backgroundColor: '#0591c6', '&:hover': { backgroundColor: '#0477a2' } }}>Skonsultuj swój pomysł</Button></Box>
+                        {/* ======================= ZMIANA TUTAJ ======================= */}
+                        <Box sx={{ mt: 3 }}><Button component={Link} to="/contact?open=3" variant="contained" startIcon={<TbMail />} sx={{ backgroundColor: '#0591c6', '&:hover': { backgroundColor: '#0477a2' } }}>Skonsultuj swój pomysł</Button></Box>
                     </FeatureSection>
                 </div>
 
@@ -118,7 +126,8 @@ const Offer = () => {
                         <p>Zdajemy sobie sprawę, że kluczem do sukcesu inwestycji jest profesjonalny i spójny projekt. Dlatego oferujemy <strong>kompleksowe zarządzanie całym procesem projektowym</strong>, od koncepcji po gotową dokumentację wykonawczą.</p>
                         <p>Współpracujemy z zaufanymi biurami projektowymi i specjalistami branżowymi, aby dostarczyć kompletne opracowania, idealnie dopasowane do potrzeb Twojej inwestycji. Naszą główną specjalizacją jest koordynacja projektów <strong>systemów teletechnicznych</strong>, ale w ramach kompleksowej obsługi zapewniamy również <strong>pełną dokumentację dla instalacji elektrycznych</strong>.</p>
                         <p>Dzięki temu inwestor otrzymuje jeden, spójny i gotowy do realizacji projekt, bez konieczności angażowania się w skomplikowane uzgodnienia międzybranżowe. <strong>To my bierzemy na siebie całą komunikację i odpowiedzialność.</strong></p>
-                        <Box sx={{ mt: 3 }}><Button variant="contained" href="/contact?open=5" startIcon={<TbMail />} sx={{ backgroundColor: '#0591c6', '&:hover': { backgroundColor: '#0477a2' } }}>Omów swój projekt</Button></Box>
+                        {/* ======================= ZMIANA TUTAJ ======================= */}
+                        <Box sx={{ mt: 3 }}><Button component={Link} to="/contact?open=5" variant="contained" startIcon={<TbMail />} sx={{ backgroundColor: '#0591c6', '&:hover': { backgroundColor: '#0477a2' } }}>Omów swój projekt</Button></Box>
                     </FeatureSection>
                 </div>
 
@@ -128,7 +137,6 @@ const Offer = () => {
                     </ExpandableFeatureSection>
                 </div>
 
-                {/* === NOWA SEKCJA "POZOSTAŁE USŁUGI" - Z POPRAWKAMI === */}
                 <div className="content-section-anchor">
                     <h2 style={{textAlign: 'center', marginBottom: '40px', fontSize: '2.5rem', color: '#1a2b48'}}>Poznaj Nasze Pozostałe Usługi</h2>
                     <FeatureGrid
@@ -139,7 +147,7 @@ const Offer = () => {
                                     titleColor="#0591c6"
                                     image={logoImageSecurity}
                                     imageClassName="fs-logo-image"
-                                    imagePosition="left" // Obrazek po lewej (na zewnątrz)
+                                    imagePosition="left"
                                     contentAlign="center"
                                     backgroundColor="white"
                                     hasShadow={true}
@@ -152,7 +160,7 @@ const Offer = () => {
                                     titleColor="#0591c6"
                                     image={logoImageCleaning}
                                     imageClassName="fs-logo-image"
-                                    imagePosition="right" // Obrazek po prawej (na zewnątrz)
+                                    imagePosition="right"
                                     contentAlign="center"
                                     backgroundColor="white"
                                     hasShadow={true}

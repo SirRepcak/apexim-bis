@@ -50,7 +50,7 @@ const ContactCard = ({ department, isOpenedFromUrl }) => {
         }
         // `[]` na końcu sprawia, że ten efekt uruchomi się tylko raz, po zamontowaniu komponentu.
         // Dodajemy `isOpenedFromUrl` i `isOpen` do dependency array, aby reagować na ich zmiany, jeśli kiedykolwiek będą dynamiczne.
-    }, [isOpenedFromUrl, isOpen]);
+    }, [isOpenedFromUrl]);
     // ===================================================================
 
     const isExpandable = department.additionalContacts && department.additionalContacts.length > 0;
