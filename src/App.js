@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route, Navigate, ScrollRestoration} from 'react-router-dom';
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import Home from './/pages/home/Home';
 import Realizations from './/pages/realizations/Realizations';
 import Contact from './/pages/contact/Contact';
@@ -11,7 +11,7 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 
 const App = () => (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
         <ScrollToTop/>
         <Routes>
             {/* Redirect root to /home */}
@@ -24,7 +24,7 @@ const App = () => (
             <Route path="/offer" element={<Offer/>}/>
             {/* Add more routes here as needed */}
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
 );
 
 export default App;
