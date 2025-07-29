@@ -37,6 +37,7 @@ const MyTimeline = React.forwardRef(({ activeItemIndex, setActiveIndex, onGaller
                             // No need to pass index or setActiveIndex down anymore for this part
                             galleryImages={item.galleryImages}
                             coverImage={item.cover}
+                            coverType = {item.coverType}
                             onGalleryOpen={onGalleryOpen}
                             onGalleryClose={onGalleryClose}
                         />

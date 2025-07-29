@@ -19,13 +19,33 @@ import renomaImg17 from '../../assets/inv1Renoma/17.jpg';
 import renomaImg18 from '../../assets/inv1Renoma/18.jpg';
 import renomaImg19 from '../../assets/inv1Renoma/19.jpg';
 import renomaImg20 from '../../assets/inv1Renoma/20.jpg';
+import coverPkp from '../../assets/invPKP/cover.jpg';
+import pkpImg1 from '../../assets/invPKP/1.jpg';
+import pkpImg2 from '../../assets/invPKP/2.jpg';
+import pkpImg3 from '../../assets/invPKP/3.jpg';
+import pkpImg4 from '../../assets/invPKP/4.jpg';
+import pkpImg5 from '../../assets/invPKP/5.jpg';
+import pkpImg6 from '../../assets/invPKP/6.jpg';
+import pkpImg7 from '../../assets/invPKP/7.jpeg';
+import pkpImg8 from '../../assets/invPKP/8.jpeg';
+import placeholderCover from '../../assets/realization-logos/logo-blueSub.png';
+import sdr35 from '../../assets/realization-logos/35-SdrOP-Skwierz.jpg';
+import wszwZg from '../../assets/realization-logos/WSZW-zg.png';
+import zmech17 from '../../assets/realization-logos/17-zmech-wedrzyn.png';
+import rziZg from '../../assets/realization-logos/RZI-zg.png';
+import pul5 from '../../assets/realization-logos/5pul-artylerii.png';
+import wog4 from '../../assets/realization-logos/4wog.png';
+import wog43 from '../../assets/realization-logos/43wog.png';
+import wog2 from '../../assets/realization-logos/2wog.png';
+import wog45 from '../../assets/realization-logos/45wog.png';
 
 
 export const items = [
   {
     title: "Czerwiec 2025",
     cardTitle: "C.H. Renoma \"Ace of Space\"",
-    cardSubtitle: "Wykonanie instalacji: elektrycznej, uziemiającej, oświetlenia, przyzywowej, sieci strukturalnej LAN, KD, systemu wizji dozorowej CCTV oraz oświetlenia awaryjnego",
+    coverType: 'photo',
+    cardSubtitle: "Kompleksowa realizacja instalacji niskoprądowych i elektrycznych, w tym oświetlenia, LAN, CCTV i systemów kontroli dostępu.",
     cover: coverRenoma,
     galleryImages: [
       renomaImg1, renomaImg2, renomaImg3, renomaImg4, renomaImg5, renomaImg6,
@@ -37,176 +57,201 @@ export const items = [
   {
     title: "2021-2025",
     cardTitle: "45 WOG Wędrzyn",
-    cardSubtitle: "Konserwacja i utrzymanie systemów: SSWIN, systemu wizji dozorowej CCTV oraz KD",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Zapewnienie ciągłości działania i bezpieczeństwa kluczowych systemów: SSWiN, CCTV i kontroli dostępu (KD).",
+    cover: wog45,
+    galleryImages: []
   },
   {
     title: "2020-2024",
     cardTitle: "2 WOG Wrocław",
-    cardSubtitle: "Konserwacja i utrzymanie systemu SSP",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Stała opieka serwisowa nad systemem sygnalizacji pożarowej (SSP), gwarantująca bezpieczeństwo obiektu.",
+    cover: wog2,
+    galleryImages: []
   },
   {
     title: "2012-2025",
     cardTitle: "43 WOG Świętoszów",
-    cardSubtitle: "Konserwacja i utrzymanie systemów: SSWIN, systemu wizji dozorowej CCTV oraz KD",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Długoterminowa obsługa i konserwacja zintegrowanych systemów bezpieczeństwa, w tym SSWiN, CCTV oraz KD.",
+    cover: wog43,
+    galleryImages: []
   },
   {
     title: "2010-2025",
     cardTitle: "4 WOG Gliwice",
-    cardSubtitle: "Konserwacja i utrzymanie systemów: SSWIN, systemu wizji dozorowej CCTV oraz KD",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Wieloletnia umowa na utrzymanie niezawodności systemów alarmowych (SSWiN), monitoringu (CCTV) i kontroli dostępu (KD).",
+    cover: wog4,
+    galleryImages: []
   },
   {
     title: "Listopad 2024",
     cardTitle: "MOK Międzyrzecz",
-    cardSubtitle: "Modernizacja systemu SSP",
-    cover: "https://placehold.co/1280x720?text=Realizacja+2",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+2+-+Zdjęcie+1", "https://placehold.co/1280x720?text=Realizacja+2+-+Zdjęcie+2"]
+    coverType: 'logo',
+    cardSubtitle: "Podniesienie standardu bezpieczeństwa obiektu poprzez modernizację kluczowego systemu sygnalizacji pożarowej (SSP).",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "Wrzesień 2024",
     cardTitle: "SP 2 we Wschowie",
-    cardSubtitle: "Wymiana WLZ oraz montaż rozdzielnic piętrowych",
-    cover: "https://placehold.co/1280x720?text=Realizacja+3",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+3+-+Zdjęcie+1", "https://placehold.co/1280x720?text=Realizacja+3+-+Zdjęcie+2"]
+    coverType: 'logo',
+    cardSubtitle: "Kluczowa modernizacja infrastruktury zasilania, obejmująca wymianę WLZ i montaż nowych rozdzielnic piętrowych.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "Sierpień 2024",
     cardTitle: "Zarząd Dróg Wojewódzkich w Zielonej Górze",
-    cardSubtitle: "Modernizacja serwerowni oraz wymiana szafy dystrybucyjnej",
-    cover: "https://placehold.co/1280x720?text=Realizacja+4",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+4+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Modernizacja serca sieci IT – wdrożenie nowej serwerowni oraz wymiana centralnej szafy dystrybucyjnej.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "Lipiec 2024",
     cardTitle: "Dworce PKP w : Świebodzinie, Babimoście, Rzepinie",
-    cardSubtitle: "Realizacja w ramach podwykonawstwa dla Elektrodan sp. z o.o.",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'photo',
+    cardSubtitle: "Wsparcie jako kluczowy podwykonawca dla Elektrodan sp. z o.o. przy modernizacji infrastruktury dworcowej.",
+    cover: coverPkp,
+    galleryImages: [ pkpImg1, pkpImg2, pkpImg3, pkpImg4, pkpImg5, pkpImg6, pkpImg7, pkpImg8]
   },
   {
     title: "Listopad 2023",
     cardTitle: "SU w Zielonej Górze oddział Okulistyki i Intensywnej Terapii",
-    cardSubtitle: "Wykonanie instalacji SSP oraz instalacji elektrycznej",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Zapewnienie bezpieczeństwa pacjentów poprzez wdrożenie systemu SSP i modernizację instalacji elektrycznej.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "Marzec 2023",
     cardTitle: "Starostwo Powiatowe w Zielonej Górze",
-    cardSubtitle: "Modernizacja systemu SSP",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Unowocześnienie systemu sygnalizacji pożarowej (SSP) w celu zwiększenia bezpieczeństwa urzędu.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "Styczeń 2023",
     cardTitle: "JW. Sulechów",
-    cardSubtitle: "Wykonanie instalacji: SSP, systemu wizji dozorowej CCTV, elektrycznej oraz odgromowej",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Kompleksowe wdrożenie systemów bezpieczeństwa (SSP, CCTV) oraz wykonanie instalacji elektrycznej i odgromowej.",
+    cover: pul5,
+    galleryImages: []
   },
   {
     title: "Grudzień 2022",
     cardTitle: "BWA w Zielonej Górze",
-    cardSubtitle: "Montaż systemu wizji dozorowej CCTV",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Instalacja nowoczesnego systemu monitoringu wizyjnego (CCTV) w celu ochrony dzieł sztuki i obiektu.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "Listopad 2022",
     cardTitle: "Urząd Skarbowy w Zielonej Górze",
-    cardSubtitle: "Kompleksowa wymiana instalacji sieci strukturalnej LAN oraz dedykowanej instalacji elektrycznej",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Pełna modernizacja sieci strukturalnej LAN oraz dedykowanej infrastruktury zasilającej dla całego budynku.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "2021",
     cardTitle: "ZUS Oleśnica",
-    cardSubtitle: "Wykonanie instalacji SSWIN oraz systemu wizji dozorowej CCTV",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Zabezpieczenie obiektu poprzez instalację zintegrowanych systemów alarmowych (SSWiN) i monitoringu wizyjnego (CCTV).",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "2021",
     cardTitle: "RZI w Zielonej Górze",
-    cardSubtitle: "Wykonanie instalacji SSWIN oraz systemu wizji dozorowej CCTV",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Wdrożenie systemów ochrony mienia: systemu alarmowego SSWiN oraz nowoczesnego monitoringu CCTV.",
+    cover: rziZg,
+    galleryImages: []
   },
   {
     title: "2021",
     cardTitle: "Prokuratury Rejonowe w: Głogowie, Lubinie, Złotoryji",
-    cardSubtitle: "Wykonanie instalacji sieci strukturalnej LAN",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Budowa nowej, certyfikowanej sieci strukturalnej LAN w trzech kluczowych dla regionu prokuraturach.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "2020",
     cardTitle: "JW. Wędrzyn",
-    cardSubtitle: "Wykonanie instalacji: SSP, systemu wizji dozorowej CCTV, KD oraz sieci strukturalnej LAN",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Zintegrowanie kluczowych systemów bezpieczeństwa: SSP, CCTV, KD oraz wdrożenie nowej sieci strukturalnej LAN.",
+    cover: zmech17,
+    galleryImages: []
   },
   {
     title: "2019",
     cardTitle: "Izba Celna w Zgorzelcu",
-    cardSubtitle: "Wykonanie instalacji: SSP, systemu wizji dozorowej CCTV, KD, SSWIN oraz oddymiania",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Pełne wdrożenie zintegrowanych systemów bezpieczeństwa: SSP, CCTV, KD, SSWiN oraz systemu oddymiania.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "2019",
-    cardTitle: "WSW Zielona Góra",
-    cardSubtitle: "Wykonanie instalacji: SSWIN, SSP, KD oraz systemu wizji dozorowej CCTV",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    cardTitle: "WSZW Zielona Góra",
+    coverType: 'logo',
+    cardSubtitle: "Kompleksowe zabezpieczenie obiektu przez instalację systemów SSWiN, SSP, KD oraz monitoringu CCTV.",
+    cover: wszwZg,
+    galleryImages: []
   },
   {
     title: "2018",
     cardTitle: "SP 2 w Kożuchowie",
-    cardSubtitle: "Wykonanie instalacji: zasilania podstawowego i awaryjnego, sieci strukturalnej LAN, BMS, SSWIN oraz systemu wizji dozorowej CCTV",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Wdrożenie pełnej infrastruktury teletechnicznej i elektrycznej, w tym LAN, BMS, CCTV, SSWiN oraz zasilania.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "2018",
     cardTitle: "BURSA w Zielonej Górze",
-    cardSubtitle: "Modernizacja systemu SSP",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Modernizacja i dostosowanie systemu sygnalizacji pożarowej (SSP) do aktualnych norm bezpieczeństwa.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "2018",
     cardTitle: "JW. Międzyrzecz",
-    cardSubtitle: "Wykonanie instalacji SSWIN oraz systemu wizji dozorowej CCTV",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Wzmocnienie ochrony obiektu wojskowego poprzez instalację systemu alarmowego SSWiN i monitoringu CCTV.",
+    cover: zmech17,
+    galleryImages: []
   },
   {
     title: "2017",
     cardTitle: "JW. Skwierzyna",
-    cardSubtitle: "Wykonanie instalacji: elektrycznej, uziemiającej, odgromowej, sieci strukturalnej LAN oraz systemu wizji dozorowej CCTV",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Budowa od podstaw instalacji elektrycznej, odgromowej oraz wdrożenie sieci LAN i systemu monitoringu CCTV.",
+    cover: sdr35,
+    galleryImages: []
   },
   {
     title: "2015",
     cardTitle: "Komisariat Policji w Szprotawie",
-    cardSubtitle: "Wykonanie instalacji: elektrycznej, zasilania awaryjnego (40kVA), sieci strukturalnej LAN, systemu wizji dozorowej CCTV, KD, SSWIN, SSP, DVB-T, nagłośnienia oraz systemu rejestracji przesłuchań",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Realizacja 'pod klucz' wszystkich instalacji niskoprądowych (LAN, CCTV, KD, SSP) oraz elektrycznych, w tym zasilania awaryjnego 40kVA, oraz systemu nagrywania przesłuchań.",
+    cover: placeholderCover,
+    galleryImages: []
   },
   {
     title: "2014",
     cardTitle: "Elektrownia Wodna Grajówka",
-    cardSubtitle: "Wykonanie instalacji: SSWIN, systemu wizji dozorowej CCTV, SSP oraz KD",
-    cover: "https://placehold.co/1280x720?text=Realizacja+5",
-    galleryImages: ["https://placehold.co/1280x720?text=Realizacja+5+-+Zdjęcie+1"]
+    coverType: 'logo',
+    cardSubtitle: "Zabezpieczenie obiektu infrastruktury krytycznej przez wdrożenie systemów SSWiN, CCTV, SSP oraz kontroli dostępu.",
+    cover: placeholderCover,
+    galleryImages: []
   },
 ];
