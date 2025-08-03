@@ -1,57 +1,70 @@
 // src/components/ContactCard/ContactCard.jsx
 
-import React, { useState, useEffect } from 'react'; // <<< DODAJEMY IMPORT useEffect
-import { FaPhone, FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaPhone, FaEnvelope, FaFax, FaCopy, FaCheck } from 'react-icons/fa';
 
-// Komponent ContactItem pozostaje bez zmian
 const ContactItem = ({ type, value }) => {
     const [copied, setCopied] = useState(false);
-    const href = type === 'phone' ? `tel:${value.replace(/\s/g, '')}` : `mailto:${value}`;
+
+    const icons = {
+        phone: <FaPhone />,
+        email: <FaEnvelope />,
+        fax: <FaFax />,
+    };
+
+    const href =
+        type === 'phone'
+            ? `tel:${value.replace(/\s/g, '')}`
+            : type === 'email'
+                ? `mailto:${value}`
+                : null;
+
     const handleCopy = (e) => {
         e.preventDefault();
-        const textToCopy = type === 'phone' ? value.replace(/\s/g, '') : value;
+        const textToCopy = (type === 'phone' || type === 'fax') ? value.replace(/\s/g, '') : value;
         navigator.clipboard.writeText(textToCopy);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
+
+    const content = (
+        <>
+            {value}
+            <button onClick={handleCopy} className="copy-button" title="Skopiuj do schowka">
+                {copied ? <FaCheck style={{ color: '#4CAF50' }} /> : <FaCopy />}
+            </button>
+        </>
+    );
+
     return (
         <div className="contact-item">
-            <div className="contact-icon-wrapper">{type === 'phone' ? <FaPhone /> : <FaEnvelope />}</div>
-            <a href={href} className="contact-value">
-                <span>{value}</span>
-                <button onClick={handleCopy} className="copy-button" title="Skopiuj do schowka">
-                    {copied ? <FaCheck style={{ color: '#4CAF50' }} /> : <FaCopy />}
-                </button>
-            </a>
+            <div className="contact-icon-wrapper">{icons[type] || <FaEnvelope />}</div>
+            {href ? (
+                <a href={href} className="contact-value">
+                    {content}
+                </a>
+            ) : (
+                <div className="contact-value">
+                    {content}
+                </div>
+            )}
         </div>
     );
 };
 
-
+// Komponent ContactCard pozostaje bez zmian
 const ContactCard = ({ department, isOpenedFromUrl }) => {
-    // Stan początkowy jest teraz zawsze oparty na `initiallyOpen` lub jest `false`.
-    // Ignorujemy `isOpenedFromUrl` w tym miejscu.
     const [isOpen, setIsOpen] = useState(department.initiallyOpen || false);
 
-    // ===================================================================
-    // === NOWA LOGIKA Z useEffect - TUTAJ DZIEJE SIĘ MAGIA ===
-    // ===================================================================
     useEffect(() => {
-        // Jeśli prop `isOpenedFromUrl` jest `true`, ORAZ karta nie jest już otwarta
         if (isOpenedFromUrl && !isOpen) {
-            // Używamy małego opóźnienia, aby dać przeglądarce czas na wyrenderowanie
-            // zamkniętej karty, zanim uruchomimy animację otwierania.
             const timer = setTimeout(() => {
                 setIsOpen(true);
-            }, 100); // 100ms to dobre, subtelne opóźnienie
+            }, 100);
 
-            // Funkcja czyszcząca - dobra praktyka
             return () => clearTimeout(timer);
         }
-        // `[]` na końcu sprawia, że ten efekt uruchomi się tylko raz, po zamontowaniu komponentu.
-        // Dodajemy `isOpenedFromUrl` i `isOpen` do dependency array, aby reagować na ich zmiany, jeśli kiedykolwiek będą dynamiczne.
-    }, [isOpenedFromUrl]);
-    // ===================================================================
+    }, [isOpenedFromUrl, isOpen]);
 
     const isExpandable = department.additionalContacts && department.additionalContacts.length > 0;
 

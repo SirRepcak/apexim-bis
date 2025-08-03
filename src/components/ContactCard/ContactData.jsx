@@ -20,8 +20,7 @@ const deptSekretariat = {
   mainContact: { type: 'phone', value: '68 327 05 00' },
   additionalContacts: [
     { type: 'phone', value: '68 329 36 55' },
-    { type: 'phone', value: '68 329 36 56' },
-    { type: 'phone', value: '68 329 36 65' },
+    { type: 'fax', value: 'FAX : 68 329 36 65' },
     { type: 'email', value: 'agencja-ochrony@apexim-bis.com.pl' },
   ],
   initiallyOpen: false,
@@ -30,54 +29,34 @@ const deptSekretariat = {
 const deptHandel = {
   id: 3,
   title: 'Dział Handlu i Obsługi Klienta',
-  mainContact: { type: 'phone', value: '68 329 36 68' },
-  additionalContacts: [
-    { type: 'phone', value: '68 329 36 62' },
-    { type: 'phone', value: '68 329 36 70' },
-    { type: 'phone', value: '68 329 36 64' },
-    { type: 'email', value: 'handel@apexim-bis.com.pl' },
-  ],
+  mainContact: { type: 'email', value: 'handel@apexim-bis.com.pl' },
+  additionalContacts: [],
   initiallyOpen: false,
 };
 
 const deptSerwis = {
   id: 4,
   title: 'Dział Serwisu Technicznego',
-  mainContact: { type: 'phone', value: '68 329 36 78' },
-  additionalContacts: [
-    { type: 'phone', value: '68 329 36 71' },
-    { type: 'email', value: 'serwis@apexim-bis.com.pl' },
-  ],
+  mainContact: { type: 'email', value: 'serwis@apexim-bis.com.pl' },
+  additionalContacts: [],
   initiallyOpen: false,
 };
 
 const deptProjekt = {
   id: 5,
   title: 'Dział Inwestycji i Projektowania',
-  mainContact: { type: 'phone', value: '68 329 36 67' },
+  mainContact: { type: 'email', value: 'projekt@apexim\u2011bis.com.pl' },
   additionalContacts: [
-    { type: 'email', value: 'projekt@apexim-bis.com.pl' },
     { type: 'email', value: 'inwestycje@apexim-bis.com.pl' },
   ],
   initiallyOpen: false,
 };
 
-const deptOchrona = {
-  id: 6,
-  title: 'Szefowie Ochrony',
-  mainContact: { type: 'phone', value: '68 329 36 72' },
-  additionalContacts: [
-    { type: 'phone', value: '68 329 36 58' },
-    { type: 'phone', value: '68 329 36 75' },
-    { type: 'email', value: 'agencja-ochrony@apexim-bis.com.pl' },
-  ],
-  initiallyOpen: false,
-};
 
 const deptPlace = {
   id: 7,
   title: 'Płace',
-  mainContact: { type: 'phone', value: '68 329 36 52' },
+  mainContact: { type: 'phone', value: '68 329 36 51' },
   additionalContacts: [],
   initiallyOpen: false,
 };
@@ -86,9 +65,7 @@ const deptKsiegowosc = {
   id: 8,
   title: 'Księgowość',
   mainContact: { type: 'phone', value: '68 329 36 54' },
-  additionalContacts: [
-    { type: 'phone', value: '68 329 36 53' },
-  ],
+  additionalContacts: [],
   initiallyOpen: false,
 };
 
@@ -113,13 +90,12 @@ export const columnsData = [
   // Column 2
   [
     deptSerwis,
-    deptProjekt,
-    deptOchrona
+    deptKsiegowosc,
+    deptKadry
   ],
   // Column 3
   [
     deptPlace,
-    deptKsiegowosc,
-    deptKadry
+    deptProjekt,
   ],
 ];

@@ -1,4 +1,3 @@
-/* styles.css (Updated with Animations) */
 
 body {
   font-family: sans-serif;
@@ -113,6 +112,10 @@ body {
   margin-bottom: 10px;
 }
 
+.contact-item-span{
+  white-space: nowrap;
+}
+
 /* New styles for the copy button */
 .copy-button {
   background: rgba(255, 255, 255, 0.2);
@@ -158,6 +161,7 @@ body {
   margin-right: 15px;
   flex-shrink: 0;
 }
+
 
 /* ... (responsive styles for columns are the same) ... */
 @media (max-width: 992px) {

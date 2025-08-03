@@ -24,7 +24,7 @@ import handShake from '../../assets/hand-shake.jpg';
 
 const About = () => {
     const companyStats = [
-        { value: 19, label: 'Lat na rynku'},
+        { value: 24, label: 'Lata na rynku'},
         { value: 150, label: 'Zrealizowanych projektów', suffix: '+' },
         { value: 98, label: 'Zadowolonych Klientów', suffix: '%' },
         { value: 24, label: 'Godziny wsparcia', suffix: '/7' },
@@ -62,7 +62,7 @@ const About = () => {
                 title="Nasze doświadczenie"
                 titleColor="#0591c6"
               >
-                <p>Doświadczenie, kompetencje i zaufanie… Patrząc wstecz na 19 lat naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każde zrealizowane projekty to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.</p>
+                <p>Doświadczenie, kompetencje i zaufanie… Patrząc wstecz na 24 lata naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każde zrealizowane projekty to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.</p>
               </FeatureSection>
             ],
             [
@@ -119,7 +119,7 @@ const About = () => {
               titleColor="#0591c6"
               contentAlign={"center"}
           >
-              <p>Od 19 lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.</p>
+              <p>Od 24 lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.</p>
               <p>Wraz z rozwojem rynku i rosnącymi potrzebami naszych partnerów, naturalnie poszerzaliśmy nasze kompetencje, realizując coraz więcej projektów inwestycyjnych. Dziś, aby sprostać największym wyzwaniom, otworzyliśmy nowy rozdział w naszej historii. Powołaliśmy dedykowany dział odpowiedzialny za kompleksową realizację dużych inwestycji – od projektu, przez wykonawstwo, aż po finalny odbiór. Łączymy dekady doświadczenia w bezpieczeństwie z nowoczesnym podejściem do zarządzania projektami.</p>
           </FeatureSection>
       </div>
