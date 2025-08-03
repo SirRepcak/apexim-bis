@@ -1,7 +1,9 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
-import { useSpring, animated } from 'react-spring';
+import {useInView} from 'react-intersection-observer';
+import {animated, useSpring} from 'react-spring';
 import './StatsCounter.css';
+import {useTheme} from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 /**
  * A single animated number.
@@ -43,13 +45,16 @@ const StatsCounter = ({
     threshold: 0.3, // Start animation when 30% of the component is visible
   });
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   const containerStyle = {
     backgroundColor: backgroundImage ? 'transparent' : backgroundColor,
     backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
     color: textColor,
   };
 
-  const containerClasses = `stats-counter-container ${fullWidth ? 'full-width' : ''}`;
+  const containerClasses = `stats-counter-container ${fullWidth ? 'full-width' : ''} ${isMobile ? 'mobile' : ''}`;
 
   return (
       <div ref={ref} className={containerClasses} style={containerStyle}>

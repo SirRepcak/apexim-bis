@@ -7,17 +7,6 @@ body{
     padding: 150px 0 0 0;
 }
 
-/* === GŁÓWNY UKŁAD STRONY === */
-
-.main-content-wrapper {
-    max-width: 1400px;
-    margin: 40px auto 0;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px; /* Odstęp między głównymi sekcjami */
-}
-
 /* Zapewnienie, że sekcja z ID ma odpowiedni margines górny dla kotwicy (nagłówek nie zasłania tytułu) */
 .content-section-anchor {
     padding-top: 100px;

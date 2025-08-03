@@ -73,23 +73,10 @@
 /* === POZOSTAŁE STYLE (BEZ ZMIAN) === */
 .landing-page-container {
     position: relative;
-    height: 100vh;
     width: 100%;
     display: flex;
 }
 
-.landing-page-header {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 900px;
-    z-index: 20;
-    text-align: center;
-    padding: 4vh 20px 0;
-    pointer-events: none;
-}
 
 .logo-container {
     display: inline-block;
