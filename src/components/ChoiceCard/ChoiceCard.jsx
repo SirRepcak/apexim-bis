@@ -7,8 +7,12 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import './ChoiceCard.css';
+import {useTheme} from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ChoiceCard = ({ to, backgroundImage, logo, title, customClassName = '' }) => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const isExternal = to && (to.startsWith('http') || to.startsWith('//'));
 
@@ -24,7 +28,7 @@ const ChoiceCard = ({ to, backgroundImage, logo, title, customClassName = '' }) 
         <Card
             component={Link}
             to={to}
-            className={`choice-mui-card ${customClassName}`} // <<< UŻYWAMY customClassName
+            className={`choice-mui-card ${customClassName}`}
         >
             <CardMedia
                 image={backgroundImage}
@@ -34,13 +38,16 @@ const ChoiceCard = ({ to, backgroundImage, logo, title, customClassName = '' }) 
                 <div className="choice-logo-wrapper">
                     <img src={logo} alt={title} className="choice-logo-image" />
                 </div>
-                <Typography
-                    variant="h4"
-                    component="h2"
-                    className="choice-title"
-                >
-                    {title}
-                </Typography>
+                {!isMobile && (
+                    <Typography
+                        variant="h4"
+                        component="h2"
+                        className="choice-title"
+                        textAlign={"center"}
+                    >
+                        {title}
+                    </Typography>
+                )}
             </CardContent>
         </Card>
     );

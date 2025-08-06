@@ -33,9 +33,21 @@
   color: #333;
 }
 
+.fs-content-box.mobile {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #333;
+}
+
 /* Alignment rules... */
 .fs-content-box.fs-align-left {
   text-align: left;
+}
+
+.fs-content-box.fs-align-justify {
+  text-align: justify;
 }
 
 .fs-align-left .fs-header {
@@ -48,6 +60,10 @@
 
 .fs-align-center .fs-header {
   justify-content: center;
+}
+
+.fs-content-box .MuiButtonBase-root {
+  text-align: center;
 }
 
 .fs-content-box.fs-align-right {
@@ -63,6 +79,11 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  text-align: center;
+}
+
+.fs-header.mobile-header {
+  flex-direction: column;
 }
 
 .fs-icon {
@@ -77,6 +98,11 @@
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
+}
+
+.fs-text.fs-text-mobile {
+  padding: 0 10px 0 10px;
+  text-align: justify;
 }
 
 .fs-text {
@@ -102,6 +128,10 @@
   flex: 1;
 }
 
+.fs-image-box.fs-image-box-mobile {
+  min-height: unset!important;
+  padding-bottom: 20px;
+}
 .fs-side-by-side-variant.fs-direction-column .fs-image-box {
   min-height: 300px;
 }
@@ -113,6 +143,10 @@
   display: block;
 }
 
+.fs-image {
+  border-radius: 8px;
+}
+
 
 /* --- Overlay Variant (Updated for Graininess and Bubble Effect) --- */
 .fs-overlay-variant {
@@ -121,7 +155,7 @@
   align-items: center;
   justify-content: center;
   /* Center the content by default */
-  padding: 40px;
+  padding-top: 40px 0 40px 0;
 
   /* The Parallax and Dark Overlay fix for graininess */
   background-attachment: fixed;

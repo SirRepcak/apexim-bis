@@ -3,6 +3,8 @@
 import React from 'react';
 import './FeatureSection.css';
 import { useInView } from 'react-intersection-observer';
+import {useTheme} from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 /**
  * An advanced, all-in-one feature section component for creating flexible content blocks.
@@ -55,12 +57,17 @@ const FeatureSection = ({
                             clickable = null,
                             target,
                             rel,
-                            children
+                            children,
+                            showImg = true
                         }) => {
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1,
     });
+
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const RootComponent = clickable ? 'a' : 'div';
 
@@ -80,24 +87,27 @@ const FeatureSection = ({
     const iconStyle = { color: iconColor };
     const titleStyle = { color: titleColor || textColor };
 
-    const ContentBlock = () => (
-        <div
-            className={`fs-content-box fs-align-${contentAlign} fs-content-${contentBoxStyle}`}
-            style={contentBoxStyleObj}
-        >
-            <div className="fs-header">
-                {icon && <div className="fs-icon" style={iconStyle}>{icon}</div>}
-                <h2 className="fs-title" style={titleStyle}>{title}</h2>
-            </div>
-            <div className="fs-text">
-                {children}
-            </div>
+    const ImageBlock = () => (
+        <div className={`fs-image-box ${isMobile ? 'fs-image-box-mobile' : '' }`}>
+            <img src={image} alt={title} className={`fs-image ${imageClassName}`} />
         </div>
     );
 
-    const ImageBlock = () => (
-        <div className="fs-image-box">
-            <img src={image} alt={title} className={`fs-image ${imageClassName}`} />
+    const ContentBlock = () => (
+        <div
+            className={`fs-content-box ${isMobile ? 'mobile' : ''} fs-align-${contentAlign} fs-content-${contentBoxStyle}`}
+            style={contentBoxStyleObj}
+        >
+            <div className={`fs-header ${isMobile ? 'mobile-header' : ''}`}>
+                {icon && <div className="fs-icon" style={iconStyle}>{icon}</div>}
+                <h2 className="fs-title" style={titleStyle}>{title}</h2>
+            </div>
+            {isMobile && image && showImg && (
+                <ImageBlock />
+            )}
+            <div className={`fs-text ${isMobile ? 'fs-text-mobile' : ''}`}>
+                {children}
+            </div>
         </div>
     );
 
@@ -131,7 +141,21 @@ const FeatureSection = ({
 
     return (
         <RootComponent {...rootProps}>
-            {imagePosition === 'left' ? (<>{image && <ImageBlock />}<ContentBlock /></>) : (<><ContentBlock />{image && <ImageBlock />}</>)}
+            {isMobile ? (
+                <ContentBlock />
+            ) : (
+                imagePosition === 'left' ? (
+                    <>
+                        {image && <ImageBlock />}
+                        <ContentBlock />
+                    </>
+                ) : (
+                    <>
+                        <ContentBlock />
+                        {image && <ImageBlock />}
+                    </>
+                )
+            )}
         </RootComponent>
     );
 };

@@ -12,6 +12,10 @@
     overflow: hidden;
 }
 
+.stats-counter-container.mobile {
+    padding-left: 0;
+    padding-right: 0;
+}
 /* This is the class that breaks the component out of its parent container */
 .stats-counter-container.full-width {
     width: 100vw;

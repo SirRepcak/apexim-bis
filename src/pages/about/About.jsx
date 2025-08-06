@@ -21,6 +21,8 @@ import { LuHistory } from "react-icons/lu";
 import teamImage from '../../assets/image-team.jpg';
 import deskImage from '../../assets/image-desk.jpg';
 import handShake from '../../assets/hand-shake.jpg';
+import {useTheme} from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const About = () => {
     const companyStats = [
@@ -29,6 +31,10 @@ const About = () => {
         { value: 98, label: 'Zadowolonych Klientów', suffix: '%' },
         { value: 24, label: 'Godziny wsparcia', suffix: '/7' },
     ]
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <>
       <Header />
@@ -39,13 +45,14 @@ const About = () => {
           height="60vh"
           contentWidth="100%"
           title="Lata doświadczenia i profesjonalizm"
-          fullWidth={true} // Spans the entire screen edge-to-edge
+          fullWidth={true}
           backgroundColor="transparent"
           hasShadow={false}
           titleColor="#0591c6"
           iconColor="#3498db"
           contentAlign="center"
           contentBoxStyle="transparent"
+          showImg={false}
         >
 
         </FeatureSection>
@@ -61,6 +68,7 @@ const About = () => {
                 icon={<TbCertificate />}
                 title="Nasze doświadczenie"
                 titleColor="#0591c6"
+                contentAlign={'justify'}
               >
                 <p>Doświadczenie, kompetencje i zaufanie… Patrząc wstecz na 24 lata naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każde zrealizowane projekty to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.</p>
               </FeatureSection>
@@ -74,6 +82,7 @@ const About = () => {
                 icon={<TbPlugConnected />}
                 title="Czym sie zajmujemy?"
                 titleColor="#0591c6"
+                contentAlign={'justify'}
               >
                   <p>Nasze 19-letnie doświadczenie to fundament kompetencji i zaufania, z którego jesteśmy dumni. Nie spoczywamy jednak na laurach – każde zrealizowane zadanie jest dla nas motywacją do poszukiwania innowacyjnych rozwiązań i podejmowania nowych wyzwań. Zawsze dążymy do doskonałości, a naszym celem jest nie tylko spełniać, ale i przewyższać oczekiwania naszych Klientów, zapewniając niezawodność na lata.</p>
               </FeatureSection>
@@ -88,10 +97,8 @@ const About = () => {
           />
 
       <FeatureSection
-
           variant="side-by-side"
-          direction="row"
-          height="400px"
+          height={isMobile ? 'unset' : '400px'}
           contentWidth="50%"
           maxWidth={"1500px"}
           imagePosition="right"
@@ -99,17 +106,17 @@ const About = () => {
           icon={<RiTeamFill />}
           title="Nasz Zespół"
           titleColor="#0591c6"
-          contentAlign={"center"}
+          contentAlign={'justify'}
+          direction={isMobile ? 'column' : 'row'}
       >
           <p>Wierzymy, że za sukcesem każdej realizacji stoją ludzie. Nasz zespół składa się z doświadczonych inżynierów, certyfikowanych techników i profesjonalnych doradców, którzy stale podnoszą swoje kwalifikacje. Dzięki ich wszechstronnym kompetencjom i partnerskiemu podejściu, jesteśmy w stanie sprostać najbardziej wymagającym projektom i zapewnić rozwiązania idealnie dopasowane do potrzeb Klienta.</p>
 
       </FeatureSection>
 
           <FeatureSection
-
               variant="side-by-side"
-              direction="row"
-              height="400px"
+              direction={isMobile ? 'column' : 'row'}
+              height={isMobile ? 'unset' : '400px'}
               contentWidth="50%"
               maxWidth={"1500px"}
               imagePosition="left"
@@ -117,7 +124,7 @@ const About = () => {
               icon={<LuHistory />}
               title="Historia Firmy"
               titleColor="#0591c6"
-              contentAlign={"center"}
+              contentAlign={'justify'}
           >
               <p>Od 24 lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.</p>
               <p>Wraz z rozwojem rynku i rosnącymi potrzebami naszych partnerów, naturalnie poszerzaliśmy nasze kompetencje, realizując coraz więcej projektów inwestycyjnych. Dziś, aby sprostać największym wyzwaniom, otworzyliśmy nowy rozdział w naszej historii. Powołaliśmy dedykowany dział odpowiedzialny za kompleksową realizację dużych inwestycji – od projektu, przez wykonawstwo, aż po finalny odbiór. Łączymy dekady doświadczenia w bezpieczeństwie z nowoczesnym podejściem do zarządzania projektami.</p>

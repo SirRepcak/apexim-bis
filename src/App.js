@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route, Navigate, ScrollRestoration} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './/pages/home/Home';
 import Realizations from './/pages/realizations/Realizations';
 import Contact from './/pages/contact/Contact';
