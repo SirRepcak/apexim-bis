@@ -1,19 +1,21 @@
 {
   "files": {
     "main.css": "/apexim-bis/static/css/main.b0c3a655.css",
-    "main.js": "/apexim-bis/static/js/main.b89d3fb9.js",
+    "main.js": "/apexim-bis/static/js/main.391b5a02.js",
     "static/js/453.6f4f59f4.chunk.js": "/apexim-bis/static/js/453.6f4f59f4.chunk.js",
     "static/media/hand-shake.jpg": "/apexim-bis/static/media/hand-shake.df0703dce11e9bb666da.jpg",
     "static/media/logo.png": "/apexim-bis/static/media/logo.ca3716367cd00e8985ea.png",
     "static/media/image-desk.jpg": "/apexim-bis/static/media/image-desk.507c721509a18e29c5b9.jpg",
+    "static/media/13.jpg": "/apexim-bis/static/media/13.7a042a9b44d18f7521b3.jpg",
     "static/media/3.jpg": "/apexim-bis/static/media/3.354374db096882b4a109.jpg",
-    "static/media/9.jpg": "/apexim-bis/static/media/9.5956b2d2c402df912031.jpg",
+    "static/media/9.jpg": "/apexim-bis/static/media/9.813c8da299315c8012b5.jpg",
     "static/media/4.jpg": "/apexim-bis/static/media/4.7f0d5bafe7c303b8d176.jpg",
     "static/media/2.jpg": "/apexim-bis/static/media/2.756b36352aa402c70924.jpg",
     "static/media/6.jpg": "/apexim-bis/static/media/6.78323cbfeefe5f3af889.jpg",
     "static/media/5.jpg": "/apexim-bis/static/media/5.1c9f7a9816dd4f958173.jpg",
-    "static/media/cover.jpg": "/apexim-bis/static/media/cover.3c36d9f9d0352d40d002.jpg",
     "static/media/1.jpg": "/apexim-bis/static/media/1.f334e0b5c9a70dff75b1.jpg",
+    "static/media/14.jpg": "/apexim-bis/static/media/14.eb8bde19a850ae6b3a03.jpg",
+    "static/media/cover.jpg": "/apexim-bis/static/media/cover.3c36d9f9d0352d40d002.jpg",
     "static/media/8.jpg": "/apexim-bis/static/media/8.7f4c7cd78ee87d1cfb7f.jpg",
     "static/media/10.jpg": "/apexim-bis/static/media/10.fbc3e15c8974482f968b.jpg",
     "static/media/7.jpg": "/apexim-bis/static/media/7.5d9c15a3263d9a085fd7.jpg",
@@ -39,11 +41,11 @@
     "static/media/5pul-artylerii.png": "/apexim-bis/static/media/5pul-artylerii.2c4e7598f85b59e9db4f.png",
     "index.html": "/apexim-bis/index.html",
     "main.b0c3a655.css.map": "/apexim-bis/static/css/main.b0c3a655.css.map",
-    "main.b89d3fb9.js.map": "/apexim-bis/static/js/main.b89d3fb9.js.map",
+    "main.391b5a02.js.map": "/apexim-bis/static/js/main.391b5a02.js.map",
     "453.6f4f59f4.chunk.js.map": "/apexim-bis/static/js/453.6f4f59f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0c3a655.css",
-    "static/js/main.b89d3fb9.js"
+    "static/js/main.391b5a02.js"
   ]
 }
