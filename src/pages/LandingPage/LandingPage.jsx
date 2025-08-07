@@ -6,9 +6,9 @@ import './LandingPage.css'; // Importujemy plik CSS dla tej strony
 // Zaimportuj swoje logotypy i tła
 import logoSecurity from '../../assets/logo-sec-clean.png';
 import logoInvestments from '../../assets/logo-Inv-Ser.png';
-import mainLogo from '../../assets/logo.png';
-import securityBg from '../../assets/image-team.jpg';
-import investmentsBg from '../../assets/image-team.jpg';
+import mainLogo from '../../assets/landingLogo.png';
+import securityBg from '../../assets/mainImg/10.jpg';
+import investmentsBg from '../../assets/mainImg/11.jpg';
 import {Grid} from "@mui/material";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";

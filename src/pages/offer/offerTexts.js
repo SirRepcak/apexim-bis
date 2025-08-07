@@ -20,7 +20,7 @@ const offerTexts = {
             {
                 title: "Systemy Ochrony Przeciwpożarowej",
                 content: (
-                    <>Wdrażamy zintegrowane Systemy Sygnalizacji Pożaru (SAP), które w połączeniu z systemami oddymiania i dźwiękowymi systemami ostrzegawczymi (DSO) zapewniają najwyższy poziom bezpieczeństwa życia i mienia.</>
+                    <>Wdrażamy zintegrowane Systemy Sygnalizacji Pożaru (SSP), które w połączeniu z systemami oddymiania i dźwiękowymi systemami ostrzegawczymi (DSO) zapewniają najwyższy poziom bezpieczeństwa życia i mienia.</>
                 ),
             },
             {
@@ -59,7 +59,7 @@ const offerTexts = {
                 content: <>Regularne przeglądy i testy systemów <strong>SSWiN, KD i CCTV</strong> w celu weryfikacji poprawności działania, aktualizacji oprogramowania i utrzymania pełnej sprawności.</>,
             },
             {
-                title: "Serwis Systemów PPOŻ i Elektrycznych",
+                title: "Serwis Systemów SSP i Elektrycznych",
                 content: <>Kluczowe dla bezpieczeństwa przeglądy systemów <strong>SAP i instalacji odgromowych</strong>, a także diagnostyka instalacji elektrycznych i oświetleniowych.</>,
             }
         ],
@@ -84,8 +84,8 @@ const offerTexts = {
     },
     project: {
         title: "Zarządzanie Procesem Projektowym",
-        paragraph1: <>Zdajemy sobie sprawę, że kluczem do sukcesu inwestycji jest profesjonalny i spójny projekt. Dlatego oferujemy <strong>kompleksowe zarządzanie całym procesem projektowym</strong>, od koncepcji po gotową dokumentację wykonawczą.</>,
-        paragraph2: <>Współpracujemy z zaufanymi biurami projektowymi i specjalistami branżowymi, aby dostarczyć kompletne opracowania, idealnie dopasowane do potrzeb Twojej inwestycji. Naszą główną specjalizacją jest koordynacja projektów <strong>systemów teletechnicznych</strong>, ale w ramach kompleksowej obsługi zapewniamy również <strong>pełną dokumentację dla instalacji elektrycznych</strong>.</>,
+        paragraph1: <>Zdajemy sobie sprawę, że kluczem do sukcesu inwestycji jest profesjonalny i spójny projekt. Dlatego oferujemy <strong>kompleksowe zarządzanie całym procesem projektowym</strong>, od koncepcji po gotową dokumentację wykonawczą. </>,
+        paragraph2: <>Współpracujemy z zaufanymi biurami projektowymi i specjalistami branżowymi, aby dostarczyć kompletne opracowania, idealnie dopasowane do potrzeb Twojej inwestycji. Naszą główną specjalizacją jest koordynacja projektów <strong>systemów teletechnicznych</strong>, ale w ramach kompleksowej obsługi zapewniamy również <strong>pełną dokumentację dla instalacji elektrycznych</strong>. </>,
         paragraph3: <>Dzięki temu inwestor otrzymuje jeden, spójny i gotowy do realizacji projekt, bez konieczności angażowania się w skomplikowane uzgodnienia międzybranżowe. <strong>To my bierzemy na siebie całą komunikację i odpowiedzialność.</strong></>,
         button: "Omów swój projekt",
     },
@@ -95,15 +95,15 @@ const offerTexts = {
         features: [
             {
                 title: "Koncesja MSWiA",
-                content: <>Posiadamy koncesję (nr L-0602/00) uprawniającą do prowadzenia działalności gospodarczej w zakresie profesjonalnego zabezpieczenia technicznego.</>
+                content: <>Posiadamy koncesję L-0602/00 uprawniającą do prowadzenia działalności gospodarczej w zakresie zabezpieczenia technicznego.</>
+            },
+            {
+                title: "Świadectwo Bezpieczeństwa przemysłowego ABW",
+                content: <>Poświadcza naszą wiarygodność i zdolność do ochrony informacji niejawnych, gwarantując zachowanie tajemnicy i poufności (ŚBP II stopnia - POUFNE).</>
             },
             {
                 title: "Kancelaria Niejawna",
                 content: <>Dysponujemy kancelarią do przetwarzania materiałów o klauzuli „Zastrzeżone”, zapewniając pełne bezpieczeństwo proceduralne.</>
-            },
-            {
-                title: "Świadectwo Bezpieczeństwa ABW",
-                content: <>Poświadcza naszą wiarygodność i zdolność do ochrony informacji niejawnych, gwarantując zachowanie tajemnicy i poufności.</>
             },
             {
                 title: "Akredytowany Sprzęt IT",
@@ -115,7 +115,7 @@ const offerTexts = {
             },
             {
                 title: "Inspektor Bezpieczeństwa IT",
-                content: <>Nasz zespół uzupełnia inspektor bezpieczeństwa teleinformatycznego (IBTI), który administruje i chroni nasze systemy informatyczne.</>
+                content: <>Nasz zespół uzupełnia inspektor bezpieczeństwa teleinformatycznego, który administruje i chroni nasze systemy informatyczne.</>
             }
         ]
     },
@@ -123,7 +123,7 @@ const offerTexts = {
         heading: "Poznaj Nasze Pozostałe Usługi",
         features: [
             {
-                title: "Profesjonalna Ochrona Mienia",
+                title: "Ochrona Mienia",
                 url: "http://www.apexim-bis.com.pl/dzialalnosc/ochrona-fizyczna",
             },
             {

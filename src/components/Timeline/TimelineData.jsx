@@ -77,7 +77,7 @@ export const items = [
     title: "2010-2025",
     cardTitle: "4 WOG Gliwice",
     coverType: 'logo',
-    cardSubtitle: "Wieloletnia umowa na utrzymanie niezawodności systemów alarmowych (SSWiN), monitoringu (CCTV) i kontroli dostępu (KD).",
+    cardSubtitle: "Długoterminowa obsługa i konserwacja zintegrowanych systemów bezpieczeństwa, w tym SSWiN, CCTV oraz KD.",
     cover: wog4,
     galleryImages: []
   },
@@ -93,15 +93,15 @@ export const items = [
     title: "Listopad 2024",
     cardTitle: "MOK Międzyrzecz",
     coverType: 'photo',
-    cardSubtitle: "Podniesienie standardu bezpieczeństwa obiektu poprzez modernizację kluczowego systemu sygnalizacji pożarowej (SSP).",
+    cardSubtitle: "Modernizacja systemu sygnalizacji pożarowej (SSP).",
     cover: mokCover,
     galleryImages: []
   },
   {
     title: "Wrzesień 2024",
-    cardTitle: "Szkoła Podstawowa nr.2 we Wschowie",
+    cardTitle: "Szkoła Podstawowa nr 2 we Wschowie",
     coverType: 'photo',
-    cardSubtitle: "Kluczowa modernizacja infrastruktury zasilania, obejmująca wymianę WLZ i montaż nowych rozdzielnic piętrowych.",
+    cardSubtitle: "Modernizacja infrastruktury zasilania, obejmująca wymianę WLZ oraz montaż nowych rozdzielnic piętrowych.",
     cover: coverSP,
     galleryImages: [spImg1, spImg2, spImg3]
   },
@@ -109,15 +109,15 @@ export const items = [
     title: "Sierpień 2024",
     cardTitle: "Zarząd Dróg Wojewódzkich w Zielonej Górze",
     coverType: 'photo',
-    cardSubtitle: "Modernizacja serca sieci IT – wdrożenie nowej serwerowni oraz wymiana centralnej szafy dystrybucyjnej.",
+    cardSubtitle: "Modernizacja sieci IT – nowa serwerownia oraz wymiana centralnej szafy dystrybucyjnej.",
     cover: coverZDW,
     galleryImages: []
   },
   {
     title: "Lipiec 2024",
-    cardTitle: "Dworce PKP w : Świebodzinie, Babimoście, Rzepinie",
+    cardTitle: "Dworce PKP w: Świebodzinie, Babimoście, Rzepinie",
     coverType: 'photo',
-    cardSubtitle: "Wsparcie jako kluczowy podwykonawca dla Elektrodan sp. z o.o. przy modernizacji infrastruktury dworcowej.",
+    cardSubtitle: "Modernizacja infrastruktury teletechnicznej i elektrycznej w budynkach dworców.",
     cover: coverPkp,
     galleryImages: [ pkpImg1, pkpImg2, pkpImg3, pkpImg4, pkpImg5, pkpImg6, pkpImg7, pkpImg8]
   },
@@ -125,7 +125,7 @@ export const items = [
     title: "Listopad 2023",
     cardTitle: "Szpital Uniwersytecki w Zielonej Górze",
     coverType: 'photo',
-    cardSubtitle: "Instalacja systemu SSP oraz stworzenie instalacji elektrycznej na nowo powstałym budynku",
+    cardSubtitle: "Montaż instalacji elektrycznej oraz systemu SSP w nowo powstałym budynku szpitalnym.",
     cover: coverSU,
     galleryImages: [coverSU, suImg1, suImg2, suImg3, suImg4, suImg5]
   },
@@ -133,15 +133,15 @@ export const items = [
     title: "Marzec 2023",
     cardTitle: "Starostwo Powiatowe w Zielonej Górze",
     coverType: 'photo',
-    cardSubtitle: "Unowocześnienie systemu sygnalizacji pożarowej (SSP) w celu zwiększenia bezpieczeństwa urzędu.",
+    cardSubtitle: "Etapowa rozbudowa systemu SSP.",
     cover: coverStarostwo,
     galleryImages: []
   },
   {
     title: "Styczeń 2023",
-    cardTitle: "JW. Sulechów",
+    cardTitle: "Sinevia",
     coverType: 'logo',
-    cardSubtitle: "Kompleksowe wdrożenie systemów bezpieczeństwa (SSP, CCTV) oraz wykonanie instalacji elektrycznej i odgromowej.",
+    cardSubtitle: "Kompleksowy montaż systemów bezpieczeństwa wraz z wykonaniem instalacji elektrycznej i odgromowej w J.W. Sulechów.",
     cover: pul5,
     galleryImages: []
   },
@@ -149,7 +149,7 @@ export const items = [
     title: "Grudzień 2022",
     cardTitle: "BWA w Zielonej Górze",
     coverType: 'photo',
-    cardSubtitle: "Instalacja nowoczesnego systemu monitoringu wizyjnego (CCTV) w celu ochrony dzieł sztuki i obiektu.",
+    cardSubtitle: "Wykonanie systemu monitoringu wizyjnego CCTV.",
     cover: coverBWA,
     galleryImages: []
   },
@@ -157,7 +157,7 @@ export const items = [
     title: "Listopad 2022",
     cardTitle: "Urząd Skarbowy w Zielonej Górze",
     coverType: 'logo',
-    cardSubtitle: "Pełna modernizacja sieci strukturalnej LAN oraz dedykowanej infrastruktury zasilającej dla całego budynku.",
+    cardSubtitle: "Modernizacja sieci strukturalnej oraz dedykowanej infrastruktury zasilającej.",
     cover: placeholderCover,
     galleryImages: []
   },
@@ -165,7 +165,7 @@ export const items = [
     title: "2021",
     cardTitle: "ZUS Oleśnica",
     coverType: 'logo',
-    cardSubtitle: "Zabezpieczenie obiektu poprzez instalację zintegrowanych systemów alarmowych (SSWiN) i monitoringu wizyjnego (CCTV).",
+    cardSubtitle: "Zabezpieczenie obiektu poprzez instalację zintegrowanego systemu alarmowego (SSWiN) i monitoringu wizyjnego (CCTV).",
     cover: placeholderCover,
     galleryImages: []
   },
@@ -173,15 +173,15 @@ export const items = [
     title: "2021",
     cardTitle: "RZI w Zielonej Górze",
     coverType: 'logo',
-    cardSubtitle: "Wdrożenie systemów ochrony mienia: systemu alarmowego SSWiN oraz nowoczesnego monitoringu CCTV.",
+    cardSubtitle: "Montaż systemów ochrony mienia: SSWiN oraz CCTV.",
     cover: rziZg,
     galleryImages: []
   },
   {
     title: "2021",
-    cardTitle: "Prokuratury Rejonowe w: Głogowie, Lubinie, Złotoryji",
+    cardTitle: "Prokuratury Rejonowe: Głogów, Lubin, Złotoryja",
     coverType: 'logo',
-    cardSubtitle: "Budowa nowej, certyfikowanej sieci strukturalnej LAN w trzech kluczowych dla regionu prokuraturach.",
+    cardSubtitle: "Wykonanie certyfikowanej sieci strukturalnej LAN.",
     cover: placeholderCover,
     galleryImages: []
   },
@@ -189,7 +189,7 @@ export const items = [
     title: "2020",
     cardTitle: "JW. Wędrzyn",
     coverType: 'logo',
-    cardSubtitle: "Zintegrowanie kluczowych systemów bezpieczeństwa: SSP, CCTV, KD oraz wdrożenie nowej sieci strukturalnej LAN.",
+    cardSubtitle: "Montaż i uruchomienie systemów bezpieczeństwa: SSP, CCTV, KD i LAN.",
     cover: zmech17,
     galleryImages: []
   },
@@ -197,7 +197,7 @@ export const items = [
     title: "2019",
     cardTitle: "Izba Celna w Zgorzelcu",
     coverType: 'logo',
-    cardSubtitle: "Pełne wdrożenie zintegrowanych systemów bezpieczeństwa: SSP, CCTV, KD, SSWiN oraz systemu oddymiania.",
+    cardSubtitle: "Wykonanie systemów bezpieczeństwa: SSP, CCTV, KD, SSWiN oraz systemu oddymiania.",
     cover: placeholderCover,
     galleryImages: []
   },
@@ -205,7 +205,7 @@ export const items = [
     title: "2019",
     cardTitle: "WSZW Zielona Góra",
     coverType: 'logo',
-    cardSubtitle: "Kompleksowe zabezpieczenie obiektu przez instalację systemów SSWiN, SSP, KD oraz monitoringu CCTV.",
+    cardSubtitle: "Instalacja systemu SSWiN, SSP, KD i CCTV.",
     cover: wszwZg,
     galleryImages: []
   },
@@ -213,7 +213,7 @@ export const items = [
     title: "2018",
     cardTitle: "SP 2 w Kożuchowie",
     coverType: 'logo',
-    cardSubtitle: "Wdrożenie pełnej infrastruktury teletechnicznej i elektrycznej, w tym LAN, BMS, CCTV, SSWiN oraz zasilania.",
+    cardSubtitle: "Montaż infrastruktury teletechnicznej i elektrycznej, w tym LAN, BMS, CCTV, SSWiN oraz zasilania.",
     cover: placeholderCover,
     galleryImages: []
   },
@@ -221,7 +221,7 @@ export const items = [
     title: "2018",
     cardTitle: "BURSA w Zielonej Górze",
     coverType: 'photo',
-    cardSubtitle: "Modernizacja i dostosowanie systemu sygnalizacji pożarowej (SSP) do aktualnych norm bezpieczeństwa.",
+    cardSubtitle: "Wykonanie systemu sygnalizacji pożarowej SSP.",
     cover: coverBURSA,
     galleryImages: []
   },
@@ -229,7 +229,7 @@ export const items = [
     title: "2018",
     cardTitle: "JW. Międzyrzecz",
     coverType: 'logo',
-    cardSubtitle: "Wzmocnienie ochrony obiektu wojskowego poprzez instalację systemu alarmowego SSWiN i monitoringu CCTV.",
+    cardSubtitle: "Instalacja systemu alarmowego SSWiN i monitoringu CCTV.",
     cover: zmech17,
     galleryImages: []
   },
@@ -237,7 +237,7 @@ export const items = [
     title: "2017",
     cardTitle: "JW. Skwierzyna",
     coverType: 'logo',
-    cardSubtitle: "Budowa od podstaw instalacji elektrycznej, odgromowej oraz wdrożenie sieci LAN i systemu monitoringu CCTV.",
+    cardSubtitle: "Wykonanie instalacji elektrycznej, odgromowej, LAN i systemu monitoringu CCTV.",
     cover: sdr35,
     galleryImages: []
   },
@@ -245,7 +245,7 @@ export const items = [
     title: "2015",
     cardTitle: "Komisariat Policji w Szprotawie",
     coverType: 'logo',
-    cardSubtitle: "Realizacja 'pod klucz' wszystkich instalacji niskoprądowych (LAN, CCTV, KD, SSP) oraz elektrycznych, w tym zasilania awaryjnego 40kVA, oraz systemu nagrywania przesłuchań.",
+    cardSubtitle: "Realizacja wszystkich instalacji niskoprądowych (LAN, CCTV, KD, SSP) oraz elektrycznych, w tym zasilania awaryjnego 40 kVA, oraz systemu nagrywania przesłuchań.",
     cover: placeholderCover,
     galleryImages: []
   },
@@ -253,7 +253,7 @@ export const items = [
     title: "2014",
     cardTitle: "Elektrownia Wodna Grajówka",
     coverType: 'logo',
-    cardSubtitle: "Zabezpieczenie obiektu infrastruktury krytycznej przez wdrożenie systemów SSWiN, CCTV, SSP oraz kontroli dostępu.",
+    cardSubtitle: "Zabezpieczenie obiektu infrastruktury krytycznej przez wykonanie systemów SSWiN, CCTV, SSP oraz kontroli dostępu.",
     cover: placeholderCover,
     galleryImages: []
   },

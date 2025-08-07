@@ -26,11 +26,11 @@ import {
     TbUserShield,
     TbVideo
 } from "react-icons/tb";
-import investmentsImage from '../../assets/image-desk.jpg';
-import designImage from '../../assets/image-desk.jpg';
-import serviceImage from '../../assets/image-team.jpg';
-import permissionsImage from '../../assets/image-team.jpg';
-import consultingImage from '../../assets/hand-shake.jpg';
+import investmentsImage from '../../assets/mainImg/3.jpg';
+import designImage from '../../assets/mainImg/7.jpg';
+import serviceImage from '../../assets/mainImg/8.jpg';
+import permissionsImage from '../../assets/mainImg/9.jpg';
+import consultingImage from '../../assets/mainImg/2.jpg';
 import logoImageSecurity from '../../assets/logo-security.png';
 import logoImageCleaning from '../../assets/logo-cleaning.png';
 import {useTheme} from "@mui/material/styles";
@@ -42,8 +42,8 @@ const investmentsIcons = [<TbBulb/>, <TbShieldCheck/>, <TbVideo/>, <TbNetwork/>]
 const serviceIcons = [<TbShieldCheck/>, <TbBulb/>];
 const permissionsIcons = [
     <TbLicense/>,
-    <TbFileCertificate/>,
     <TbShieldCheck/>,
+    <TbFileCertificate/>,
     <TbDeviceDesktopCheck/>,
     <TbUserShield/>,
     <TbLockAccess/>,
@@ -414,7 +414,7 @@ const Offer = () => {
                         <Grid size={{xs:12, md:6}}>
                             <FeatureSection
                                 title={offerTexts.additional.features[0].title}
-                                titleColor="#0591c6"
+                                titleColor="#EC6C1E"
                                 image={logoImageSecurity}
                                 imageClassName="fs-logo-image"
                                 imagePosition={isMobile ? 'center' : 'left'}
@@ -428,7 +428,7 @@ const Offer = () => {
                         <Grid size={{xs:12, md:6}}>
                             <FeatureSection
                                 title={offerTexts.additional.features[1].title}
-                                titleColor="#0591c6"
+                                titleColor="#EC6C1E"
                                 image={logoImageCleaning}
                                 imageClassName="fs-logo-image"
                                 imagePosition={isMobile ? 'center' : 'right'}

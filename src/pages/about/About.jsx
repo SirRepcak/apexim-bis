@@ -18,9 +18,12 @@ import { RiTeamFill } from "react-icons/ri";
 import { LuHistory } from "react-icons/lu";
 
 // Import Images
-import teamImage from '../../assets/image-team.jpg';
+import teammImage from '../../assets/image-team.jpg';
 import deskImage from '../../assets/image-desk.jpg';
-import handShake from '../../assets/hand-shake.jpg';
+import handShake from '../../assets/mainImg/6.jpg';
+import counterImage from '../../assets/mainImg/1.jpg';
+import teamImage from '../../assets/mainImg/4.jpg';
+import historyImage from '../../assets/mainImg/5.jpg'
 import {useTheme} from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
@@ -70,7 +73,11 @@ const About = () => {
                 titleColor="#0591c6"
                 contentAlign={'justify'}
               >
-                <p>Doświadczenie, kompetencje i zaufanie… Patrząc wstecz na 24 lata naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każde zrealizowane projekty to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.</p>
+                  <p>Nasze 24-letnie doświadczenie to fundament kompetencji i zaufania. Patrząc wstecz na te 24 lata
+                      naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi.
+                      Każdy zrealizowany projekt to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają
+                      naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie
+                      tylko spełniać, ale i przewyższać oczekiwania naszych klientów. </p>
               </FeatureSection>
             ],
             [
@@ -84,7 +91,7 @@ const About = () => {
                 titleColor="#0591c6"
                 contentAlign={'justify'}
               >
-                  <p>Nasze 19-letnie doświadczenie to fundament kompetencji i zaufania, z którego jesteśmy dumni. Nie spoczywamy jednak na laurach – każde zrealizowane zadanie jest dla nas motywacją do poszukiwania innowacyjnych rozwiązań i podejmowania nowych wyzwań. Zawsze dążymy do doskonałości, a naszym celem jest nie tylko spełniać, ale i przewyższać oczekiwania naszych Klientów, zapewniając niezawodność na lata.</p>
+                  <p>Spółka Apexim Bis Sp. z o.o. prowadzi działalność w zakresie robót budowlano-montażowych, projektowych i konserwacyjnych - instalacji niskoprądowych (teleinformatycznych) i elektrycznych do 1000 V - szczególnie specjalizuje się w systemach alarmowych włamania i napadu, kontroli dostępu, systemach telewizji przemysłowej, sieciach komputerowych, systemach ppoż. i dźwiękowych systemach ostrzegawczych, systemach multimedialnych, instalacjach domofonowych i przywoławczych, instalacjach nagłośnienia, systemach automatyki i zarządzania budynkiem. Wykonujemy instalacje elektryczne w obiektach prywatnych, przemysłowych, wielkogabarytowych.</p>
               </FeatureSection>
             ]
           ]}
@@ -92,7 +99,7 @@ const About = () => {
           <StatsCounter
               stats={companyStats}
               fullWidth={true}
-              backgroundImage={teamImage}
+              backgroundImage={counterImage}
               textColor="#ffffff"
           />
 
@@ -120,7 +127,7 @@ const About = () => {
               contentWidth="50%"
               maxWidth={"1500px"}
               imagePosition="left"
-              image={teamImage}
+              image={historyImage}
               icon={<LuHistory />}
               title="Historia Firmy"
               titleColor="#0591c6"
