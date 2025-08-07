@@ -1,6 +1,6 @@
 // src/components/Timeline/TimelineCardMedia.jsx
 
-import React, { useState } from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
@@ -19,7 +19,9 @@ const TimelineCardMedia = ({ coverImage, galleryImages, coverType, onGalleryOpen
         setIsLightboxOpen(true);
     };
 
-    const slides = hasGallery ? galleryImages.map(url => ({ src: url })) : [];
+    const slides = useMemo(() => {
+        return  hasGallery ? galleryImages.map(url => ({ src: url })) : [];
+    }, [galleryImages, hasGallery]);
 
     const wrapperClasses = [
         'timeline-media-wrapper',

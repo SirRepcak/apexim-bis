@@ -176,6 +176,7 @@ const ServiceDetails = ({onPermissionsClick}) => {
                 sx={{ maxWidth: '100%', margin: '0 auto' }}
                 alignItems="center"
                 spacing={2}
+                flexWrap="nowrap"
             >
                 {offerTexts.service.features.map((feature, idx) => (
                     <Grid item xs={12} md={4} key={feature.title}>
@@ -244,7 +245,7 @@ const PermissionsDetails = () => {
             }}
         >
             {offerTexts.permissions.features.map((feature, index) => (
-                <Grid size={{ xs: 12, md: 4}}>
+                <Grid size={{ xs: 12, md: 4}} p={2}>
                     <FeatureSection
                         key={feature.title}
                         title={feature.title}
