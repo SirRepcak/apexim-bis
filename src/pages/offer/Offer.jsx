@@ -49,17 +49,21 @@ const permissionsIcons = [
     <TbLockAccess/>,
 ];
 
-const InvestmentsDetails = ({ onPermissionsClick }) => (
+const InvestmentsDetails = ({onPermissionsClick}) => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+    return (
     <>
         <FeatureSection
             title={offerTexts.investments.title}
             titleColor="#0591c6"
-            icon={<TbClipboardCheck />}
+            icon={<TbClipboardCheck/>}
             backgroundColor="#e9f7ff"
             hasShadow={true}
-            contentAlign="justify"
+            contentAlign={isMobile ? 'justify' : 'center'}
         >
-            <p style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto' }}>
+            <p style={{fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto'}}>
                 {offerTexts.investments.description}
             </p>
         </FeatureSection>
@@ -68,8 +72,9 @@ const InvestmentsDetails = ({ onPermissionsClick }) => (
             container
             spacing={4}
             sx={{maxWidth: '100%', margin: '0 auto', alignItems: 'stretch'}}
+            alignItems={"center"}
         >
-            <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={4}>
+            <Grid alignItems={"center"} xs={12} md={6} display="flex" flexDirection={isMobile ? "column" : "row"} gap={4}>
                 <FeatureSection
                     title={offerTexts.investments.features[0].title}
                     titleColor="#0591c6"
@@ -91,7 +96,7 @@ const InvestmentsDetails = ({ onPermissionsClick }) => (
                     {offerTexts.investments.features[1].content}
                 </FeatureSection>
             </Grid>
-            <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={4}>
+            <Grid alignItems={"center"} xs={12} md={6} display="flex" flexDirection={isMobile ? "column" : "row"} gap={4}>
                 <FeatureSection
                     title={offerTexts.investments.features[2].title}
                     titleColor="#0591c6"
@@ -114,7 +119,7 @@ const InvestmentsDetails = ({ onPermissionsClick }) => (
                 </FeatureSection>
             </Grid>
         </Grid>
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 4 }}>
+        <Box sx={{display: 'flex', justifyContent: 'center', gap: 2, mt: 4, flexDirection: isMobile ? "column" : "row"}}>
             <Button
                 variant="outlined"
                 href="#permissions"
@@ -142,117 +147,121 @@ const InvestmentsDetails = ({ onPermissionsClick }) => (
             </Button>
         </Box>
     </>
-);
+    )
+};
 
-const ServiceDetails = ({ onPermissionsClick }) => (
-    <>
-        <FeatureSection
-            title={offerTexts.service.title}
-            titleColor="#0591c6"
-            icon={<FaWrench/>}
-            backgroundColor="#e9f7ff"
-            hasShadow={true}
-            contentAlign="justify"
-        >
-            <p style={{fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto'}}>
-                {offerTexts.service.description}
-            </p>
-        </FeatureSection>
-        <h3 style={{textAlign: 'center', margin: '40px 0 20px'}}>
-            {offerTexts.service.scopeTitle}
-        </h3>
+const ServiceDetails = ({onPermissionsClick}) => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+    return (
+        <>
+            <FeatureSection
+                title={offerTexts.service.title}
+                titleColor="#0591c6"
+                icon={<FaWrench/>}
+                backgroundColor="#e9f7ff"
+                hasShadow={true}
+                contentAlign={isMobile ? 'justify' : 'center'}
+            >
+                <p style={{fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto'}}>
+                    {offerTexts.service.description}
+                </p>
+            </FeatureSection>
+            <h3 style={{textAlign: 'center', margin: '40px 0 20px'}}>
+                {offerTexts.service.scopeTitle}
+            </h3>
+            <Grid
+                container
+                sx={{ maxWidth: '100%', margin: '0 auto' }}
+                alignItems="center"
+                spacing={2}
+            >
+                {offerTexts.service.features.map((feature, idx) => (
+                    <Grid item xs={12} md={4} key={feature.title}>
+                        <FeatureSection
+                            title={feature.title}
+                            titleColor="#0591c6"
+                            icon={serviceIcons[idx]}
+                            backgroundColor="#f8f9fa"
+                            hasShadow={true}
+                            contentAlign="center"
+                        >
+                            {feature.content}
+                        </FeatureSection>
+                    </Grid>
+                ))}
+            </Grid>
+            <Box sx={{mt: 4}}>
+                <FeatureSection
+                    key="section-service-react"
+                    title={offerTexts.service.responseTitle}
+                    titleColor="#0591c6"
+                    backgroundColor="#f8f9fa"
+                    icon={<TbClockHour4/>}
+                    contentAlign="center">
+                    {offerTexts.service.responseText}
+                </FeatureSection>
+            </Box>
+            <Box sx={{display: 'flex', justifyContent: 'center', gap: 2, mt: 4, flexDirection: isMobile ? "column" : "row"}}>
+                <Button
+                    variant="outlined"
+                    href="#permissions"
+                    onClick={onPermissionsClick}
+                    startIcon={<FaCertificate/>}
+                    sx={{
+                        color: '#0591c6',
+                        borderColor: '#0591c6',
+                        '&:hover': {borderColor: '#0477a2', backgroundColor: 'rgba(5, 145, 198, 0.04)'}
+                    }}
+                >
+                    {offerTexts.service.buttons.permissions}
+                </Button>
+                <Button
+                    component={Link}
+                    to="/contact?open=4"
+                    variant="contained"
+                    startIcon={<TbMail/>}
+                    sx={{backgroundColor: '#0591c6', '&:hover': {backgroundColor: '#0477a2'}}}
+                >
+                    {offerTexts.service.buttons.ask}
+                </Button>
+            </Box>
+        </>
+    );
+}
+
+const PermissionsDetails = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    return (
         <Grid
             container
-            spacing={4}
-            sx={{maxWidth: '100%', margin: '0 auto', alignItems: 'stretch'}}
+            flexWrap={"wrap"}
+            sx={{
+                width: '100%',
+                margin: '0 auto'
+            }}
         >
-            {offerTexts.service.features.map((feature, idx) => (
-                <Grid item xs={12} md={6} key={feature.title}>
+            {offerTexts.permissions.features.map((feature, index) => (
+                <Grid size={{ xs: 12, md: 4}}>
                     <FeatureSection
+                        key={feature.title}
                         title={feature.title}
                         titleColor="#0591c6"
-                        icon={serviceIcons[idx]}
+                        icon={permissionsIcons[index]}
                         backgroundColor="#f8f9fa"
                         hasShadow={true}
                         contentAlign="center"
+                        sx={{height: '100%'}}
                     >
                         {feature.content}
                     </FeatureSection>
                 </Grid>
             ))}
         </Grid>
-        <Box sx={{mt: 4}}>
-            <FeatureSection
-                key="section-service-react"
-                title={offerTexts.service.responseTitle}
-                titleColor="#0591c6"
-                backgroundColor="#f8f9fa"
-                icon={<TbClockHour4/>}
-                contentAlign="center">
-                {offerTexts.service.responseText}
-            </FeatureSection>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 4 }}>
-            <Button
-                variant="outlined"
-                href="#permissions"
-                onClick={onPermissionsClick}
-                startIcon={<FaCertificate/>}
-                sx={{
-                    color: '#0591c6',
-                    borderColor: '#0591c6',
-                    '&:hover': {borderColor: '#0477a2', backgroundColor: 'rgba(5, 145, 198, 0.04)'}
-                }}
-            >
-                {offerTexts.service.buttons.permissions}
-            </Button>
-            <Button
-                component={Link}
-                to="/contact?open=4"
-                variant="contained"
-                startIcon={<TbMail/>}
-                sx={{backgroundColor: '#0591c6', '&:hover': {backgroundColor: '#0477a2'}}}
-            >
-                {offerTexts.service.buttons.ask}
-            </Button>
-        </Box>
-    </>
-);
-
-const PermissionsDetails = () => (
-    <Grid
-        container
-        spacing={4}
-        alignItems="stretch"
-        sx={{
-            width: '100%',
-            margin: '0 auto'
-        }}
-    >
-        {[0, 1, 2].map((colIdx) => (
-            <Grid item xs={12} md={4} display="flex" flexDirection="column" gap={4} key={colIdx}>
-                {[0, 1].map((rowIdx) => {
-                    const idx = colIdx * 2 + rowIdx;
-                    const feature = offerTexts.permissions.features[idx];
-                    return (
-                        <FeatureSection
-                            key={feature.title}
-                            title={feature.title}
-                            titleColor="#0591c6"
-                            icon={permissionsIcons[idx]}
-                            backgroundColor="#f8f9fa"
-                            hasShadow={true}
-                            contentAlign="center"
-                            sx={{height: '100%'}}
-                        >
-                            {feature.content}
-                        </FeatureSection>
-                    );
-                })}
-            </Grid>
-        ))}
-    </Grid>
-);
+    );
+}
 
 const Offer = () => {
     const [isPermissionsExpanded, setPermissionsExpanded] = useState(false);
@@ -400,31 +409,34 @@ const Offer = () => {
                         container
                         spacing={4}
                         sx={{maxWidth: '100%', margin: '0 auto'}}
+                        size={12}
                     >
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{xs:12, md:6}}>
                             <FeatureSection
                                 title={offerTexts.additional.features[0].title}
                                 titleColor="#0591c6"
                                 image={logoImageSecurity}
                                 imageClassName="fs-logo-image"
-                                imagePosition="left"
+                                imagePosition={isMobile ? 'center' : 'left'}
                                 contentAlign="center"
                                 backgroundColor="white"
                                 hasShadow={true}
                                 clickable={offerTexts.additional.features[0].url}
+                                flexJustifyCenter
                             />
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{xs:12, md:6}}>
                             <FeatureSection
                                 title={offerTexts.additional.features[1].title}
                                 titleColor="#0591c6"
                                 image={logoImageCleaning}
                                 imageClassName="fs-logo-image"
-                                imagePosition="right"
+                                imagePosition={isMobile ? 'center' : 'right'}
                                 contentAlign="center"
                                 backgroundColor="white"
                                 hasShadow={true}
                                 clickable={offerTexts.additional.features[1].url}
+                                flexJustifyCenter
                             />
                         </Grid>
                     </Grid>

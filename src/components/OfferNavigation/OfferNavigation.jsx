@@ -47,15 +47,23 @@ const OfferNavigation = () => {
                         justifyContent: 'center',
                     }}
                 >
-                    <Grid container spacing={isMobile && 2} width={'80%'} justifyContent={'center'}>
-                        {navItems.map((item) => (
-                            <Grid size={{ xs: 12, sm: 12, md: 3 }} key={item.label}>
+                    <Grid container spacing={isMobile ? 2 : 0} width={'75%'} justifyContent={'center'}>
+                        {navItems.map((item, idx) => (
+                            <Grid  size={{ xs: 12, sm: 12, md: 3 }}  key={item.label}>
                                 <Button
                                     href={item.href}
                                     startIcon={item.icon}
                                     sx={{
                                         color: '#0591c6',
                                         borderColor: '#0591c6',
+                                        borderLeft: !isMobile && idx !== 0 ? 'none' : undefined,
+                                        borderRadius: !isMobile
+                                            ? idx === 0
+                                                ? '8px 0 0 8px'
+                                                : idx === navItems.length - 1
+                                                    ? '0 8px 8px 0'
+                                                    : '0'
+                                            : '8px',
                                         '&:hover': {
                                             borderColor: '#0477a2',
                                             backgroundColor: 'rgba(5, 145, 198, 0.04)'

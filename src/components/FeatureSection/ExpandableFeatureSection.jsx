@@ -90,7 +90,7 @@ const ExpandableFeatureSection = ({
             <div className={`${isMobile ? 'efs-mobile-expandable-area' : ''} efs-expandable-area`}>
                 {expandContent}
                 {isExpanded && (
-                    <div className="efs-bottom-trigger-wrapper">
+                    <div className={`${isMobile ? '' : 'efs-bottom-trigger-wrapper-padding'} efs-bottom-trigger-wrapper`}>
                         <Button
                             variant="outlined"
                             onClick={handleToggle}

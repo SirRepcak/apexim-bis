@@ -25,6 +25,10 @@
   border-radius: 0;
 }
 
+.fs-container.fs-justify-center {
+  justify-content: center;
+}
+
 .fs-content-box {
   padding: 40px;
   display: flex;

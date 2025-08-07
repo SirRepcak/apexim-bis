@@ -35,3 +35,7 @@ body {
   margin: 0 auto 40px auto;
   line-height: 1.6;
 }
+
+.mobile-app-container {
+  margin: 0 auto;
+}

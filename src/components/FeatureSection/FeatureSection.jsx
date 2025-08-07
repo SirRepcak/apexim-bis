@@ -58,7 +58,8 @@ const FeatureSection = ({
                             target,
                             rel,
                             children,
-                            showImg = true
+                            showImg = true,
+                            flexJustifyCenter = false,
                         }) => {
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -122,6 +123,7 @@ const FeatureSection = ({
     if (fullWidth) { containerClasses += ` fs-full-width`; }
     if (hasShadow && contentBoxStyle === 'solid') { containerClasses += ` fs-has-shadow`; }
     if (clickable) { containerClasses += ` fs-clickable`; }
+    if (flexJustifyCenter) { containerClasses += ` fs-justify-center`; }
 
     const rootProps = {
         ref: ref,
