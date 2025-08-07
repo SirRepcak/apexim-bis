@@ -11,16 +11,14 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 
 const App = () => (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
         <ScrollToTop/>
         <Routes>
             {/* Redirect root to /home */}
             <Route path="/" element={<LandingPage/>}/>
-            <Route path="/home" element={<Home/>}/>
             <Route path="/realizations" element={<Realizations/>}/>
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/about" element={<About/>}/>
-            <Route path="/feature-demo" element={<FeatureDemo/>}/>
             <Route path="/offer" element={<Offer/>}/>
             {/* Add more routes here as needed */}
         </Routes>

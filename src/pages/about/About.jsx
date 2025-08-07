@@ -47,19 +47,21 @@ const About = () => {
           image={handShake}
           height="60vh"
           contentWidth="100%"
-          title="Lata doświadczenia i profesjonalizm"
           fullWidth={true}
           backgroundColor="transparent"
           hasShadow={false}
-          titleColor="#0591c6"
-          iconColor="#3498db"
           contentAlign="center"
           contentBoxStyle="transparent"
           showImg={false}
         >
-
         </FeatureSection>
-        <FeatureGrid
+          <h2 style={{
+              textAlign: 'center',
+              marginBottom: '40px',
+              fontSize: '3rem',
+              color: '#0591c6'
+          }}>Lata doświadczenia i profesjonalizm</h2>
+          <FeatureGrid
           gap="40px"
           maxWidth="1200px"
           columnsData={[
