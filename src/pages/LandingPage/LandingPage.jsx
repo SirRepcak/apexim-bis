@@ -3,17 +3,16 @@ import ChoiceCard from '../../components/ChoiceCard/ChoiceCard';
 
 import logoSecurity from '../../assets/logo-sec-clean.png';
 import logoInvestments from '../../assets/logo-Inv-Ser.png';
-import mainLogo from '../../assets/landingLogo.png';
 import securityBg from '../../assets/mainImg/10.jpg';
 import investmentsBg from '../../assets/mainImg/11.jpg';
 
+// MODIFICATION: Import useMediaQuery to check screen size
 import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 
 const LandingPage = () => {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
-    const splitDirection = isMobile ? 'column' : 'row';
+    // MODIFICATION: Check if the viewport is 'md' or wider. Returns true for desktop, false for mobile.
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
         <Box sx={{
@@ -27,26 +26,28 @@ const LandingPage = () => {
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: splitDirection,
+                    flexDirection: { xs: 'column', md: 'row' },
                     width: '100%',
                     height: '100%',
                 }}
             >
                 <ChoiceCard
                     to="/ochrona-czystosc"
-                    title="Ochrona i Sprzątanie"
+                    title="Ochrona i Sprzatanie"
                     logo={logoSecurity}
                     backgroundImage={securityBg}
-                    contentBg="rgba(255,156,0,0.77)"
-                    hoverContentBg="rgba(230,141,0,0.92)"
+                    contentBg={theme.palette.secondary.translucent}
+                    hoverContentBg={theme.palette.secondary.translucentHover}
+                    slideDirection={isDesktop ? 'right' : 'down'}
                 />
                 <ChoiceCard
                     to="/About"
                     title="Inwestycje i Serwis"
                     logo={logoInvestments}
                     backgroundImage={investmentsBg}
-                    contentBg="rgba(5,145,198,0.78)"
-                    hoverContentBg="rgba(5,135,185,0.97)"
+                    contentBg={theme.palette.primary.translucent}
+                    hoverContentBg={theme.palette.primary.translucentHover}
+                    slideDirection={isDesktop ? 'left' : 'up'}
                 />
             </Box>
 
@@ -54,42 +55,42 @@ const LandingPage = () => {
             <Box
                 sx={{
                     position: 'absolute',
-                    top: isMobile ? '40%' : 48,
+                    top: { xs: '40%', md: 48 },
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    width: isMobile ? '100vw' : 800,
-                    minHeight: isMobile ? 120 : 150,
-                    bgcolor: 'rgba(255,255,255,0.19)',
+                    width: { xs: 'calc(100% - 32px)', sm: '85%', md: 800 },
+                    minHeight: { xs: 120, md: 150 },
+                    px: { xs: 2, md: 6 },
+                    py: { xs: 2, md: 3 },
+                    bgcolor: theme.palette.glass.background,
+                    boxShadow: theme.shadows[24],
                     backdropFilter: 'blur(10px)',
                     WebkitBackdropFilter: 'blur(10px)',
                     borderRadius: 30,
-                    boxShadow: '0 12px 32px 0px rgba(0,0,0,0.13)',
                     zIndex: 20,
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    px: isMobile ? 2 : 6,
-                    py: isMobile ? 2 : 3,
                     textAlign: 'center',
                 }}
             >
-
                 <Typography
-                    variant={isMobile ? 'h5' : 'h2'}
+                    variant="h5"
                     sx={{
-                        fontFamily: "'externalFont', sans-serif",
+                        fontSize: { xs: '1.5rem', md: '3.75rem' },
+                        mb: { xs: 0.5, md: 1.5 },
                         fontWeight: 700,
                         letterSpacing: '0.07em',
-                        mb: isMobile ? 0.5 : 1.5,
                         color: theme.palette.text.third,
                     }}
                 >
                     Apexim BIS sp. z o.o.
                 </Typography>
                 <Typography
-                    variant={isMobile ? 'subtitle1' : 'h6'}
+                    variant="subtitle1"
                     sx={{
+                        fontSize: { xs: '1rem', md: '1.25rem' },
                         fontFamily: "'Roboto', sans-serif",
                         fontWeight: 400,
                         color: theme.palette.text.third,

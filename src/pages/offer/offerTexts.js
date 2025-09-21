@@ -5,7 +5,7 @@ const offerTexts = {
         title: "Generalny Wykonawca Instalacji Niskoprądowych i Elektrycznych",
         description: (
             <>
-                Bierzemy na siebie pełną odpowiedzialność za kluczowe systemy w Twoim obiekcie. Jako generalny wykonawca w tym zakresie, zdejmujemy z barków inwestora ciężar koordynacji wielu podwykonawców.
+                Bierzemy na siebie pełną odpowiedzialność za kluczowe systemy w Twoim obiekcie. Jako generalny wykonawca w tym zakresie, zdejmujemy z barków inwestora ciężar sprawnej, kompleksowej koordynacji wielu różnych partnerów podwykonawców.
                 <strong><br/>Dzięki posiadaniu własnych, wyspecjalizowanych zespołów elektryków i techników niskoprądowych, zapewniamy płynny przebieg prac i bezproblemową współpracę z innymi wykonawcami na budowie.</strong>
             </>
         ),

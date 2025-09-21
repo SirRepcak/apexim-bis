@@ -1,20 +1,35 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useEffect, useLayoutEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from '../NavHeader/NavHeader';
 import Footer from '../NavFooter/NavFooter';
-import { Box, Container, Paper } from '@mui/material';
+import { Box, Container } from '@mui/material';
+
+const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        document.documentElement.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant",
+        });
+    }, [pathname]);
+
+    return null;
+}
 
 const MainLayout = () => {
+
+    useLayoutEffect(() => {
+        if (window.history.scrollRestoration) {
+            window.history.scrollRestoration = 'manual';
+        }
+    }, []);
+
     return (
-
-        // This outer Box remains full-width
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <ScrollToTop />
             <Header />
-
-            {/*
-        This Container will wrap your page content.
-        It centers itself and applies a max-width, but leaves the Header and Footer unaffected.
-      */}
 
             <Container component="main" sx={{ flexGrow: 1 }} maxWidth="xl">
                 <Outlet />

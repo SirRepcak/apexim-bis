@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link as RouterLink, NavLink } from 'react-router-dom';
 import {
     AppBar,
@@ -11,8 +11,8 @@ import {
     ListItemText,
     Box,
     useTheme,
-    useMediaQuery,
     Button,
+    Fade,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -31,10 +31,12 @@ const navLinks = [
 
 const NavHeader = () => {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
+    useEffect(() => {
+        setLoaded(true);
+    }, []);
     const toggleDrawer = (open) => () => setDrawerOpen(open);
 
     const activeLinkStyle = {
@@ -44,20 +46,21 @@ const NavHeader = () => {
 
     return (
         <>
+            <Fade in={loaded} timeout={1000}>
             <AppBar
                 position="sticky"
                 color="default"
-                elevation={1}
+                elevation={12}
                 sx={{
-                    bgcolor: theme.palette.background.paper,
-                    boxShadow: theme.shadows[4],
+                    backgroundColor: theme.palette.appBarTransparent,
+                    backdropFilter: 'blur(10px)',
                     py: 0.75,
                     px: { xs: 2, md: 4 },
                     flexWrap: 'wrap',
                 }}
             >
+                {/* ... AppBar content ... */}
                 <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-                    {/* Logo and company name */}
                     <Box
                         component={RouterLink}
                         to="/"
@@ -66,6 +69,7 @@ const NavHeader = () => {
                             alignItems: 'center',
                             textDecoration: 'none',
                             color: 'inherit',
+                            minWidth: 0,
                         }}
                     >
                         <Box
@@ -75,63 +79,62 @@ const NavHeader = () => {
                             sx={{ height: 80, mr: 1 }}
                         />
                         <Typography
-                            variant="subtitle1"
+                            variant="h5"
+                            noWrap
                             sx={{
-                                fontWeight: 'bold',
-                                fontFamily: 'externalFont, Arial, sans-serif',
-                                whiteSpace: 'nowrap',
                                 userSelect: 'none',
+                                fontWeight: '600',
+                                fontSize: { xs: '0.9rem', sm: '1.5rem' },
                             }}
                         >
                             Apexim BIS sp. z o.o.
                         </Typography>
                     </Box>
 
-                    {/* Desktop nav links */}
-                    {!isMobile && (
-                        <Box sx={{ display: 'flex', gap: 3 }}>
-                            {navLinks.map(({ to, label }) => (
-                                <Button
-                                    key={to}
-                                    component={NavLink}
-                                    to={to}
-                                    sx={{
-                                        color: theme.palette.text.primary,
-                                        fontWeight: 600,
-                                        fontSize: '1rem',
-                                        textTransform: 'none',
-                                        '&.active': activeLinkStyle,
-                                    }}
-                                >
-                                    {label}
-                                </Button>
-                            ))}
-                        </Box>
-                    )}
+                    <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+                        {navLinks.map(({ to, label }) => (
+                            <Button
+                                key={to}
+                                component={NavLink}
+                                to={to}
+                                sx={{
+                                    color: theme.palette.text.primary,
+                                    fontWeight: 550,
+                                    fontSize: '1rem',
+                                    textTransform: 'none',
+                                    '&.active': activeLinkStyle,
+                                }}
+                            >
+                                {label}
+                            </Button>
+                        ))}
+                    </Box>
 
-                    {/* Mobile hamburger menu */}
-                    {isMobile && (
-                        <IconButton
-                            edge="end"
-                            color="inherit"
-                            aria-label="menu"
-                            onClick={toggleDrawer(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                    )}
+                    <IconButton
+                        edge="end"
+                        color="inherit"
+                        aria-label="menu"
+                        onClick={toggleDrawer(true)}
+                        sx={{ display: { xs: 'flex', md: 'none' } }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
                 </Toolbar>
             </AppBar>
+            </Fade>
 
             {/* Mobile drawer */}
             <Drawer
                 anchor="right"
                 open={drawerOpen}
                 onClose={toggleDrawer(false)}
-                PaperProps={{
-                    sx: {
-                        width: 250,
-                        backgroundColor: theme.palette.background.paper,
+                // MODIFICATION: Replaced deprecated `PaperProps` with `slotProps`
+                slotProps={{
+                    paper: {
+                        sx: {
+                            width: 250,
+                            backgroundColor: theme.palette.background.paper,
+                        },
                     },
                 }}
             >
@@ -158,18 +161,18 @@ const NavHeader = () => {
                         </ListItemButton>
                     ))}
                 </List>
-                <Box sx={{ width: '100%',
-                    height: '100%', // Crucial for vertical alignment
-
-                    // Use Flexbox
+                <Box sx={{
+                    width: '100%',
+                    height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'flex-end', // Center the items horizontally
-                    alignItems: 'center',   // Push them to the bottom
-                    gap: 3,                   // Add space between the items
-                    pb: 4,   }}>
-                    <ContactButton/>
-                    <SocialIcons/>
+                    justifyContent: 'flex-end',
+                    alignItems: 'center',
+                    gap: 3,
+                    pb: 4,
+                }}>
+                    <ContactButton />
+                    <SocialIcons />
                 </Box>
             </Drawer>
         </>
