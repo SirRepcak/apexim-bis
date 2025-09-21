@@ -1,54 +1,72 @@
-// src/FeatureGrid.js
-
-import React from 'react';
-import './FeatureGrid.css';
+// src/components/FeatureGrid/FeatureGrid.jsx
+import React from "react";
+import {Grid, Box} from "@mui/material";
 
 const FeatureGrid = ({
-                       columnsData = [],
-                       gap = '30px',
-                       maxWidth,
-                       equalHeight = false // Nasz przełącznik
+                         columnsData = [],
+                         gap = 3, // domyślnie theme.spacing(3) = 24px
+                         maxWidth = "none",
+                         equalHeight = false,
                      }) => {
-  const gridStyle = {
-    '--grid-column-count': columnsData.length,
-    '--grid-gap': gap,
-    maxWidth: maxWidth || 'none',
-  };
+    if (equalHeight) {
+        // tryb "równa wysokość" – spłaszczona siatka
+        const flatItems = columnsData.flat();
+        return (
+            <Grid
+                container
+                spacing={gap}
+                sx={{
+                    maxWidth,
+                    margin: "0 auto",
+                    alignItems: "stretch",
+                }}
+            >
+                {flatItems.map((item, index) => (
+                    <Grid item xs={12} md={12 / columnsData.length} key={index}>
+                        <Box
+                            sx={{
+                                height: "100%",
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
+                        >
+                            {item}
+                        </Box>
+                    </Grid>
+                ))}
+            </Grid>
+        );
+    }
 
-  const containerClasses = [
-    "feature-grid-container",
-    equalHeight ? "feature-grid-equal-height" : ""
-  ].join(" ");
-
-  // === NOWA, WARUNKOWA LOGIKA RENDEROWANIA ===
-  if (equalHeight) {
-    // Tryb "Równa Wysokość": renderujemy płaską siatkę
-    const flatItems = columnsData.flat(); // Spłaszczamy tablicę [[a,b], [c,d]] do [a,b,c,d]
+    // tryb domyślny – kolumny
     return (
-        <div className={containerClasses} style={gridStyle}>
-          {flatItems.map((item, index) => (
-              <div key={index} className="feature-grid-item">
-                {item}
-              </div>
-          ))}
-        </div>
+        <Grid
+            container
+            spacing={gap}
+            sx={{
+                maxWidth,
+                margin: "0 auto",
+                alignItems: "flex-start",
+            }}
+        >
+            {columnsData.map((columnItems, columnIndex) => (
+                <Grid item xs={12} md={12 / columnsData.length} key={columnIndex}>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: gap,
+                            height: "100%",
+                        }}
+                    >
+                        {columnItems.map((item, itemIndex) => (
+                            <Box key={itemIndex}>{item}</Box>
+                        ))}
+                    </Box>
+                </Grid>
+            ))}
+        </Grid>
     );
-  }
-
-  // Domyślny tryb: renderujemy kolumny, tak jak wcześniej (bezpieczne dla starych stron)
-  return (
-      <div className={containerClasses} style={gridStyle}>
-        {columnsData.map((columnItems, columnIndex) => (
-            <div key={columnIndex} className="feature-grid-column">
-              {columnItems.map((item, itemIndex) => (
-                  <div key={itemIndex} className="feature-grid-item">
-                    {item}
-                  </div>
-              ))}
-            </div>
-        ))}
-      </div>
-  );
 };
 
 export default FeatureGrid;

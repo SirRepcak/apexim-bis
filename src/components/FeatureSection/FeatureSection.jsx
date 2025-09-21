@@ -1,59 +1,35 @@
-// src/FeatureSection.js
+// src/components/FeatureSection/FeatureSection.jsx
+import React from "react";
+import {
+    Box,
+    Typography,
+    Paper,
+    Grid,
+    useTheme,
+    useMediaQuery,
+} from "@mui/material";
+import {useInView} from "react-intersection-observer";
 
-import React from 'react';
-import './FeatureSection.css';
-import { useInView } from 'react-intersection-observer';
-import {useTheme} from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-
-/**
- * An advanced, all-in-one feature section component for creating flexible content blocks.
- * It supports multiple layouts, including side-by-side (horizontal/vertical) and overlay.
- *
- * @param {'side-by-side' | 'overlay'} variant - The main layout style. 'side-by-side' places content and image next to each other. 'overlay' places content on top of a background image. Defaults to 'side-by-side'.
- * @param {'row' | 'column'} direction - For the 'side-by-side' variant, this controls the flex direction. 'row' is a horizontal layout, 'column' is a vertical layout (image above/below text). Defaults to 'row'.
- * @param {'left' | 'right'} imagePosition - Position of the image relative to the content. In 'row' mode, it's left/right. In 'column' mode, 'left' means the image is on top, and 'right' means it's at the bottom. Defaults to 'right'.
- * @param {string} height - The overall minimum height of the section (e.g., '500px', '70vh'). Defaults to 'auto'.
- * @param {boolean} fullHeight - If true, the component will attempt to fill 100% of its parent's height. Useful in CSS Grid for creating equal-height cards. Defaults to false.
- * @param {string} contentWidth - The width of the text content block when in 'row' direction (e.g., '50%', '400px'). Ignored if no image is present. Defaults to '50%'.
- * @param {string} title - The main heading text for the section.
- * @param {React.ReactNode} icon - An optional icon component to display next to the title (e.g., <TbPlugConnected />).
- * @param {string} image - Path to the image file to be displayed. If omitted, the content block will take up 100% of the width.
- * @param {string} imageClassName - An optional CSS class to apply directly to the `<img>` element. Useful for custom styling like adjusting object-fit or size for logos.
- * @param {string} maxWidth - The maximum width of the entire component container (e.g., '1400px').
- * @param {boolean} fullWidth - If true, the component will break out of its container and span the full width of the viewport. Defaults to false.
- * @param {React.ReactNode} children - The main content of the section, typically paragraph text (`<p>`) or other components.
- * @param {string} backgroundColor - The background color of the component or, in 'overlay' variant, the content box.
- * @param {string} textColor - The color of the main paragraph text (`children`).
- * @param {string} iconColor - The color of the icon.
- * @param {string} titleColor - The color of the main heading text. If not provided, it may inherit `textColor`.
- * @param {boolean} hasShadow - If true, applies a subtle box-shadow to the container. Defaults to true.
- * @param {'left' | 'center' | 'right'} contentAlign - The horizontal alignment of the title, icon, and text within the content block. Defaults to 'left'.
- * @param {'solid' | 'transparent'} contentBoxStyle - In 'overlay' variant, defines if the content box has a solid background or is transparent. Defaults to 'solid'.
- * @param {string} clickable - If a URL is provided, the entire section becomes a clickable `<a>` tag linking to this URL. Also adds hover effects.
- * @param {string} target - Standard HTML `<a>` tag attribute `target` (e.g., '_blank'). Used only if 'clickable' is provided.
- * @param {string} rel - Standard HTML `<a>` tag attribute `rel` (e.g., 'noopener noreferrer'). Used only if 'clickable' is provided.
- */
 const FeatureSection = ({
-                            variant = 'side-by-side',
-                            direction = 'row',
-                            imagePosition = 'right',
-                            height = 'auto',
+                            variant = "side-by-side",
+                            direction = "row",
+                            imagePosition = "right",
+                            height = "auto",
                             fullHeight = false,
-                            contentWidth = '50%',
+                            contentWidth = "50%",
                             title,
                             icon,
                             image,
-                            imageClassName = '',
-                            maxWidth,
+                            imageClassName = "",
+                            maxWidth = "1400px",
                             fullWidth = false,
-                            backgroundColor,
-                            textColor,
-                            iconColor,
+                            backgroundColor = "#fff",
+                            textColor = "#333",
+                            iconColor = "#888",
                             titleColor,
                             hasShadow = true,
-                            contentAlign = 'left',
-                            contentBoxStyle = 'solid',
+                            contentAlign = "left",
+                            contentBoxStyle = "solid",
                             clickable = null,
                             target,
                             rel,
@@ -61,102 +37,207 @@ const FeatureSection = ({
                             showImg = true,
                             flexJustifyCenter = false,
                         }) => {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
-
-
+    const {ref, inView} = useInView({triggerOnce: true, threshold: 0.1});
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-    const RootComponent = clickable ? 'a' : 'div';
+    const RootComponent = clickable ? "a" : Paper;
 
-    const mainStyle = {
-        height: fullHeight ? '100%' : height,
-        backgroundImage: variant === 'overlay' && image ? `url(${image})` : 'none',
-        maxWidth: fullWidth ? 'none' : maxWidth || 'none',
-        backgroundColor: variant === 'side-by-side' ? backgroundColor : undefined,
+    // MAIN CONTAINER STYLE
+    const containerStyle = {
+        display: "flex",
+        flexDirection: isMobile
+            ? "column"
+            : direction === "row"
+                ? "row"
+                : "column",
+        justifyContent: flexJustifyCenter ? "center" : "flex-start",
+        alignItems: variant === "overlay" ? "center" : "stretch",
+        width: fullWidth ? "100vw" : "100%",
+        marginLeft: fullWidth ? "calc(50% - 50vw)" : "auto",
+        marginRight: fullWidth ? "calc(50% - 50vw)" : "auto",
+        minHeight: fullHeight ? "100%" : height,
+        maxWidth: fullWidth ? "100vw" : maxWidth,
+        textDecoration: clickable ? "none" : "inherit",
         color: textColor,
+        bgcolor: variant === "side-by-side" ? backgroundColor : "transparent",
+        backgroundImage:
+            variant === "overlay" && image ? `url(${image})` : "none",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: variant === "overlay" ? "fixed" : "scroll",
+        borderRadius: fullWidth ? 0 : 2,
+        overflow: "hidden",
+        boxShadow:
+            hasShadow && contentBoxStyle === "solid"
+                ? "0 4px 20px rgba(0,0,0,0.07)"
+                : "none",
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(30px)",
+        transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
+        cursor: clickable ? "pointer" : "default",
+        "&:hover": clickable
+            ? {
+                transform: isMobile ? "none" : "translateY(-8px)",
+                boxShadow: "0 12px 35px rgba(0,0,0,0.15)",
+            }
+            : {},
     };
 
+    // CONTENT BLOCK STYLE
     const contentBoxStyleObj = {
-        flexBasis: image ? (direction === 'row' ? contentWidth : 'auto') : '100%',
-        backgroundColor: contentBoxStyle === 'solid' ? backgroundColor : 'transparent',
+        flexBasis: image && !isMobile ? contentWidth : "100%",
+        p: isMobile ? 2.5 : 5,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        bgcolor: contentBoxStyle === "solid" ? backgroundColor : "transparent",
+        borderRadius: contentBoxStyle === "solid" ? 2 : 0,
+        textAlign: contentAlign,
+        color: textColor,
+        flexGrow: 1,
     };
 
-    const iconStyle = { color: iconColor };
-    const titleStyle = { color: titleColor || textColor };
+    // IMAGE BLOCK
+    const ImageBlock = () =>
+        image ? (
+            <Grid
+                item
+                size={{xs: 12, md: 6}}
+                sx={{display: "flex", alignItems: "stretch"}}
+            >
+                <Box
+                    component="img"
+                    src={image}
+                    alt={title}
+                    className={imageClassName}
+                    sx={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: 2,
+                    }}
+                />
+            </Grid>
+        ) : null;
 
-    const ImageBlock = () => (
-        <div className={`fs-image-box ${isMobile ? 'fs-image-box-mobile' : '' }`}>
-            <img src={image} alt={title} className={`fs-image ${imageClassName}`} />
-        </div>
-    );
-
+    // CONTENT BLOCK
     const ContentBlock = () => (
-        <div
-            className={`fs-content-box ${isMobile ? 'mobile' : ''} fs-align-${contentAlign} fs-content-${contentBoxStyle}`}
-            style={contentBoxStyleObj}
+        <Grid
+            item
+            size={{xs: 12, md: image ? 6 : 12}}
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+            }}
         >
-            <div className={`fs-header ${isMobile ? 'mobile-header' : ''}`}>
-                {icon && <div className="fs-icon" style={iconStyle}>{icon}</div>}
-                <h2 className="fs-title" style={titleStyle}>{title}</h2>
-            </div>
-            {isMobile && image && showImg && (
-                <ImageBlock />
-            )}
-            <div className={`fs-text ${isMobile ? 'fs-text-mobile' : ''}`}>
-                {children}
-            </div>
-        </div>
+            <Box sx={contentBoxStyleObj}>
+                <Box
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexDirection: isMobile ? "column" : "row",
+                        mb: 2,
+                        justifyContent:
+                            contentAlign === "center"
+                                ? "center"
+                                : contentAlign === "right"
+                                    ? "flex-end"
+                                    : "flex-start",
+                        textAlign: isMobile ? "center" : contentAlign,
+                    }}
+                >
+                    {icon && (
+                        <Box
+                            sx={{
+                                fontSize: "4rem",
+                                mr: isMobile ? 0 : 2,
+                                color: iconColor,
+                                lineHeight: 1,
+                            }}
+                        >
+                            {icon}
+                        </Box>
+                    )}
+                    <Typography
+                        variant="h5"
+                        sx={{color: titleColor || textColor, fontWeight: 700}}
+                    >
+                        {title}
+                    </Typography>
+                </Box>
+
+                {isMobile && image && showImg && (
+                    <Box sx={{pb: 2}}>
+                        <Box
+                            component="img"
+                            src={image}
+                            alt={title}
+                            sx={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                                borderRadius: 2,
+                            }}
+                        />
+                    </Box>
+                )}
+
+                <Typography
+                    variant="body1"
+                    sx={{
+                        lineHeight: 1.6,
+                        textAlign: isMobile ? "justify" : contentAlign,
+                        px: isMobile ? 1.5 : 0,
+                    }}
+                >
+                    {children}
+                </Typography>
+            </Box>
+        </Grid>
     );
-
-    let containerClasses = `fs-container`;
-    if (fullHeight) { containerClasses += ` fs-full-height`; }
-    if (!image) { containerClasses += ` fs-content-only`; }
-
-    if (variant === 'overlay' && image) { containerClasses += ` fs-overlay-variant`; }
-    else { containerClasses += ` fs-side-by-side-variant fs-direction-${direction}`; }
-
-    containerClasses += ` fs-animate ${inView ? 'is-visible' : ''}`;
-    if (fullWidth) { containerClasses += ` fs-full-width`; }
-    if (hasShadow && contentBoxStyle === 'solid') { containerClasses += ` fs-has-shadow`; }
-    if (clickable) { containerClasses += ` fs-clickable`; }
-    if (flexJustifyCenter) { containerClasses += ` fs-justify-center`; }
-
-    const rootProps = {
-        ref: ref,
-        className: containerClasses,
-        style: mainStyle,
-    };
-
-    if (clickable) {
-        rootProps.href = clickable;
-        if (target) rootProps.target = target;
-        if (rel) rootProps.rel = rel;
-    }
-
-    if (variant === 'overlay' && image) {
-        return ( <RootComponent {...rootProps}><ContentBlock /></RootComponent> );
-    }
 
     return (
-        <RootComponent {...rootProps}>
-            {isMobile ? (
-                <ContentBlock />
+        <RootComponent
+            ref={ref}
+            sx={containerStyle}
+            href={clickable || undefined}
+            target={clickable ? target : undefined}
+            rel={clickable ? rel : undefined}
+        >
+            {variant === "overlay" && image ? (
+                <Box
+                    component={Paper}
+                    elevation={hasShadow ? 6 : 0}
+                    sx={{
+                        borderRadius: 2,
+                        p: isMobile ? 2.5 : 5,
+                        maxWidth: "90%",
+                        bgcolor:
+                            contentBoxStyle === "solid" ? backgroundColor : "transparent",
+                        color: textColor,
+                        mx: "auto",
+                    }}
+                >
+                    <ContentBlock/>
+                </Box>
             ) : (
-                imagePosition === 'left' ? (
-                    <>
-                        {image && <ImageBlock />}
-                        <ContentBlock />
-                    </>
-                ) : (
-                    <>
-                        <ContentBlock />
-                        {image && <ImageBlock />}
-                    </>
-                )
+                <Grid container spacing={0} flexWrap="nowrap">
+                    {isMobile ? (
+                        <ContentBlock/>
+                    ) : imagePosition === "left" ? (
+                        <>
+                            <ImageBlock/>
+                            <ContentBlock/>
+                        </>
+                    ) : (
+                        <>
+                            <ContentBlock/>
+                            <ImageBlock/>
+                        </>
+                    )}
+                </Grid>
             )}
         </RootComponent>
     );
