@@ -1,12 +1,12 @@
 {
-  "homepage": "/",
+  "homepage": "https://apeximbis.pl",
   "name": "apexim-bis",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.2.0",
+    "@mui/icons-material": "^7.3.2",
     "@mui/material": "^7.2.0",
     "@splidejs/react-splide": "^0.7.12",
     "@testing-library/dom": "^10.4.0",

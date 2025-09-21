@@ -1,8 +1,6 @@
 /* src/components/Timeline/Timeline.css */
 
-/* ==========================================================================
-   Card Layout
-   ========================================================================== */
+/*
 
 .custom-card-content {
   display: flex;
@@ -36,25 +34,25 @@
    Media & Image Container Styles
    ========================================================================== */
 
-/* This is the main flexible container for the image/logo area */
-.timeline-media-wrapper {
-  flex: 1 1 0; /* Allows the container to grow and shrink */
-  min-height: 0; /* Prevents overflow in flex containers */
-  position: relative; /* Context for the hover overlay */
-  overflow: hidden; /* Keeps rounded corners on children */
-  cursor: pointer; /* Default cursor for clickable items */
+/* This is the main flexible container for the image/logo area *//*
+.timeline-media-wrapper {/*
+  flex: 1 1 0; /* Allows the container to grow and shrink *//*
+  min-height: 0; /* Prevents overflow in flex containers *//*
+  position: relative; /* Context for the hover overlay *//*
+  overflow: hidden; /* Keeps rounded corners on children *//*
+  cursor: pointer; /* Default cursor for clickable items *//*
 }
 
-/* The inner container used ONLY for logos to handle padding correctly */
+/* The inner container used ONLY for logos to handle padding correctly *//*
 .logo-image-container {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
   padding: 1rem;
-  box-sizing: border-box; /* Ensures padding is contained within the element's bounds */
+  box-sizing: border-box; /* Ensures padding is contained within the element's bounds *//*
 }
 
-/* Default image style (for full-bleed PHOTOS) */
+/* Default image style (for full-bleed PHOTOS) *//*
 .timeline-cover-image {
   width: 100%;
   height: 100%;
@@ -63,26 +61,26 @@
   display: block;
 }
 
-/* Specific image style when it's a LOGO */
+/* Specific image style when it's a LOGO *//*
 .logo-image-container .timeline-cover-image {
-  object-fit: contain; /* Ensures the logo is never cropped */
+  object-fit: contain; /* Ensures the logo is never cropped *//*
 }
 
 /* ==========================================================================
    Interactivity (Hovers, Cursors, Overlays)
-   ========================================================================== */
+   ========================================================================== *//*
 
-/* Style for media that has NO gallery, making it non-interactive */
+/* Style for media that has NO gallery, making it non-interactive *//*
 .timeline-media-wrapper.not-clickable {
-  cursor: default; /* Use a normal arrow cursor */
+  cursor: default; /* Use a normal arrow cursor *//*
 }
 
-/* Don't apply the brightness hover effect if there's no gallery */
+/* Don't apply the brightness hover effect if there's no gallery *//*
 .timeline-media-wrapper.not-clickable:hover .timeline-cover-image {
   filter: none;
 }
 
-/* The hover overlay that shows the zoom icon */
+/* The hover overlay that shows the zoom icon *//*
 .hover-overlay {
   position: absolute;
   top: 0;
@@ -98,7 +96,7 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Show the overlay on hover */
+/* Show the overlay on hover *//*
 .timeline-media-wrapper:hover .hover-overlay {
   opacity: 1;
 }
@@ -107,30 +105,30 @@
    react-chrono Library Overrides
    ========================================================================== */
 
-/* Hide the default triangle pointer on cards */
+/* Hide the default triangle pointer on cards *//*
 .rc-card-text::after {
   display: none !important;
 }
 
-/* Style for the active timeline dot */
+/* Style for the active timeline dot *//*
 .timeline-vertical-circle.active {
   background-color: #ffffff !important;
   border: 2px solid #0591c6;
 }
 
-/* Style for the main timeline date title */
+/* Style for the main timeline date title *//*
 .timeline-item-title {
   font-family: externalFont;
   font-size: 2rem !important;
   font-weight: 700 !important;
 }
 
-/* Unused class from previous attempts, can be removed if not needed elsewhere */
+/* Unused class from previous attempts, can be removed if not needed elsewhere *//*
 .card-title-dots {
   font-weight: bold;
   margin-right: 4px;
   color: #555;
 }
 
-
+*/
 

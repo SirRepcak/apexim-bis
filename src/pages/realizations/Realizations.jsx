@@ -26,7 +26,6 @@ const Realizations = () => {
 
     return (
         <div className="app">
-            <Header className={isGalleryOpen ? 'header--hidden' : ''} />
             <MyTimeline
                 ref={timelineRef}
                 // This prop tells Chrono which item to scroll to.
@@ -36,7 +35,6 @@ const Realizations = () => {
                 onGalleryOpen={handleGalleryOpen}
                 onGalleryClose={handleGalleryClose}
             />
-            <Footer />
         </div>
     );
 };

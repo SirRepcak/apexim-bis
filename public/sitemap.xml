@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://apeximbis.pl/</loc>
+        <priority>1.0</priority>
+        <changefreq>monthly</changefreq>
+        <lastmod>2025-08-08</lastmod>
+    </url>
+    <url>
+        <loc>https://apeximbis.pl/realizations</loc>
+        <priority>0.7</priority>
+        <changefreq>weekly</changefreq>
+        <lastmod>2025-08-08</lastmod>
+    </url>
+    <url>
+        <loc>https://apeximbis.pl/about</loc>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+        <lastmod>2025-08-08</lastmod>
+    </url>
+    <url>
+        <loc>https://apeximbis.pl/offer</loc>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+        <lastmod>2025-08-08</lastmod>
+    </url>
+    <url>
+        <loc>https://apeximbis.pl/contact</loc>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+        <lastmod>2025-08-08</lastmod>
+    </url>
+</urlset>

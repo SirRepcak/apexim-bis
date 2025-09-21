@@ -13,11 +13,9 @@ const Contact = () => {
 
     return (
         <div className="app">
-            <Header />
             <div className="spacer" style={{ height: '10rem', width: '100%' }}></div>
             <ContactList departmentIdToOpen={departmentIdToOpen} />
             <LocationMap />
-            <Footer />
         </div>
     );
 };

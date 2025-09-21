@@ -1,4 +1,4 @@
-/* src/FeatureSection.css */
+/* src/FeatureSection.css
 
 .fs-container {
   display: flex;
@@ -9,7 +9,6 @@
   background-color: #fff;
   margin-left: auto;
   margin-right: auto;
-  /* MODIFIED: Added 'transform' for smooth hover animation */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -45,7 +44,6 @@
   color: #333;
 }
 
-/* Alignment rules... */
 .fs-content-box.fs-align-left {
   text-align: left;
 }
@@ -78,7 +76,6 @@
   justify-content: flex-end;
 }
 
-/* ...other content styles... */
 .fs-header {
   display: flex;
   align-items: center;
@@ -114,7 +111,6 @@
   line-height: 1.6;
 }
 
-/* --- Side-by-Side Variant --- */
 .fs-side-by-side-variant {
   align-items: stretch;
   background-color: #fff;
@@ -152,70 +148,56 @@
 }
 
 
-/* --- Overlay Variant (Updated for Graininess and Bubble Effect) --- */
 .fs-overlay-variant {
   background-size: cover;
   background-position: center;
   align-items: center;
   justify-content: center;
-  /* Center the content by default */
   padding-top: 40px 0 40px 0;
 
-  /* The Parallax and Dark Overlay fix for graininess */
   background-attachment: fixed;
   background-blend-mode: multiply;
   background-color: rgba(40, 40, 50, 0.4);
-  /* This dark layer blends with the image */
 }
 
 .fs-overlay-variant .fs-content-box {
   background-color: #fff;
-  /* Default solid background */
   border-radius: 8px;
   max-width: 90%;
   color: #333;
-  /* Default text color for solid box */
 }
 
-/* Add shadow to the content box in overlay mode */
 .fs-overlay-variant.fs-has-shadow .fs-content-box {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* --- NEW Transparent Content Box Style --- */
 .fs-content-box.fs-content-transparent {
   background-color: transparent;
   padding: 0;
 }
 
-/* Add text shadow for readability on transparent backgrounds */
 .fs-content-transparent .fs-title,
 .fs-content-transparent .fs-text {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .fs-container.fs-clickable {
-  text-decoration: none; /* Removes underline from 'a' tag */
-  color: inherit; /* Ensures text color is inherited, not link default */
+  text-decoration: none;
+  color: inherit;
 }
 
-/* --- MODIFIED: New Hover Effect --- */
 .fs-container.fs-clickable:hover {
   cursor: pointer;
-  /* 'Lifts' the card up by 8 pixels */
   transform: translateY(-8px);
-  /* Enhances the shadow to make it look further from the page */
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Ensure child elements don't show link-specific colors */
 .fs-clickable .fs-title,
 .fs-clickable .fs-text {
   color: inherit;
 }
 
 
-/* --- Animation and Responsive Styles (Unchanged) --- */
 .fs-animate {
   opacity: 0;
   transform: translateY(30px);
@@ -236,7 +218,6 @@
   flex-direction: column;
 }
 
-/* Powoduje, że blok z treścią rośnie, aby wypełnić całą dostępną przestrzeń */
 .feature-grid-equal-height .fs-content-box {
   flex-grow: 1;
 }
@@ -246,10 +227,9 @@
     flex-direction: column;
   }
 
-  /* MODIFIED: Revert both transform and shadow on mobile for better usability */
   .fs-container.fs-clickable:hover {
     transform: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); /* Revert shadow to normal */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
   }
 
   .fs-side-by-side-variant.fs-direction-row .fs-image-box {
@@ -261,3 +241,4 @@
     justify-content: center;
   }
 }
+*/

@@ -276,8 +276,7 @@ const Offer = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <div className="app">
-            <Header/>
+        <>
             <div className="blank-divider"></div>
             <OfferNavigation />
 
@@ -443,8 +442,7 @@ const Offer = () => {
                     </Grid>
                 </div>
             </Box>
-            <Footer/>
-        </div>
+        </>
     );
 };
 

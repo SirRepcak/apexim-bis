@@ -1,4 +1,4 @@
-/* src/components/ExpandableFeatureSection/ExpandableFeatureSection.css */
+/* src/components/ExpandableFeatureSection/ExpandableFeatureSection.css
 
 .efs-container {
     position: relative;
@@ -15,12 +15,10 @@
     padding: 40px;
 }
 
-/* GŁÓWNA SIATKA */
 .efs-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    /* Domyślnie centrujemy, ale animujemy do góry */
     align-items: center;
     transition: align-items 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -31,7 +29,6 @@
     direction: ltr;
 }
 
-/* === OBRAZEK === */
 .efs-image-wrapper {
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: top left;
@@ -51,15 +48,14 @@
     padding-bottom: 20px;
 }
 
-/* === KONTENER Z TREŚCIĄ (PRAWA/LEWA STRONA) === */
 .efs-content-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centruje w pionie */
+    justify-content: center;
     min-height: 250px;
 }
 .efs-main-content {
-    flex-grow: 1; /* Powoduje, że treść wypełnia dostępną przestrzeń */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,13 +80,12 @@
 }
 
 .efs-trigger-wrapper {
-    margin-top: 20px; /* Stały margines od treści */
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
 
-/* === TREŚĆ ROZWIJANA (POD SPODEM) === */
 .efs-expandable-area {
     max-height: 0;
     opacity: 0;
@@ -111,10 +106,8 @@
 }
 
 
-/* ================== STAN ROZWINIĘTY ================== */
 
 .efs-container.efs-expanded .efs-grid {
-    /* KLUCZ: Wyrównujemy wszystko do góry! */
     align-items: flex-start;
 }
 
@@ -130,7 +123,6 @@
 .efs-container.efs-expanded .efs-expandable-area {
     max-height: 2000px;
     opacity: 1;
-    /* Już nie używamy ujemnego marginesu, co naprawia błąd */
     margin-top: 0;
 }
 
@@ -144,18 +136,16 @@
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Stan, gdy komponent jest widoczny na ekranie */
 .efs-container.efs-is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* === RESPONSIVE === */
 @media (max-width: 900px) {
     .efs-grid {
         grid-template-columns: 1fr;
         direction: ltr !important;
-        align-items: flex-start; /* Zawsze od góry na mobilce */
+        align-items: flex-start;
     }
     .efs-content-wrapper { justify-content: flex-start; }
     .efs-main-content { justify-content: flex-start; }
@@ -172,4 +162,4 @@
         min-height: 150px;
         transform: none !important;
     }
-}
+}*/

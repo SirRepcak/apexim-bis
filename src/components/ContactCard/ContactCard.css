@@ -1,4 +1,4 @@
-
+/*
 body {
   font-family: sans-serif;
   padding: 2rem;
@@ -45,7 +45,6 @@ body {
   color: #333;
 }
 
-/* --- Arrow animation remains the same --- */
 .toggle-icon {
   font-size: 1.5rem;
   font-weight: bold;
@@ -58,34 +57,20 @@ body {
 }
 
 
-/* --- THE NEW SMOOTHER ANIMATION LOGIC --- */
-
-/* 1. The Grid Container */
 .collapsible-grid-container {
   display: grid;
-  /* By default, the row for our content has a height of 0fr (zero fractions) */
   grid-template-rows: 0fr;
-  /* We transition the change in row height for a smooth animation */
   transition: grid-template-rows 0.4s ease-in-out;
 }
 
-/* When the container has the .open class... */
 .collapsible-grid-container.open {
-  /* ...we transition the row height to 1fr (1 fraction of the content's size) */
   grid-template-rows: 1fr;
 }
 
-/* 2. The Content Wrapper */
 .collapsible-grid-content {
-  /* This is crucial: it prevents the content from overflowing its container
-     while the grid row is collapsing, which is essential for the animation. */
   overflow: hidden;
 }
 
-/* --- END OF NEW ANIMATION LOGIC --- */
-
-
-/* --- The rest of the styles remain the same --- */
 .contact-value {
   background-color: #0591c6;
   color: #ffffff;
@@ -116,21 +101,16 @@ body {
   white-space: nowrap;
 }
 
-/* New styles for the copy button */
 .copy-button {
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  /* The icon color will be white */
   font-size: 1rem;
-  /* Make the icon a nice size */
   padding: 6px 9px;
   border-radius: 5px;
   cursor: pointer;
   margin-left: 10px;
-  /* Space between the text and the button */
   line-height: 1;
-  /* Helps vertically align the icon inside the button */
   transition: background-color 0.2s ease;
 }
 
@@ -138,13 +118,10 @@ body {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* This targets the icon itself inside the button */
 .copy-button svg {
   display: block;
-  /* Removes any extra space below the icon */
 }
 
-/* Ensure the last item in the list has no bottom margin for a cleaner look */
 .collapsible-grid-content .contact-item:last-child {
   margin-bottom: 0;
 }
@@ -162,10 +139,9 @@ body {
   flex-shrink: 0;
 }
 
-
-/* ... (responsive styles for columns are the same) ... */
 @media (max-width: 992px) {
   .contact-list-container {
     grid-template-columns: 1fr;
   }
 }
+*/

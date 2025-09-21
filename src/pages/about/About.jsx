@@ -1,147 +1,167 @@
-// src/pages/About/About.js (Complete Demonstration with All Examples)
-
 import React from "react";
-import Header from '../../components/NavHeader/NavHeader';
-import Footer from '../../components/NavFooter/NavFooter';
-import './About.css';
-import FeatureSection from "../../components/FeatureSection/FeatureSection";
-import FeatureGrid from "../../components/FeatureSection/FeatureGrid";
-import StatsCounter from "../../components/Counter/StatsCounter";
-
-// Import Icons
-import {
-  TbTimelineEventExclamation, TbLayoutDashboard,
-  TbPlugConnected, TbBuildingFactory2, TbShieldCheck,
-  TbAward, TbShieldCog, TbCertificate
-} from "react-icons/tb";
+import { Box, Typography, Grid, useTheme, useMediaQuery, Container } from "@mui/material";
 import { RiTeamFill } from "react-icons/ri";
 import { LuHistory } from "react-icons/lu";
+import { TbPlugConnected, TbCertificate } from "react-icons/tb";
+
+// Import your new or refactored components
+import StatsCounter from "../../components/Counter/StatsCounter";
+import ContentCard from "../../components/ContentCard/ContentCard";
+import ImageTextCard from "../../components/ImageTextCard/ImageTextCard";
 
 // Import Images
-import teammImage from '../../assets/image-team.jpg';
-import deskImage from '../../assets/image-desk.jpg';
 import handShake from '../../assets/mainImg/6.jpg';
 import counterImage from '../../assets/mainImg/1.jpg';
 import teamImage from '../../assets/mainImg/4.jpg';
-import historyImage from '../../assets/mainImg/5.jpg'
-import {useTheme} from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import historyImage from '../../assets/mainImg/5.jpg';
 
 const About = () => {
     const companyStats = [
-        { value: 24, label: 'Lata na rynku'},
+        { value: 24, label: 'Lata na rynku' },
         { value: 150, label: 'Zrealizowanych projektów', suffix: '+' },
         { value: 98, label: 'Zadowolonych Klientów', suffix: '%' },
         { value: 24, label: 'Godziny wsparcia', suffix: '/7' },
-    ]
+    ];
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  return (
-    <>
-      <Header />
-      <div className="about-container">
-        <FeatureSection
-          variant="overlay"
-          image={handShake}
-          height="60vh"
-          contentWidth="100%"
-          fullWidth={true}
-          backgroundColor="transparent"
-          hasShadow={false}
-          contentAlign="center"
-          contentBoxStyle="transparent"
-          showImg={false}
-        >
-        </FeatureSection>
-          <h2 style={{
-              textAlign: 'center',
-              marginBottom: '40px',
-              fontSize: '3rem',
-              color: '#0591c6'
-          }}>Lata doświadczenia i profesjonalizm</h2>
-          <FeatureGrid
-          gap="40px"
-          maxWidth="1200px"
-          columnsData={[
-            [
-              <FeatureSection
-                variant="side-by-side"
-                direction="column"
-                imagePosition="left"
-                icon={<TbCertificate />}
-                title="Nasze doświadczenie"
-                titleColor="#0591c6"
-                contentAlign={'justify'}
-              >
-                  <p>Nasze 24-letnie doświadczenie to fundament kompetencji i zaufania. Patrząc wstecz na te 24 lata
-                      naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi.
-                      Każdy zrealizowany projekt to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają
-                      naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie
-                      tylko spełniać, ale i przewyższać oczekiwania naszych klientów. </p>
-              </FeatureSection>
-            ],
-            [
-              <FeatureSection
-                variant="side-by-side"
-                direction="column"
-                imagePosition="left"
-                hasShadow={true}
-                icon={<TbPlugConnected />}
-                title="Czym sie zajmujemy?"
-                titleColor="#0591c6"
-                contentAlign={'justify'}
-              >
-                  <p>Spółka Apexim Bis Sp. z o.o. prowadzi działalność w zakresie robót budowlano-montażowych, projektowych i konserwacyjnych - instalacji niskoprądowych (teleinformatycznych) i elektrycznych do 1000 V - szczególnie specjalizuje się w systemach alarmowych włamania i napadu, kontroli dostępu, systemach telewizji przemysłowej, sieciach komputerowych, systemach ppoż. i dźwiękowych systemach ostrzegawczych, systemach multimedialnych, instalacjach domofonowych i przywoławczych, instalacjach nagłośnienia, systemach automatyki i zarządzania budynkiem. Wykonujemy instalacje elektryczne w obiektach prywatnych, przemysłowych, wielkogabarytowych.</p>
-              </FeatureSection>
-            ]
-          ]}
-        />
-          <StatsCounter
-              stats={companyStats}
-              fullWidth={true}
-              backgroundImage={counterImage}
-              textColor="#ffffff"
-          />
+    return (
+        <>
+            {/* 1. HERO/OVERLAY SECTION - Now a simple Box */}
+            <Box
+                sx={{
+                    height: '60vh',
+                    width: '100vw',
+                    position: 'relative',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundImage: `url(${handShake})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            />
 
-      <FeatureSection
-          variant="side-by-side"
-          height={isMobile ? 'unset' : '400px'}
-          contentWidth="50%"
-          maxWidth={"1500px"}
-          imagePosition="right"
-          image={teamImage}
-          icon={<RiTeamFill />}
-          title="Nasz Zespół"
-          titleColor="#0591c6"
-          contentAlign={'justify'}
-          direction={isMobile ? 'column' : 'row'}
-      >
-          <p>Wierzymy, że za sukcesem każdej realizacji stoją ludzie. Nasz zespół składa się z doświadczonych inżynierów, certyfikowanych techników i profesjonalnych doradców, którzy stale podnoszą swoje kwalifikacje. Dzięki ich wszechstronnym kompetencjom i partnerskiemu podejściu, jesteśmy w stanie sprostać najbardziej wymagającym projektom i zapewnić rozwiązania idealnie dopasowane do potrzeb Klienta.</p>
+            {/* 2. MAIN CONTENT AREA */}
+            <Box sx={{ my: 6 }}>
+                <Typography
+                    variant="h2"
+                    component="h2"
+                    textAlign="center"
+                    sx={{
+                        mb: 5,
+                        fontWeight: 'bold',
+                        color: 'primary.main',
+                        fontSize: { xs: '2.5rem', md: '3rem' }
+                    }}
+                >
+                    Lata doświadczenia i profesjonalizm
+                </Typography>
 
-      </FeatureSection>
+                {/* THIS IS THE FIX - The Grid container makes the cards sit side-by-side */}
+                <Grid container spacing={4} alignItems="stretch">
 
-          <FeatureSection
-              variant="side-by-side"
-              direction={isMobile ? 'column' : 'row'}
-              height={isMobile ? 'unset' : '400px'}
-              contentWidth="50%"
-              maxWidth={"1500px"}
-              imagePosition="left"
-              image={historyImage}
-              icon={<LuHistory />}
-              title="Historia Firmy"
-              titleColor="#0591c6"
-              contentAlign={'justify'}
-          >
-              <p>Od 24 lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.</p>
-              <p>Wraz z rozwojem rynku i rosnącymi potrzebami naszych partnerów, naturalnie poszerzaliśmy nasze kompetencje, realizując coraz więcej projektów inwestycyjnych. Dziś, aby sprostać największym wyzwaniom, otworzyliśmy nowy rozdział w naszej historii. Powołaliśmy dedykowany dział odpowiedzialny za kompleksową realizację dużych inwestycji – od projektu, przez wykonawstwo, aż po finalny odbiór. Łączymy dekady doświadczenia w bezpieczeństwie z nowoczesnym podejściem do zarządzania projektami.</p>
-          </FeatureSection>
-      </div>
-      <Footer />
-    </>
-  );
+                    {/* Card 1 is wrapped in a Grid item that takes half the width on desktop */}
+                    <Grid size={{xs:12, md:6}}>
+                        <ContentCard
+                            icon={<TbCertificate />}
+                            title="NASZE DOŚWIADCZENIE"
+                            titleColor="#0591c6"
+                        >
+                            Nasze 24-letnie doświadczenie to fundament kompetencji i zaufania. Patrząc wstecz na te 24 lata naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każdy zrealizowany projekt to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.
+                        </ContentCard>
+                    </Grid>
+
+                    {/* Card 2 is wrapped in another Grid item that takes the other half */}
+                    <Grid  size={{xs:12, md:6}}>
+                        <ContentCard
+                            icon={<TbPlugConnected />}
+                            title="CZYM SIĘ ZAJMUJEMY?"
+                            titleColor="#0591c6"
+                        >
+                            Spółka Apexim Bis Sp. z o.o. prowadzi działalność w zakresie robót budowlano-montażowych, projektowych i konserwacyjnych - instalacji niskoprądowych (teleinformatycznych) i elektrycznych do 1000 V - szczególnie specjalizuje się w systemach alarmowych włamania i napadu, kontroli dostępu, systemach telewizji przemysłowej, sieciach komputerowych, systemach ppoż. i dźwiękowych systemach ostrzegawczych, systemach multimedialnych, instalacjach domofonowych i przywoławczych, instalacjach nagłośnienia, systemach automatyki i zarządzania budynkiem. Wykonujemy instalacje elektryczne w obiektach prywatnych, przemysłowych, wielkogabarytowych.
+                        </ContentCard>
+                    </Grid>
+
+                </Grid>
+            </Box>
+
+
+            {/* 3. PARALLAX STATS COUNTER SECTION */}
+            <Box
+                sx={{
+                    py: 10,
+                    width: '100vw',
+                    position: 'relative',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    color: '#ffffff',
+                    // Parallax Background
+                    backgroundImage: `url(${counterImage})`,
+                    backgroundAttachment: 'fixed',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    // Dark Overlay
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        zIndex: 1,
+                    },
+                    // Ensure content is above the overlay
+                    '& > *': {
+                        position: 'relative',
+                        zIndex: 2,
+                    },
+                }}
+            >
+                <Container maxWidth="lg">
+                    <StatsCounter stats={companyStats} />
+                </Container>
+            </Box>
+
+            {/* 4. MORE CONTENT SECTIONS */}
+            <Box sx={{ my: 6 }}>
+                {/* Use a Grid container with alignItems="stretch" to make children equal height */}
+                <Grid container spacing={6} alignItems="stretch">
+
+                    {/* "Nasz Zespół" Section */}
+                    <Grid size={{xs:12}}> {/* Each card is a full-width item in the stacking column */}
+                        <ImageTextCard
+                            // NO height prop needed!
+                            image={teamImage}
+                            imagePosition="right"
+                            icon={<RiTeamFill />}
+                            title="NASZ ZESPÓŁ"
+                        >
+                            Wierzymy, że za sukcesem każdej realizacji stoją ludzie. Nasz zespół składa się z doświadczonych inżynierów, certyfikowanych techników i profesjonalnych doradców, którzy stale podnoszą swoje kwalifikacje. Dzięki ich wszechstronnym kompetencjom i partnerskiemu podejściu, jesteśmy w stanie sprostać najbardziej wymagającym projektom i zapewnić rozwiązania idealnie dopasowane do potrzeb Klienta.
+                        </ImageTextCard>
+                    </Grid>
+
+                    {/* "Historia Firmy" Section */}
+                    <Grid size={{xs:12}}>
+                        <ImageTextCard
+                            // NO height prop needed!
+                            image={historyImage}
+                            imagePosition="left"
+                            icon={<LuHistory />}
+                            title="HISTORIA FIRMY"
+                        >
+                            Od 24 lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.
+                            <br/><br/>
+                            Wraz z rozwojem rynku i rosnącymi potrzebami naszych partnerów, naturalnie poszerzaliśmy nasze kompetencje, realizując coraz więcej projektów inwestycyjnych. Dziś, aby sprostać największym wyzwaniom, otworzyliśmy nowy rozdział w naszej historii. Powołaliśmy dedykowany dział odpowiedzialny za kompleksową realizację dużych inwestycji – od projektu, przez wykonawstwo, aż po finalny odbiór. Łączymy dekady doświadczenia w bezpieczeństwie z nowoczesnym podejściem do zarządzania projektami.
+                        </ImageTextCard>
+                    </Grid>
+
+                </Grid>
+            </Box>
+        </>
+    );
 };
 
 export default About;

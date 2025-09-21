@@ -1,35 +1,26 @@
-/* src/FeatureGrid.css (Updated for Asymmetric Layouts) */
+/* src/FeatureGrid.css (Updated for Asymmetric Layouts)
 
 .feature-grid-container {
   display: grid;
-  /* Use the CSS variables from the style prop to create the main columns */
   grid-template-columns: repeat(var(--grid-column-count, 1), 1fr);
   gap: var(--grid-gap, 30px);
 
-  /* Align columns to the top so they don't stretch if one is shorter */
   align-items: flex-start;
 
-  /* Centering logic */
   margin-left: auto;
   margin-right: auto;
 }
 
-/* This is the new class for each individual column */
 .feature-grid-column {
   display: flex;
   flex-direction: column;
-  /* Use the gap variable for vertical spacing between items in a column */
   gap: var(--grid-gap, 30px);
 }
 
-/* The .feature-grid-item is just a simple wrapper, it may not need styles
-   but is good practice to have for future targeting. */
 .feature-grid-item {
-  /* No styles needed by default */
 }
 
 .feature-grid-container.feature-grid-equal-height {
-  /* Zmieniamy sposób, w jaki siatka układa wiersze */
   grid-auto-rows: 1fr;
 }
 
@@ -37,24 +28,22 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-column-count, 1), 1fr);
   gap: var(--grid-gap, 30px);
-  align-items: stretch; /* Kluczowe: rozciąga elementy w pionie */
+  align-items: stretch;
 }
 
-/* Usuwamy flexbox z kolumn, bo już ich nie ma w tym trybie */
 .feature-grid-equal-height .feature-grid-column {
-  display: contents; /* To sprawia, że ten div jest "niewidzialny" dla siatki */
+  display: contents;
 }
 
-/* Sprawiamy, że wrapper i jego dziecko (FeatureSection) wypełniają komórkę siatki */
+
 .feature-grid-equal-height .feature-grid-item,
 .feature-grid-equal-height .feature-grid-item > * {
   height: 100%;
 }
 
-/* On smaller screens, force the grid into a single column.
-   Our new structure handles this much more gracefully! */
+
 @media (max-width: 900px) {
   .feature-grid-container {
     grid-template-columns: 1fr;
   }
-}
+}*/

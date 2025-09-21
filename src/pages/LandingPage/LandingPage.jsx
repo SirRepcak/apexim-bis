@@ -1,91 +1,103 @@
-// src/pages/LandingPage/LandingPage.js
-
 import React from 'react';
 import ChoiceCard from '../../components/ChoiceCard/ChoiceCard';
-import './LandingPage.css'; // Importujemy plik CSS dla tej strony
-// Zaimportuj swoje logotypy i tła
+
 import logoSecurity from '../../assets/logo-sec-clean.png';
 import logoInvestments from '../../assets/logo-Inv-Ser.png';
 import mainLogo from '../../assets/landingLogo.png';
 import securityBg from '../../assets/mainImg/10.jpg';
 import investmentsBg from '../../assets/mainImg/11.jpg';
-import {Grid} from "@mui/material";
-import Box from "@mui/material/Box";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import {useTheme} from "@mui/material/styles";
+
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 
 const LandingPage = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-    const headerSx = isMobile ? {
-        position: 'absolute',
-        top: '40%',
-        left: '50%',
-        zIndex: 20,
-        transform: 'translateX(-50%)',
-        textAlign: 'center',
-        width: '90%',
-    } : {
-        position: 'absolute',
-        top: 0,
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '100%',
-        maxWidth: '900px',
-        zIndex: '20',
-        textAlign: 'center',
-        padding: '4vh 20px 0',
-        pointerEvents: 'none'
-    }
+    const splitDirection = isMobile ? 'column' : 'row';
 
     return (
-        <Box
-            className="landing-page-container"
-            sx={{
-                minHeight: '100vh',
-                height: {xs: '100vh', sm: '100vh', md: 'auto'},
-                overflow: 'hidden',
-            }}
-        >
-            <Box sx={headerSx}>
-                <header className="landing-page-header">
-                    {!isMobile && (
-                        <div className="logo-container animate-entry">
-                            <img src={mainLogo} alt="Logo Firmy" className="landing-main-logo"/>
-                        </div>
-                    )}
-                    <h1 className="landing-title animate-entry delay-1">Apexim BIS sp. z o.o.</h1>
-                    <p className="landing-subtitle animate-entry delay-2">
-                        Wybierz obszar, który Cię interesuje, aby zobaczyć dedykowaną ofertę.
-                    </p>
-                </header>
+        <Box sx={{
+            position: 'relative',
+            width: '100vw',
+            height: '100vh',
+            overflow: 'hidden',
+            bgcolor: 'background.default',
+        }}>
+            {/* Choice cards split */}
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: splitDirection,
+                    width: '100%',
+                    height: '100%',
+                }}
+            >
+                <ChoiceCard
+                    to="/ochrona-czystosc"
+                    title="Ochrona i Sprzątanie"
+                    logo={logoSecurity}
+                    backgroundImage={securityBg}
+                    contentBg="rgba(255,156,0,0.77)"
+                    hoverContentBg="rgba(230,141,0,0.92)"
+                />
+                <ChoiceCard
+                    to="/About"
+                    title="Inwestycje i Serwis"
+                    logo={logoInvestments}
+                    backgroundImage={investmentsBg}
+                    contentBg="rgba(5,145,198,0.78)"
+                    hoverContentBg="rgba(5,135,185,0.97)"
+                />
             </Box>
 
-            <Grid container
-                  size={{xs: 12}}
-                  sx={{
-                      width: '100%',
-                  }}
+            {/* Centered Frosted Header */}
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: isMobile ? '40%' : 48,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: isMobile ? '100vw' : 800,
+                    minHeight: isMobile ? 120 : 150,
+                    bgcolor: 'rgba(255,255,255,0.19)',
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    borderRadius: 30,
+                    boxShadow: '0 12px 32px 0px rgba(0,0,0,0.13)',
+                    zIndex: 20,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    px: isMobile ? 2 : 6,
+                    py: isMobile ? 2 : 3,
+                    textAlign: 'center',
+                }}
             >
-                <Grid size={{sm: 12, md: 6}} width={isMobile ? '100%' : 'unset'} height={isMobile ? '50%' : 'unset'}>
-                    <ChoiceCard
-                        to="http://www.apexim-bis.com.pl/"
-                        backgroundImage={securityBg}
-                        logo={logoSecurity}
-                        title="Ochrona i Utrzymanie Czystości"
-                        customClassName="security-choice"
-                    />
-                </Grid>
-                <Grid size={{sm: 12, md: 6}} width={isMobile ? '100%' : 'unset'} height={isMobile ? '50%' : 'unset'}>
-                    <ChoiceCard
-                        to="/About"
-                        backgroundImage={investmentsBg}
-                        logo={logoInvestments}
-                        title="Inwestycje i Serwis Techniczny"
-                    />
-                </Grid>
-            </Grid>
+
+                <Typography
+                    variant={isMobile ? 'h5' : 'h2'}
+                    sx={{
+                        fontFamily: "'externalFont', sans-serif",
+                        fontWeight: 700,
+                        letterSpacing: '0.07em',
+                        mb: isMobile ? 0.5 : 1.5,
+                        color: theme.palette.text.third,
+                    }}
+                >
+                    Apexim BIS sp. z o.o.
+                </Typography>
+                <Typography
+                    variant={isMobile ? 'subtitle1' : 'h6'}
+                    sx={{
+                        fontFamily: "'Roboto', sans-serif",
+                        fontWeight: 400,
+                        color: theme.palette.text.third,
+                    }}
+                >
+                    Wybierz, interesujący cię dział
+                </Typography>
+            </Box>
         </Box>
     );
 };
