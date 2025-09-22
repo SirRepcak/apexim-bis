@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 import { lightTheme } from './Theme';
+import './App.css';
 
 // Import the new layout
 import MainLayout from './components/MainLayout/MainLayout';
@@ -12,12 +13,10 @@ import About from './pages/about/About';
 import Offer from './pages/offer/Offer';
 import Realizations from './pages/realizations/Realizations';
 import Contact from './pages/contact/Contact';
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 const App = () => (
     <ThemeProvider theme={lightTheme}>
         <BrowserRouter>
-            <ScrollToTop />
             <Routes>
                 {/* Route for the Landing Page (doesn't use the main layout) */}
                 <Route path="/" element={<LandingPage />} />
