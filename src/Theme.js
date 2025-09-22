@@ -19,7 +19,9 @@ const lightTheme = createTheme({
         mode: 'light',
         primary: {
             main: '#0591C6',
-            // MODIFICATION: Add translucent variants for ChoiceCard
+            light: '#68c3e4', // A lighter shade for hover/secondary elements
+            dark: '#006395',  // A darker shade
+            contrastText: '#ffffff',
             translucent: 'rgba(5, 145, 198, 0.78)',
             translucentHover: 'rgba(5, 135, 185, 0.97)',
         },
