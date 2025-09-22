@@ -1,8 +1,6 @@
 // src/pages/Offer/Offer.jsx
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import Header from "../../components/NavHeader/NavHeader";
-import Footer from "../../components/NavFooter/NavFooter";
 import ExpandableFeatureSection from "../../components/FeatureSection/ExpandableFeatureSection";
 import OfferNavigation from "../../components/OfferNavigation/OfferNavigation";
 import FeatureSection from "../../components/FeatureSection/FeatureSection";
@@ -41,6 +39,8 @@ import logoImageSecurity from "../../assets/logo-security.png";
 import logoImageCleaning from "../../assets/logo-cleaning.png";
 
 import offerTexts from "./offerTexts";
+import ContentCard from "../../components/ContentCard/ContentCard";
+import ImageTextCard from "../../components/ImageTextCard/ImageTextCard";
 
 const investmentsIcons = [<TbBulb/>, <TbShieldCheck/>, <TbVideo/>, <TbNetwork/>];
 const serviceIcons = [<TbShieldCheck/>, <TbBulb/>];
@@ -60,17 +60,14 @@ const InvestmentsDetails = ({onPermissionsClick}) => {
 
     return (
         <>
-            <FeatureSection
+            <ContentCard
                 title={offerTexts.investments.title}
                 titleColor="#0591c6"
                 icon={<TbClipboardCheck/>}
-                backgroundColor="#e9f7ff"
-                hasShadow
-                contentAlign={isMobile ? "justify" : "center"}
             >
 
                 {offerTexts.investments.description}
-            </FeatureSection>
+            </ContentCard>
 
             <Typography
                 variant="h5"
@@ -88,26 +85,20 @@ const InvestmentsDetails = ({onPermissionsClick}) => {
                     flexDirection={isMobile ? "column" : "row"}
                     gap={4}
                 >
-                    <FeatureSection
+                    <ContentCard
                         title={offerTexts.investments.features[0].title}
                         titleColor="#0591c6"
                         icon={investmentsIcons[0]}
-                        backgroundColor="#f8f9fa"
-                        hasShadow
-                        contentAlign="justify"
                     >
                         {offerTexts.investments.features[0].content}
-                    </FeatureSection>
-                    <FeatureSection
+                    </ContentCard>
+                    <ContentCard
                         title={offerTexts.investments.features[1].title}
                         titleColor="#0591c6"
                         icon={investmentsIcons[1]}
-                        backgroundColor="#f8f9fa"
-                        hasShadow
-                        contentAlign="justify"
                     >
                         {offerTexts.investments.features[1].content}
-                    </FeatureSection>
+                    </ContentCard>
                 </Grid>
 
                 <Grid
@@ -118,17 +109,14 @@ const InvestmentsDetails = ({onPermissionsClick}) => {
                     flexDirection={isMobile ? "column" : "row"}
                     gap={4}
                 >
-                    <FeatureSection
+                    <ContentCard
                         title={offerTexts.investments.features[2].title}
                         titleColor="#0591c6"
                         icon={investmentsIcons[2]}
-                        backgroundColor="#f8f9fa"
-                        hasShadow
-                        contentAlign="justify"
                     >
                         {offerTexts.investments.features[2].content}
-                    </FeatureSection>
-                    <FeatureSection
+                    </ContentCard>
+                    <ContentCard
                         title={offerTexts.investments.features[3].title}
                         titleColor="#0591c6"
                         icon={investmentsIcons[3]}
@@ -137,7 +125,7 @@ const InvestmentsDetails = ({onPermissionsClick}) => {
                         contentAlign="justify"
                     >
                         {offerTexts.investments.features[3].content}
-                    </FeatureSection>
+                    </ContentCard>
                 </Grid>
             </Grid>
 
@@ -187,13 +175,10 @@ const ServiceDetails = ({onPermissionsClick}) => {
 
     return (
         <>
-            <FeatureSection
+            <ContentCard
                 title={offerTexts.service.title}
                 titleColor="#0591c6"
                 icon={<FaWrench/>}
-                backgroundColor="#e9f7ff"
-                hasShadow
-                contentAlign={isMobile ? "justify" : "center"}
             >
                 <Typography
                     variant="body1"
@@ -201,7 +186,7 @@ const ServiceDetails = ({onPermissionsClick}) => {
                 >
                     {offerTexts.service.description}
                 </Typography>
-            </FeatureSection>
+            </ContentCard>
 
             <Typography variant="h5" sx={{textAlign: "center", mt: 5, mb: 2}}>
                 {offerTexts.service.scopeTitle}
@@ -225,16 +210,14 @@ const ServiceDetails = ({onPermissionsClick}) => {
             </Grid>
 
             <Box sx={{mt: 4}}>
-                <FeatureSection
+                <ContentCard
                     key="section-service-react"
                     title={offerTexts.service.responseTitle}
                     titleColor="#0591c6"
-                    backgroundColor="#f8f9fa"
                     icon={<TbClockHour4/>}
-                    contentAlign="center"
                 >
                     {offerTexts.service.responseText}
-                </FeatureSection>
+                </ContentCard>
             </Box>
 
             <Box
@@ -282,17 +265,13 @@ const PermissionsDetails = () => {
         <Grid container spacing={2}>
             {offerTexts.permissions.features.map((feature, index) => (
                 <Grid item xs={12} md={4} key={feature.title}>
-                    <FeatureSection
+                    <ContentCard
                         title={feature.title}
                         titleColor="#0591c6"
                         icon={permissionsIcons[index]}
-                        backgroundColor="#f8f9fa"
-                        hasShadow
-                        contentAlign="center"
-                        sx={{height: "100%"}}
                     >
                         {feature.content}
-                    </FeatureSection>
+                    </ContentCard>
                 </Grid>
             ))}
         </Grid>
@@ -356,16 +335,11 @@ const Offer = () => {
 
                 {/* === CONSULTING === */}
                 <Box id="consulting" sx={{scrollMarginTop: "100px"}}>
-                    <FeatureSection
+                    <ImageTextCard
                         title={offerTexts.consulting.title}
-                        titleColor="#0591c6"
                         icon={<TbBrain/>}
-                        iconColor="#0591c6"
                         image={consultingImage}
                         imagePosition="right"
-                        contentWidth="50%"
-                        direction={isMobile ? "column" : "row"}
-                        contentAlign="justify"
                     >
                         {offerTexts.consulting.paragraph1}
                         {offerTexts.consulting.paragraph2}
@@ -385,21 +359,16 @@ const Offer = () => {
                                 {offerTexts.consulting.button}
                             </Button>
                         </Box>
-                    </FeatureSection>
+                    </ImageTextCard>
                 </Box>
 
                 {/* === PROJECT === */}
                 <Box id="project" sx={{scrollMarginTop: "100px"}}>
-                    <FeatureSection
+                    <ImageTextCard
                         title={offerTexts.project.title}
-                        titleColor="#0591c6"
                         icon={<TbRulerMeasure/>}
-                        iconColor="#0591c6"
                         image={designImage}
                         imagePosition={isMobile ? "right" : "left"}
-                        contentWidth="50%"
-                        direction={isMobile ? "column" : "row"}
-                        contentAlign="justify"
                     >
                         {offerTexts.project.paragraph1}
                         {offerTexts.project.paragraph2}
@@ -420,7 +389,7 @@ const Offer = () => {
                                 {offerTexts.project.button}
                             </Button>
                         </Box>
-                    </FeatureSection>
+                    </ImageTextCard>
                 </Box>
 
                 {/* === PERMISSIONS === */}

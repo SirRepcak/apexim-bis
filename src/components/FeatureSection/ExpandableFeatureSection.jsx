@@ -47,6 +47,7 @@ const ExpandableFeatureSection = ({
     return (
         <Paper
             ref={ref}
+            elevation={12}
             sx={{
                 position: "relative",
                 borderRadius: "12px",
@@ -54,7 +55,6 @@ const ExpandableFeatureSection = ({
                 p: isMobile ? 0 : 5,
                 transform: inView ? "translateY(0)" : "translateY(30px)",
                 transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
-                boxShadow: 'none'
             }}
         >
             <Grid
@@ -189,6 +189,7 @@ const ExpandableFeatureSection = ({
                     overflow: "hidden",
                     mt: isExpanded ? (isMobile ? 2 : 0) : 0,
                     transition: "all 0.5s ease",
+                    padding: '10px'
                 }}
             >
                 {expandContent}

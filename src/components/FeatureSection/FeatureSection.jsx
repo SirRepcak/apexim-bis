@@ -205,6 +205,7 @@ const FeatureSection = ({
             href={clickable || undefined}
             target={clickable ? target : undefined}
             rel={clickable ? rel : undefined}
+            elevation={clickable ? "unset" : 22}
         >
             {variant === "overlay" && image ? (
                 <Box
