@@ -31,8 +31,8 @@ const lightTheme = createTheme({
             translucent: 'rgba(255, 156, 0, 0.77)',
             translucentHover: 'rgba(230, 141, 0, 0.92)',
         },
-        background: { default: '#F5F8FB', paper: '#fff' },
-        text: { primary: '#000', secondary: '#444', third: '#fff' },
+        background: { default: '#F5F8FB', paper: '#ffffff' },
+        text: { primary: '#000', secondary: '#444', third: '#ffffff' },
         icon: { main: '#757575' },
         appBarTransparent: 'rgba(255, 255, 255, 0.85)',
         // MODIFICATION: Add a palette for the frosted glass effect
@@ -76,7 +76,7 @@ const darkTheme = createTheme({
             translucentHover: 'rgba(230, 141, 0, 0.92)',
         },
         background: { default: '#121212', paper: '#1E1E1E' },
-        text: { primary: '#fff', secondary: '#bbb', third: '#fff' }, // Added 'third' for consistency
+        text: { primary: '#ffffff', secondary: '#bbb', third: '#ffffff' }, // Added 'third' for consistency
         appBarTransparent: 'rgba(30, 30, 30, 0.8)',
         glass: {
             background: 'rgba(30, 30, 30, 0.19)',
@@ -89,11 +89,11 @@ const darkTheme = createTheme({
         h5: {
             fontFamily: "'BankGothic', sans-serif",
             fontWeight: 'normal',
-            color: '#fff',
+            color: '#ffffff',
         },
         h6: {
             fontWeight: 600,
-            color: '#fff',
+            color: '#ffffff',
         },
     }
 });

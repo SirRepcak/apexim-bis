@@ -1,41 +1,51 @@
 // src/pages/realizations/Realizations.jsx
 
-import './Realizations.css';
 import React, { useState, useRef } from 'react';
-import Header from '../../components/NavHeader/NavHeader';
-import Footer from '../../components/NavFooter/NavFooter';
 import MyTimeline from '../../components/Timeline/Timeline';
 
-const Realizations = () => {
-    // This state is now ONLY controlled by clicking.
-    // We start at `null` so no card is active on load.
-    const [activeIndex, setActiveIndex] = useState(null);
+// KROK 1: Import komponentu Lightbox i jego stylów
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
+// KROK 2: Import wtyczki Thumbnails oraz jej stylów
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+
+
+const Realizations = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+    const [galleryImages, setGalleryImages] = useState([]);
     const timelineRef = useRef(null);
 
-    const handleGalleryOpen = () => setIsGalleryOpen(true);
+    const handleGalleryOpen = (images) => {
+        if (images && images.length > 0) {
+            setGalleryImages(images.map(src => ({ src })));
+            setIsGalleryOpen(true);
+        }
+    };
+
     const handleGalleryClose = () => setIsGalleryOpen(false);
 
-    // NOTE: All complex useEffect hooks for observing have been DELETED.
-
-    // The ONLY handler we need is the one that sets the active index on click.
     const handleCardClick = (index) => {
         setActiveIndex(index);
     };
 
     return (
-        <div className="app">
+        <>
             <MyTimeline
                 ref={timelineRef}
-                // This prop tells Chrono which item to scroll to.
                 activeItemIndex={activeIndex}
-                // We pass the simple click handler down.
                 setActiveIndex={handleCardClick}
                 onGalleryOpen={handleGalleryOpen}
-                onGalleryClose={handleGalleryClose}
             />
-        </div>
+            <Lightbox
+                open={isGalleryOpen}
+                close={handleGalleryClose}
+                slides={galleryImages}
+                plugins={[Thumbnails]}
+            />
+        </>
     );
 };
 
