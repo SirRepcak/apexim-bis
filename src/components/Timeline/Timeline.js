@@ -42,7 +42,7 @@ const MyTimeline = React.forwardRef(({ activeItemIndex, setActiveIndex, onGaller
                     },
                     '.timeline-card-content': {
                         [theme.breakpoints.up('sm')]: {
-                            height: '280px',
+                            height: '320px',
                         },
                         [theme.breakpoints.down('sm')]: {
                             width: '100% !important',
