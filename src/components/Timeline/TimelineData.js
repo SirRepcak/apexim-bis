@@ -1,3 +1,8 @@
+import coverSp2 from '../../assets/invSP2/cover.jpg';
+import sp2Img1 from '../../assets/invSP2/1.jpg';
+import sp2Img2 from '../../assets/invSP2/2.jpg';
+import sp2Img3 from '../../assets/invSP2/3.jpg';
+import sp2Img4 from '../../assets/invSP2/4.jpg';
 import coverRenoma from '../../assets/invRenoma/cover.jpg';
 import renomaImg1 from '../../assets/invRenoma/1.jpg';
 import renomaImg2 from '../../assets/invRenoma/2.jpg';
@@ -47,6 +52,16 @@ import mokCover from '../../assets/invMOK/mokCover.jpg'
 
 export const items = [
   {
+    title: "Wrzesień 2025",
+    cardTitle: "Szkoła Podstawowa nr 2 we Wschowie",
+    coverType: 'photo',
+    cardSubtitle: "Modernizacja i wymiana instalacji elektyrcznej i teletechnicznej, w ramach kolejengo etapu współpracy..",
+    cover: coverSp2,
+    galleryImages: [
+      sp2Img1, sp2Img2, sp2Img3, sp2Img4
+    ]
+  },
+    {
     title: "Czerwiec 2025",
     cardTitle: "C.H. Renoma \"Ace of Space\"",
     coverType: 'photo',

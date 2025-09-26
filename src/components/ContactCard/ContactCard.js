@@ -20,6 +20,7 @@ import {
     ContentCopy,
     Check,
     ExpandMore,
+    InfoOutlined,
 } from '@mui/icons-material';
 
 // A sub-component for displaying a single contact item (phone, email, etc.)
@@ -30,6 +31,7 @@ const ContactItem = ({ type, value }) => {
         phone: <Phone />,
         email: <Email />,
         fax: <Fax />,
+        info: <InfoOutlined />
     };
 
     // Determine the appropriate href for the link
@@ -77,7 +79,7 @@ const ContactItem = ({ type, value }) => {
                     p: '10px 15px',
                     borderRadius: '10px',
                     transition: 'background-color 0.3s ease',
-                    '&:hover': { bgcolor: 'primary.light' },
+                    '&:hover': { bgcolor: href ? 'primary.light' : 'primary.main' },
                     minWidth:0,
                 }}
             >

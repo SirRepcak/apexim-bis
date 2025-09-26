@@ -5,8 +5,8 @@ import ContactList from '../../components/ContactCard/ContactList';
 import LocationMap from "../../components/LocationMap/LocationMap";
 import { useLocation } from 'react-router-dom';
 import {Box, Grid, Grow, Typography} from '@mui/material';
-import {useInView} from "react-intersection-observer";
 import ContactCard from "../../components/ContactCard/ContactCard";
+import {useInView} from "react-intersection-observer";
 
 const InfoCard = ({ title, value, animationDelay = 0 }) => {
     // This hook will track if the component is visible on the screen
@@ -31,7 +31,7 @@ const InfoCard = ({ title, value, animationDelay = 0 }) => {
     );
 };
 
-const Contact = () => {
+const ContactSecurity = () => {
     // This logic remains the same to read the 'open' parameter from the URL
     const location = useLocation();
     const params = new URLSearchParams(location.search);
@@ -61,4 +61,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactSecurity;

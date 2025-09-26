@@ -1,104 +1,138 @@
-// src/components/Timeline/Timeline.jsx
-
 import React from 'react';
-import { Chrono } from "react-chrono";
+import {
+    Timeline,
+    TimelineItem,
+    TimelineSeparator,
+    TimelineConnector,
+    TimelineContent,
+    TimelineDot,
+    TimelineOppositeContent,
+} from '@mui/lab';
+import { useTheme, useMediaQuery, Typography, Fade, Slide } from '@mui/material';
 import { items } from './TimelineData';
 import TimelineCard from './TimelineCard';
-import { useTheme, useMediaQuery, GlobalStyles } from '@mui/material';
-import { StyleSheetManager } from 'styled-components';
-import isPropValid from '@emotion/is-prop-valid';
+import useIntersectionObserver from './useIntersectionObserver';
 
-const MyTimeline = React.forwardRef(({ activeItemIndex, setActiveIndex, onGalleryOpen }, ref) => {
+const AnimatedTimelineItem = ({ item, index, activeItemIndex, setActiveIndex, onGalleryOpen, isMobile, itemRef }) => {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const [observerRef, isVisible] = useIntersectionObserver({ threshold: 0.2 });
 
-    const chronoTheme = {
-        primary: theme.palette.primary.main,
-        secondary: theme.palette.primary.light,
-        cardBgColor: theme.palette.background.paper,
-        cardForeColor: theme.palette.text.primary,
-        titleColor: theme.palette.primary.main,
-        titleColorActive: theme.palette.primary.contrastText,
+    const combinedRef = (el) => {
+        observerRef.current = el;
+        itemRef.current = el;
     };
 
-    // Dane przekazywane do Chrono, które używa właściwości `title` do renderowania daty
-    const chronoItemsForPoints = items.map(item => ({ title: item.title }));
+    const slideDirection = isMobile ? 'up' : (index % 2 === 0 ? 'right' : 'left');
 
     return (
-        <StyleSheetManager shouldForwardProp={(prop) => isPropValid(prop)}>
-            <div ref={ref} style={{ width: '100%', minHeight: '100vh', padding: isMobile ? '0 0.5rem' : '0' }}>
-                <GlobalStyles styles={{
-                    '.timeline-vertical-circle.active': {
-                        backgroundColor: `${theme.palette.background.paper} !important`,
-                        border: `2px solid ${theme.palette.primary.main}`,
-                    },
-                    '.rc-card-text::after': {
-                        display: 'none !important',
-                    },
-                    // Styl dla tytułu na desktopie (na zewnątrz karty)
-                    '.timeline-item-title': {
-                        fontFamily: "'BankGothic', sans-serif !important",
-                        fontSize: '2rem !important',
-                    },
-                    '.timeline-card-content': {
-                        [theme.breakpoints.up('sm')]: {
-                            height: '320px',
-                        },
-                        [theme.breakpoints.down('sm')]: {
-                            width: '100% !important',
-                            maxWidth: 'none !important',
-                            padding: '0 !important',
-                            marginLeft: '0.5rem !important',
-                            height: 'auto !important',
-                        },
-                    },
-                    '.rc-card-text': {
-                        '&::-webkit-scrollbar': { display: 'none' },
-                        msOverflowStyle: 'none',
-                        scrollbarWidth: 'none',
-                    },
+        <TimelineItem ref={combinedRef} sx={{ minHeight: isMobile ? 'auto' : '360px' }}>
+            <TimelineOppositeContent
+                sx={{
+                    m: 'auto 0',
+                    display: isMobile ? 'none' : 'flex',
+                    justifyContent: index % 2 === 0 ? 'flex-end' : 'flex-start',
+                    px: 2,
+                }}
+            >
+                <Fade in={isVisible} timeout={800}>
+                    <Typography
+                        variant="h5"
+                        component="span"
+                        sx={{
+                            fontFamily: "'BankGothic', sans-serif",
+                            fontSize: '1.5rem',
+                            p: '0.5rem 1rem',
+                            backgroundColor: 'primary.main',
+                            color: 'primary.contrastText',
+                            display: 'inline-block',
+                            textAlign: 'center',
+                        }}
+                    >
+                        {item.title}
+                    </Typography>
+                </Fade>
+            </TimelineOppositeContent>
 
-                    // --- KLUCZOWA POPRAWKA DLA CZCIONKI I PADDINGU NA MOBILE ---
-                    // Celujemy w nagłówek (`header`) wewnątrz karty, który jest renderowany przez Chrono
-                    '.timeline-card-content header': {
-                        [theme.breakpoints.down('sm')]: {
-                            // Dodajemy padding, aby odsunąć datę od krawędzi karty
-                            padding: '1rem 1rem 0.5rem 1rem !important',
-                            // Ustawiamy poprawną czcionkę
-                            fontFamily: "'BankGothic', sans-serif !important",
-                            fontSize: '1.5rem !important',
-                        }
-                    },
-                }} />
-                <Chrono
-                    items={chronoItemsForPoints}
-                    mode={isMobile ? 'VERTICAL' : 'VERTICAL_ALTERNATING'}
-                    disableToolbar
-                    activeItemIndex={activeItemIndex}
-                    theme={chronoTheme}
-                    scrollable={{ scrollbar: false }}
-                    itemWidth={isMobile ? 30 : 150}
-                    // Ukrywamy domyślny tytuł na karcie, ponieważ stylujemy go sami
-                    // za pomocą GlobalStyles, aby mieć pełną kontrolę.
-                    fontSizes={{
-                        cardSubtitle: '0.85rem',
-                        cardText: '0.9rem',
-                        cardTitle: '0rem', // Ustawienie na 0 ukrywa element
-                        title: '1rem',
+            <TimelineSeparator>
+                <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
+                <TimelineDot
+                    sx={{
+                        m: 0,
+                        backgroundColor: activeItemIndex === index ? theme.palette.background.paper : 'primary.main',
+                        borderColor: 'primary.main',
+                        transition: 'background-color 0.3s ease',
                     }}
-                >
-                    {items.map((item, index) => (
-                        <TimelineCard
-                            key={index}
-                            item={item}
-                            onClick={() => setActiveIndex(index)}
-                            onGalleryOpen={onGalleryOpen}
-                            isMobile={isMobile}
-                        />
-                    ))}
-                </Chrono>
-            </div>
-        </StyleSheetManager>
+                />
+                <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
+            </TimelineSeparator>
+
+            <TimelineContent sx={{ py: '12px', px: 2, height: isMobile ? 'auto' : '320px' }}>
+                {isMobile && (
+                    <Fade in={isVisible} timeout={800}>
+                        <Typography
+                            variant="h5"
+                            component="div"
+                            sx={{
+                                fontFamily: "'BankGothic', sans-serif",
+                                fontSize: '1.5rem',
+                                p: '0.5rem 1rem',
+                                mb: 1.5,
+                                backgroundColor: 'primary.main',
+                                color: 'primary.contrastText',
+                                display: 'inline-block',
+                            }}
+                        >
+                            {item.title}
+                        </Typography>
+                    </Fade>
+                )}
+                <Fade in={isVisible} timeout={800}>
+                    <Slide direction={slideDirection} in={isVisible} timeout={800}>
+                        {/* MODIFICATION: Added style={{ height: '100%' }} to this div */}
+                        <div style={{ height: '100%' }}>
+                            <TimelineCard
+                                item={item}
+                                onClick={() => setActiveIndex(index)}
+                                onGalleryOpen={onGalleryOpen}
+                                isMobile={isMobile}
+                                isActive={index === activeItemIndex}
+                            />
+                        </div>
+                    </Slide>
+                </Fade>
+            </TimelineContent>
+        </TimelineItem>
+    );
+};
+
+
+const MyTimeline = React.forwardRef(({ activeItemIndex, setActiveIndex, onGalleryOpen, itemRefs }, ref) => {
+    const isMobile = useMediaQuery(useTheme().breakpoints.down('sm'));
+
+    return (
+        <div ref={ref} style={{ width: '100%' }}>
+            <Timeline position={isMobile ? 'right' : 'alternate'} sx={{ p: 0 }}>
+                {items.map((item, index) => (
+                    <AnimatedTimelineItem
+                        key={index}
+                        item={item}
+                        index={index}
+                        activeItemIndex={activeItemIndex}
+                        setActiveIndex={setActiveIndex}
+                        onGalleryOpen={onGalleryOpen}
+                        isMobile={isMobile}
+                        itemRef={{
+                            get current() {
+                                return itemRefs.current[index];
+                            },
+                            set current(el) {
+                                itemRefs.current[index] = el;
+                            },
+                        }}
+                    />
+                ))}
+            </Timeline>
+        </div>
     );
 });
 

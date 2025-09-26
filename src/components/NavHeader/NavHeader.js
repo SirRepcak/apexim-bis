@@ -1,3 +1,5 @@
+// src/components/NavHeader/NavHeader.js
+
 import React, { useState, useEffect } from 'react';
 import { Link as RouterLink, NavLink } from 'react-router-dom';
 import {
@@ -17,11 +19,14 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-import logo from '../../assets/logo.png';
+// Import BOTH logos
+import logoMain from '../../assets/logo.png';
+import logoSecurity from '../../assets/logo-sec-notext.png'; // Assuming you have a second logo
 import ContactButton from "../ContactButton/ContactButton";
 import SocialIcons from "../SocialIcons/SocialIcons";
 
-const navLinks = [
+// Define navigation links for the main section
+const mainNavLinks = [
     { to: '/about', label: 'O Firmie' },
     { to: '/offer', label: 'Oferta' },
     { to: '/realizations', label: 'Realizacje' },
@@ -29,7 +34,16 @@ const navLinks = [
     { to: '/', label: 'Start' },
 ];
 
-const NavHeader = () => {
+// Define navigation links for the security section
+const securityNavLinks = [
+    { to: '/aboutSecurity', label: 'O Firmie' },
+    { to: '/offerSecurity', label: 'Oferta' },
+    { to: '/contactSecurity', label: 'Kontakt' }, // Make sure these routes are unique
+    { to: '/', label: 'Start' },
+];
+
+// The component now accepts a 'variant' prop
+const NavHeader = ({ variant = 'main' }) => {
     const theme = useTheme();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [loaded, setLoaded] = useState(false);
@@ -37,8 +51,17 @@ const NavHeader = () => {
     useEffect(() => {
         setLoaded(true);
     }, []);
+
+    // --- DYNAMIC CONTENT ---
+    // Select the correct logo and links based on the variant prop
+    const currentLogo = variant === 'security' ? logoSecurity : logoMain;
+    const navLinks = variant === 'security' ? securityNavLinks : mainNavLinks;
+    const companyName = variant === 'security' ? "Apexim BIS sp. z o.o." : "Apexim BIS sp. z o.o.";
+
     const toggleDrawer = (open) => () => setDrawerOpen(open);
 
+    // This style rule works automatically because useTheme() gets the correct
+    // theme (blue or orange) from the ThemeProvider in MainLayout.
     const activeLinkStyle = {
         fontWeight: 'bold',
         color: theme.palette.primary.main,
@@ -47,88 +70,88 @@ const NavHeader = () => {
     return (
         <>
             <Fade in={loaded} timeout={1000}>
-            <AppBar
-                position="sticky"
-                color="default"
-                elevation={12}
-                sx={{
-                    backgroundColor: theme.palette.appBarTransparent,
-                    backdropFilter: 'blur(10px)',
-                    py: 0.75,
-                    px: { xs: 2, md: 4 },
-                    flexWrap: 'wrap',
-                }}
-            >
-                {/* ... AppBar content ... */}
-                <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-                    <Box
-                        component={RouterLink}
-                        to="/"
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            textDecoration: 'none',
-                            color: 'inherit',
-                            minWidth: 0,
-                        }}
-                    >
+                <AppBar
+                    position="sticky"
+                    color="default"
+                    elevation={12}
+                    sx={{
+                        // These styles also work automatically with the correct theme
+                        backgroundColor: theme.palette.appBarTransparent,
+                        backdropFilter: 'blur(10px)',
+                        py: 0.75,
+                        px: { xs: 2, md: 4 },
+                        flexWrap: 'wrap',
+                    }}
+                >
+                    <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
                         <Box
-                            component="img"
-                            src={logo}
-                            alt="Apexim BIS Logo"
-                            sx={{ height: 80, mr: 1 }}
-                        />
-                        <Typography
-                            variant="h5"
-                            noWrap
+                            component={RouterLink}
+                            to="/"
                             sx={{
-                                userSelect: 'none',
-                                fontWeight: '600',
-                                fontSize: { xs: '0.9rem', sm: '1.5rem' },
+                                display: 'flex',
+                                alignItems: 'center',
+                                textDecoration: 'none',
+                                color: 'inherit',
+                                minWidth: 0,
                             }}
                         >
-                            Apexim BIS sp. z o.o.
-                        </Typography>
-                    </Box>
-
-                    <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-                        {navLinks.map(({ to, label }) => (
-                            <Button
-                                key={to}
-                                component={NavLink}
-                                to={to}
+                            <Box
+                                component="img"
+                                src={currentLogo} // Use the selected logo
+                                alt={`${companyName} Logo`}
+                                sx={{ height: 80, mr: 1 }}
+                            />
+                            <Typography
+                                variant="h5"
+                                noWrap
                                 sx={{
-                                    color: theme.palette.text.primary,
-                                    fontWeight: 550,
-                                    fontSize: '1rem',
-                                    textTransform: 'none',
-                                    '&.active': activeLinkStyle,
+                                    userSelect: 'none',
+                                    fontWeight: '600',
+                                    fontSize: { xs: '0.9rem', sm: '1.5rem' },
                                 }}
                             >
-                                {label}
-                            </Button>
-                        ))}
-                    </Box>
+                                {companyName} {/* Use the selected company name */}
+                            </Typography>
+                        </Box>
 
-                    <IconButton
-                        edge="end"
-                        color="inherit"
-                        aria-label="menu"
-                        onClick={toggleDrawer(true)}
-                        sx={{ display: { xs: 'flex', md: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
+                        {/* Desktop Navigation */}
+                        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+                            {navLinks.map(({ to, label }) => ( // Use the selected navLinks
+                                <Button
+                                    key={to}
+                                    component={NavLink}
+                                    to={to}
+                                    sx={{
+                                        color: theme.palette.text.primary,
+                                        fontWeight: 550,
+                                        fontSize: '1rem',
+                                        textTransform: 'none',
+                                        '&.active': activeLinkStyle,
+                                    }}
+                                >
+                                    {label}
+                                </Button>
+                            ))}
+                        </Box>
+
+                        <IconButton
+                            edge="end"
+                            color="inherit"
+                            aria-label="menu"
+                            onClick={toggleDrawer(true)}
+                            sx={{ display: { xs: 'flex', md: 'none' } }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    </Toolbar>
+                </AppBar>
             </Fade>
 
-            {/* Mobile drawer */}
+            {/* Mobile Drawer */}
             <Drawer
                 anchor="right"
                 open={drawerOpen}
                 onClose={toggleDrawer(false)}
-                // MODIFICATION: Replaced deprecated `PaperProps` with `slotProps`
                 slotProps={{
                     paper: {
                         sx: {
@@ -144,7 +167,7 @@ const NavHeader = () => {
                     </IconButton>
                 </Box>
                 <List>
-                    {navLinks.map(({ to, label }) => (
+                    {navLinks.map(({ to, label }) => ( // Use the selected navLinks
                         <ListItemButton
                             component={NavLink}
                             to={to}

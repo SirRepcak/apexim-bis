@@ -32,7 +32,7 @@ const LandingPage = () => {
                 }}
             >
                 <ChoiceCard
-                    to="/ochrona-czystosc"
+                    to="/aboutSecurity"
                     title="Ochrona i Sprzatanie"
                     logo={logoSecurity}
                     backgroundImage={securityBg}
