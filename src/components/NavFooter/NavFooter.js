@@ -1,75 +1,79 @@
+// src/components/NavFooter/NavFooter.js
+
 import React from 'react';
 import { Box, Grid, Typography, Paper, useTheme } from '@mui/material';
 
 import SocialIcons from '../SocialIcons/SocialIcons';
 import ContactButton from '../ContactButton/ContactButton';
 
-const NavFooter = () => {
+// The component now accepts a 'variant' prop
+const NavFooter = ({ variant = 'main' }) => {
     const theme = useTheme();
+
+    // You can define variant-specific content here if needed
+    const companyName = variant === 'security' ? "Apexim BIS sp. z o.o." : "Apexim BIS sp. z o.o.";
+    const address = variant === 'security' ? "ul. Ochrony 1, 65-225 Zielona Góra" : "ul. Lwowska 25, 65-225 Zielona Góra";
+
 
     return (
         <Paper elevation={10}>
-        <Box
-            component="footer"
-            sx={{
-                bgcolor: theme.palette.background.paper,
-                color: theme.palette.text.primary,
-                py: 5,
-                px: 3,
-            }}
-        >
-            <Grid
-                container
-                spacing={2}
-                // MODIFICATION: Justify content based on screen size
-                justifyContent={{ xs: 'center', md: 'space-between' }}
-                alignItems="center"
-                // MODIFICATION: Center text on mobile
-                textAlign={{ xs: 'center', md: 'left' }}
+            <Box
+                component="footer"
+                sx={{
+                    // NO CHANGES NEEDED HERE: These values are taken directly
+                    // from the correct theme (light/dark/securityLight/etc.)
+                    bgcolor: theme.palette.background.paper,
+                    color: theme.palette.text.primary,
+                    py: 5,
+                    px: 3,
+                }}
             >
-                {/* --- Left Column: Info --- */}
-                <Grid size={{ xs: 12, md: 4 }}>
-                    <Typography
-                        variant="h5"
-                        sx={{
-                            fontWeight: 550,
-                            // MODIFICATION: Responsive font size
-                            fontSize: { xs: '1.4rem', sm: '1.5rem' }
-                        }}
+                <Grid
+                    container
+                    spacing={2}
+                    justifyContent={{ xs: 'center', md: 'space-between' }}
+                    alignItems="center"
+                    textAlign={{ xs: 'center', md: 'left' }}
+                >
+                    {/* --- Left Column: Info --- */}
+                    <Grid size={{xs:12, md:4}}>
+                        <Typography
+                            variant="h5"
+                            sx={{
+                                fontWeight: 550,
+                                fontSize: { xs: '1.4rem', sm: '1.5rem' }
+                            }}
+                        >
+                            {companyName} {/* Use dynamic company name */}
+                        </Typography>
+                        <Typography variant="body2" sx={{ mt: 0.5 }}>
+                            {address} {/* Use dynamic address */}
+                        </Typography>
+                        <Box sx={{ display: { xs: 'block', md: 'none' }, mt: 2 }}>
+                            <SocialIcons />
+                        </Box>
+                    </Grid>
+
+                    {/* --- Center Column: Copyright (Desktop only) --- */}
+                    <Grid
+                        size={{xs:12, md:4}}
+                        sx={{ display: { xs: 'none', md: 'block' }, textAlign: 'center' }}
                     >
-                        Apexim BIS sp. z o.o.
-                    </Typography>
-                    <Typography variant="body2" sx={{ mt: 0.5 }}>
-                        ul. Lwowska 25, 65-225 Zielona Góra
-                    </Typography>
-                    {/* MODIFICATION: Show SocialIcons here only on mobile */}
-                    <Box sx={{ display: { xs: 'block', md: 'none' }, mt: 2 }}>
-                        <SocialIcons />
-                    </Box>
-                </Grid>
+                        <Typography variant="body2">
+                            © {new Date().getFullYear()} {companyName}. All rights reserved.
+                        </Typography>
+                    </Grid>
 
-                {/* --- Center Column: Copyright (Desktop only) --- */}
-                <Grid
-                    size={{ xs: 12, md: 4 }}
-                    // MODIFICATION: Hide on mobile, show on desktop
-                    sx={{ display: { xs: 'none', md: 'block' }, textAlign: 'center' }}
-                >
-                    <Typography variant="body2">
-                        © {new Date().getFullYear()} Apexim BIS. All rights reserved.
-                    </Typography>
+                    {/* --- Right Column: Contact (Desktop only) --- */}
+                    <Grid
+                        size={{xs:12, md:4}}
+                        sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}
+                    >
+                        <ContactButton />
+                        <SocialIcons sx={{ ml: 2 }} />
+                    </Grid>
                 </Grid>
-
-                {/* --- Right Column: Contact (Desktop only) --- */}
-                <Grid
-                    size={{ xs: 12, md: 4 }}
-                    // MODIFICATION: Hide on mobile, show on desktop
-                    sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}
-                >
-                    <ContactButton />
-                    <SocialIcons sx={{ ml: 2 }} />
-                </Grid>
-            </Grid>
-        </Box>
+            </Box>
         </Paper>
     );
 };

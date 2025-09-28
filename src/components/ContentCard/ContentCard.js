@@ -1,8 +1,10 @@
+// src/components/ContentCard/ContentCard.js
 import React from 'react';
 import { Card, CardContent, Typography, Box, Grow } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 
-const ContentCard = ({ icon, title, titleColor = '#0591c6', children, sx }) => {
+// MODIFICATION: Removed the 'titleColor' prop from the component's signature.
+const ContentCard = ({ icon, title, children, sx }) => {
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -27,6 +29,7 @@ const ContentCard = ({ icon, title, titleColor = '#0591c6', children, sx }) => {
                         {icon && (
                             <Box sx={{
                                 mr: 2.5,
+                                // This color is already theme-aware, which is great.
                                 color: 'icon.main',
                                 fontSize: '4rem',
                                 lineHeight: 1,
@@ -40,7 +43,12 @@ const ContentCard = ({ icon, title, titleColor = '#0591c6', children, sx }) => {
                             sx={{
                                 fontWeight: 700,
                                 fontSize: '1.4rem',
-                                color: titleColor
+                                // THE KEY CHANGE:
+                                // Instead of a prop, we directly reference the theme's
+                                // primary color. MUI's sx prop automatically knows
+                                // how to find 'primary.main' in the theme's palette.
+                                // It will be blue for the main theme and orange for security.
+                                color: 'primary.main'
                             }}
                         >
                             {title}

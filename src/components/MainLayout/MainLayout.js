@@ -2,7 +2,8 @@ import React, { useEffect, useLayoutEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from '../NavHeader/NavHeader';
 import Footer from '../NavFooter/NavFooter';
-import { Box, Container } from '@mui/material';
+import { Box, Container, ThemeProvider } from '@mui/material'; // MODIFICATION: Import ThemeProvider
+import { lightTheme, securityLightTheme } from '../../Theme';
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -18,7 +19,7 @@ const ScrollToTop = () => {
     return null;
 }
 
-const MainLayout = () => {
+const MainLayout = ({ variant = 'main' }) => {
 
     useLayoutEffect(() => {
         if (window.history.scrollRestoration) {
@@ -26,17 +27,25 @@ const MainLayout = () => {
         }
     }, []);
 
+    // NEW: Select the theme based on the variant prop
+    const theme = variant === 'security' ? securityLightTheme : lightTheme;
+
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            <ScrollToTop />
-            <Header />
+        // NEW: Wrap the entire layout in a ThemeProvider with the chosen theme
+        <ThemeProvider theme={theme}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: theme.palette.background.default }}>
+                <ScrollToTop />
+                {/* MODIFICATION: Pass the variant to the Header */}
+                <Header variant={variant} />
 
-            <Container component="main" sx={{ flexGrow: 1 }} maxWidth="xl">
-                <Outlet />
-            </Container>
+                <Container component="main" sx={{ flexGrow: 1 }} maxWidth="xl">
+                    <Outlet />
+                </Container>
 
-            <Footer />
-        </Box>
+                {/* You might want to pass the variant to the Footer too */}
+                <Footer variant={variant} />
+            </Box>
+        </ThemeProvider>
     );
 };
 
