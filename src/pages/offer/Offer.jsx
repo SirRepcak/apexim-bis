@@ -421,33 +421,21 @@ const Offer = () => {
                     >
                         {offerTexts.additional.heading}
                     </Typography>
-                    <Grid container spacing={4}>
-                        <Grid item xs={12} md={6}>
-                            <FeatureSection
+                    <Grid container spacing={4} pb={2}>
+                        <Grid size={{ xs: 12, md: 6}}>
+                            <ImageTextCard
                                 title={offerTexts.additional.features[0].title}
-                                titleColor="#EC6C1E"
                                 image={logoImageSecurity}
-                                imageClassName="fs-logo-image"
                                 imagePosition={isMobile ? "center" : "left"}
-                                contentAlign="center"
-                                backgroundColor="white"
-                                hasShadow
                                 clickable={offerTexts.additional.features[0].url}
-                                flexJustifyCenter
                             />
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <FeatureSection
+                        <Grid size={{ xs: 12, md: 6}}>
+                            <ImageTextCard
                                 title={offerTexts.additional.features[1].title}
-                                titleColor="#EC6C1E"
                                 image={logoImageCleaning}
-                                imageClassName="fs-logo-image"
                                 imagePosition={isMobile ? "center" : "right"}
-                                contentAlign="center"
-                                backgroundColor="white"
-                                hasShadow
                                 clickable={offerTexts.additional.features[1].url}
-                                flexJustifyCenter
                             />
                         </Grid>
                     </Grid>
