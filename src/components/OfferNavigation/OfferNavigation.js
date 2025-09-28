@@ -7,7 +7,6 @@ import {TbBrain, TbClipboardCheck, TbRulerMeasure} from "react-icons/tb";
 import {FaWrench} from 'react-icons/fa';
 
 // We need to import the CSS file to make sure the styles are applied
-import './OfferNavigation.css';
 import {useTheme} from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {Grid} from "@mui/material";

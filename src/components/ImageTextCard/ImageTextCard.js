@@ -1,3 +1,4 @@
+// src/components/ImageTextCard/ImageTextCard.js
 import React from 'react';
 import { Card, CardContent, Typography, Box, Grid, CardMedia, Slide, useTheme, useMediaQuery } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
@@ -12,6 +13,8 @@ const ImageTextCard = ({
                            minCardHeight,
                            contentPadding = { xs: 2, md: 4 },
                            bodyPaddingY = 3,
+                           // NOWY PROP do kontroli układu
+                           contentLayout = 'center', // 'center' | 'spaceBetween'
                            sx
                        }) => {
     const theme = useTheme();
@@ -40,26 +43,29 @@ const ImageTextCard = ({
                     }}
                 >
                     <Grid container direction={direction}>
-
-                        {/* --- Text Column --- */}
-                        <Grid
-                            size={{xs:12, md:7}} sx={{ display: 'flex', flexDirection: 'column' }}>
+                        <Grid size={{xs:12, md:7}} sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardContent sx={{
                                 p: contentPadding,
                                 display: 'flex',
                                 flexDirection: 'column',
                                 flexGrow: 1,
-                                justifyContent: 'center',
+                                justifyContent: contentLayout,
                             }}>
-                                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                                <Box sx={{
+                                    display: 'flex', alignItems: 'center', mb: 2,
+                                    flexDirection: { xs: 'column', md: 'row' },
+                                    textAlign: { xs: 'center', md: 'left' }
+                                }}>
                                     {icon && (
-                                        <Box sx={{ mr: 2, color: 'icon.main', fontSize: '3.5rem', lineHeight: 1 }}>
+                                        <Box sx={{
+                                            mr: { xs: 0, md: 2 }, mb: { xs: 2, md: 0 },
+                                            color: 'icon.main', fontSize: '3.5rem', lineHeight: 1
+                                        }}>
                                             {icon}
                                         </Box>
                                     )}
                                     <Typography
-                                        variant="h4"
-                                        component="h2"
+                                        variant="h4" component="h2"
                                         sx={{ fontWeight: 700, color: titleColor }}
                                     >
                                         {title}
@@ -67,28 +73,15 @@ const ImageTextCard = ({
                                 </Box>
 
                                 <Box sx={{ py: bodyPaddingY }}>
-                                    <Typography variant="body1" sx={{ textAlign: 'justify', lineHeight: 1.7, color: 'text.secondary' }}>
+                                    <Typography variant="body1" component="div" sx={{ textAlign: 'justify', lineHeight: 1.7, color: 'text.secondary' }}>
                                         {children}
                                     </Typography>
                                 </Box>
                             </CardContent>
                         </Grid>
-
-                        {/* --- Image Column --- */}
-                        <Grid
-
-                            size={{xs:12, md:5}}
-                            order={{ xs: 0, md: imageOrder }}
-                        >
-                            <CardMedia
-                                component="img"
-                                image={image}
-                                alt={title}
-                                sx={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover',
-                                }}
+                        <Grid size={{xs:12, md:5}} order={{ xs: 0, md: imageOrder }}>
+                            <CardMedia component="img" image={image} alt={title}
+                                       sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />
                         </Grid>
                     </Grid>

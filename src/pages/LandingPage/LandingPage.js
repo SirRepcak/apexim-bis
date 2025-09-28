@@ -5,6 +5,7 @@ import logoSecurity from '../../assets/logo-sec-clean.png';
 import logoInvestments from '../../assets/logo-Inv-Ser.png';
 import securityBg from '../../assets/mainImg/10.jpg';
 import investmentsBg from '../../assets/mainImg/11.jpg';
+import landingLogo from '../../assets/landingLogo.png'; // IMPORT THE NEW LOGO
 
 // MODIFICATION: Import useMediaQuery to check screen size
 import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
@@ -51,22 +52,21 @@ const LandingPage = () => {
                 />
             </Box>
 
-            {/* Centered Frosted Header */}
+            {/* MODIFIED: Header with responsive positioning and hidden mobile logo */}
             <Box
                 sx={{
                     position: 'absolute',
-                    top: { xs: '40%', md: 48 },
+                    // On mobile (xs), center it. On desktop (md), position it closer to the top.
+                    top: { xs: '50%', md: 32 },
                     left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: { xs: 'calc(100% - 32px)', sm: '85%', md: 800 },
-                    minHeight: { xs: 120, md: 150 },
+                    transform: {
+                        xs: 'translate(-50%, -50%)',
+                        md: 'translateX(-50%)'
+                    },
+                    width: { xs: 'calc(100% - 32px)', sm: '85%' },
+                    maxWidth: 700, // Reduced max width
                     px: { xs: 2, md: 6 },
                     py: { xs: 2, md: 3 },
-                    bgcolor: theme.palette.glass.background,
-                    boxShadow: theme.shadows[24],
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    borderRadius: 30,
                     zIndex: 20,
                     display: 'flex',
                     flexDirection: 'column',
@@ -75,14 +75,42 @@ const LandingPage = () => {
                     textAlign: 'center',
                 }}
             >
+                {/* MODIFIED: White circle is now smaller and hidden on mobile */}
+                <Box
+                    sx={{
+                        // Hide on mobile (xs), display as flex on desktop (md)
+                        display: { xs: 'none', md: 'flex' },
+                        width: 150, // Smaller fixed size
+                        height: 150,
+                        borderRadius: '50%',
+                        backgroundColor: '#fff',
+                        boxShadow: '0 4px 18px rgba(0,0,0,0.13)',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mb: 2, // Adjusted margin bottom
+                    }}
+                >
+                    <Box
+                        component="img"
+                        src={landingLogo}
+                        alt="Apexim BIS Logo"
+                        sx={{
+                            maxWidth: '70%',
+                            maxHeight: '70%',
+                            objectFit: 'contain',
+                        }}
+                    />
+                </Box>
                 <Typography
                     variant="h5"
                     sx={{
-                        fontSize: { xs: '1.5rem', md: '3.75rem' },
+                        // MODIFIED: Reduced desktop font size
+                        fontSize: { xs: '1.75rem', md: '3rem' },
                         mb: { xs: 0.5, md: 1.5 },
                         fontWeight: 700,
                         letterSpacing: '0.07em',
                         color: theme.palette.text.third,
+                        textShadow: '1px 1px 5px rgba(0,0,0,0.25)',
                     }}
                 >
                     Apexim BIS sp. z o.o.
@@ -94,6 +122,7 @@ const LandingPage = () => {
                         fontFamily: "'Roboto', sans-serif",
                         fontWeight: 400,
                         color: theme.palette.text.third,
+                        textShadow: '1px 1px 4px rgba(0,0,0,0.35)',
                     }}
                 >
                     Wybierz, interesujący cię dział

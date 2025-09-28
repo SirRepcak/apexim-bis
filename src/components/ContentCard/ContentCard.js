@@ -3,8 +3,8 @@ import React from 'react';
 import { Card, CardContent, Typography, Box, Grow } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 
-// MODIFICATION: Removed the 'titleColor' prop from the component's signature.
-const ContentCard = ({ icon, title, children, sx }) => {
+// ZMIANA: Dodano 'contentAlign' do propsów
+const ContentCard = ({ icon, title, children, sx, contentAlign = 'justify' }) => {
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -25,11 +25,17 @@ const ContentCard = ({ icon, title, children, sx }) => {
                 }}
             >
                 <CardContent sx={{ flexGrow: 1, p: { xs: 3, md: 4 } }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+                    <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        mb: 3,
+                        flexDirection: { xs: 'column', sm: 'row' },
+                        textAlign: { xs: 'center', sm: 'left' },
+                    }}>
                         {icon && (
                             <Box sx={{
-                                mr: 2.5,
-                                // This color is already theme-aware, which is great.
+                                mr: { xs: 0, sm: 2.5 },
+                                mb: { xs: 2, sm: 0 },
                                 color: 'icon.main',
                                 fontSize: '4rem',
                                 lineHeight: 1,
@@ -43,11 +49,6 @@ const ContentCard = ({ icon, title, children, sx }) => {
                             sx={{
                                 fontWeight: 700,
                                 fontSize: '1.4rem',
-                                // THE KEY CHANGE:
-                                // Instead of a prop, we directly reference the theme's
-                                // primary color. MUI's sx prop automatically knows
-                                // how to find 'primary.main' in the theme's palette.
-                                // It will be blue for the main theme and orange for security.
                                 color: 'primary.main'
                             }}
                         >
@@ -57,7 +58,8 @@ const ContentCard = ({ icon, title, children, sx }) => {
                     <Typography
                         variant="body1"
                         sx={{
-                            textAlign: 'justify',
+                            // ZMIANA: Użycie propa `contentAlign` do sterowania wyrównaniem tekstu
+                            textAlign: contentAlign,
                             lineHeight: 1.7,
                             color: 'text.secondary',
                         }}
