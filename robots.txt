@@ -1,3 +1,16 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Główne sekcje strony
+Allow: /realizations
+Allow: /contact
+Allow: /about
+Allow: /offer
+
+# Blokuj niepotrzebne pliki
+Disallow: /static/
+Disallow: *.json
+Disallow: /build/
+
+Sitemap: https://apeximbis.pl/sitemap.xml
+
