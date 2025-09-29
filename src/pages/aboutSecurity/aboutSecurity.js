@@ -16,9 +16,11 @@ import counterImage from '../../assets/mainImg/1.jpg';
 import teamImage from '../../assets/mainImg/4.jpg';
 import historyImage from '../../assets/mainImg/5.jpg';
 
+const date = new Date().getFullYear();
+const yearsOn = date-1996;
 const About = () => {
     const companyStats = [
-        { value: 24, label: 'Lata na rynku' },
+        { value: yearsOn, label: 'Lata na rynku' },
         { value: 175, label: 'Liczba klientów dla usługi ochrony', suffix: '+' },
         { value: 98, label: 'Zadowolonych Klientów', suffix: '%' },
         { value: 90, label: 'Liczba klientów dla sprzątania', suffix: '+' },
@@ -150,7 +152,7 @@ const About = () => {
                             icon={<LuHistory />}
                             title="HISTORIA FIRMY"
                         >
-                            Od 24 lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.
+                            Od {yearsOn} lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.
                             <br/><br/>
                             W odpowiedzi na rosnące oczekiwania naszych partnerów, naturalnie rozwinęliśmy nasze kompetencje. Zrozumieliśmy, że zaufanie, którym obdarzają nas Państwo w kwestii bezpieczeństwa, jest najlepszą podstawą do powierzenia nam również dbałości o porządek i estetykę obiektów. Dlatego dziś świadomie łączymy te dwa obszary, oferując spójną i zintegrowaną obsługę. Łączymy dyscyplinę i niezawodność znaną z branży ochrony z dbałością o szczegóły, która jest kluczowa w utrzymaniu czystości. </ImageTextCard>
                     </Grid>

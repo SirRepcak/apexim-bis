@@ -6,21 +6,19 @@ import {
     Box,
     CardActionArea,
     useTheme,
-    Slide, // <-- NOWY IMPORT
+    Slide,
 } from '@mui/material';
-import { useInView } from 'react-intersection-observer'; // <-- NOWY IMPORT
+import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom'; // <-- NOWY IMPORT
 
 const PromoLinkCard = ({ title, image, href, titleColor = 'primary.main', animationDirection = 'up' }) => {
     const theme = useTheme();
-
-    // Hook do śledzenia, czy komponent jest widoczny na ekranie
     const { ref, inView } = useInView({
-        triggerOnce: true, // Animacja uruchomi się tylko raz
-        threshold: 0.1,    // Uruchom, gdy 10% komponentu jest widoczne
+        triggerOnce: true,
+        threshold: 0.1,
     });
 
     return (
-        // Zewnętrzny Box jest potrzebny do poprawnego działania ref z useInView
         <Box ref={ref} sx={{ height: '100%' }}>
             <Slide direction={animationDirection} in={inView} timeout={800}>
                 <Card
@@ -28,8 +26,6 @@ const PromoLinkCard = ({ title, image, href, titleColor = 'primary.main', animat
                     sx={{
                         height: '100%',
                         borderRadius: '12px',
-                        // Usunęliśmy stare style animacji, ponieważ teraz zarządza nimi <Slide>
-                        // Pozostawiamy tylko transition dla cienia i transformacji przy najechaniu
                         transition: 'box-shadow 0.3s, transform 0.3s',
                         '&:hover': {
                             transform: 'translateY(-5px)',
@@ -37,10 +33,10 @@ const PromoLinkCard = ({ title, image, href, titleColor = 'primary.main', animat
                         },
                     }}
                 >
+                    {/* ZMIANA: Używamy component={Link} i to={href} */}
                     <CardActionArea
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        component={Link}
+                        to={href}
                         sx={{
                             py: { xs: 2.5, md: 4 },
                             px: { xs: 2.5, md: 3 },

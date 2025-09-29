@@ -15,9 +15,11 @@ import counterImage from '../../assets/mainImg/1.jpg';
 import teamImage from '../../assets/mainImg/4.jpg';
 import historyImage from '../../assets/mainImg/5.jpg';
 
+const date = new Date().getFullYear();
+const yearsOn = date-1996;
 const About = () => {
     const companyStats = [
-        { value: 24, label: 'Lata na rynku' },
+        { value: yearsOn, label: 'Lata na rynku' },
         { value: 150, label: 'Zrealizowanych projektów', suffix: '+' },
         { value: 98, label: 'Zadowolonych Klientów', suffix: '%' },
         { value: 24, label: 'Godziny wsparcia', suffix: '/7' },
@@ -68,7 +70,7 @@ const About = () => {
                             title="NASZE DOŚWIADCZENIE"
                             titleColor="#0591c6"
                         >
-                            Nasze 24-letnie doświadczenie to fundament kompetencji i zaufania. Patrząc wstecz na te 24 lata naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każdy zrealizowany projekt to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.
+                            Nasze {yearsOn}-letnie doświadczenie to fundament kompetencji i zaufania. Patrząc wstecz na te 24 lata naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każdy zrealizowany projekt to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.
                         </ContentCard>
                     </Grid>
 

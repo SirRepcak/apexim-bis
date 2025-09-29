@@ -163,11 +163,11 @@ const offerTexts = {
         features: [
             {
                 title: "Ochrona Mienia",
-                url: "http://www.apexim-bis.com.pl/dzialalnosc/ochrona-fizyczna",
+                url: "/offerSecurity#investments",
             },
             {
                 title: "Utrzymanie Czystości",
-                url: "http://www.apexim-bis.com.pl/dzialalnosc/uslugi-porzadkowe",
+                url: "/offerSecurity#cleaning",
             }
         ]
     }

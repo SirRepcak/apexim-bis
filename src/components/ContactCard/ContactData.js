@@ -21,7 +21,7 @@ const deptSekretariat = {
   additionalContacts: [
     { type: 'phone', value: '68 329 36 55' },
     { type: 'fax', value: 'FAX : 68 329 36 65' },
-    { type: 'email', value: 'agencja-ochrony@apexim-bis.com.pl' },
+    { type: 'email', value: 'agencja-ochrony@apeximbis.pl' },
   ],
   initiallyOpen: false,
 };
@@ -29,7 +29,7 @@ const deptSekretariat = {
 const deptHandel = {
   id: 3,
   title: 'Dział Handlu i Obsługi Klienta',
-  mainContact: { type: 'email', value: 'handel@apexim-bis.com.pl' },
+  mainContact: { type: 'email', value: 'handel@apeximbis.pl' },
   additionalContacts: [],
   initiallyOpen: false,
 };
@@ -37,7 +37,7 @@ const deptHandel = {
 const deptSerwis = {
   id: 4,
   title: 'Dział Serwisu Technicznego',
-  mainContact: { type: 'email', value: 'serwis@apexim-bis.com.pl' },
+  mainContact: { type: 'email', value: 'serwis@apeximbis.pl' },
   additionalContacts: [],
   initiallyOpen: false,
 };
@@ -45,7 +45,7 @@ const deptSerwis = {
 const deptProjekt = {
   id: 5,
   title: 'Dział Inwestycji i Projektowania',
-  mainContact: { type: 'email', value: 'projekt@apexim\u2011bis.com.pl' },
+  mainContact: { type: 'email', value: 'projekt@apeximbis.pl' },
   additionalContacts: [
     { type: 'email', value: 'inwestycje@apexim-bis.com.pl' },
   ],

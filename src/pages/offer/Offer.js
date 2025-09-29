@@ -1,6 +1,6 @@
 // src/pages/Offer/Offer.jsx
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
     Box,
     Button,
@@ -43,6 +43,15 @@ import permissionsImage from "../../assets/mainImg/9.jpg";
 import consultingImage from "../../assets/mainImg/2.jpg";
 import logoImageSecurity from "../../assets/logo-security.png";
 import logoImageCleaning from "../../assets/logo-cleaning.png";
+
+// ===SEKCJA PRZYCISKÓW PODMENU ===
+const navItems = [
+    { label: 'Inwestycje', icon: <TbClipboardCheck />, href: '#investments' },
+    { label: 'Serwis', icon: <FaWrench />, href: '#service' },
+    { label: 'Doradztwo', icon: <TbBrain />, href: '#consulting' },
+    { label: 'Projektowanie', icon: <TbRulerMeasure />, href: '#project' },
+    { label: 'Uprawnienia', icon: <FaCertificate />, href: '#permissions' },
+];
 
 // === SEKCJA SZCZEGÓŁÓW INWESTYCJI ===
 const InvestmentsDetails = ({ onPermissionsClick }) => {
@@ -135,23 +144,39 @@ const PermissionsDetails = () => {
 
 // === GŁÓWNA STRONA OFERTY ===
 const Offer = () => {
-    const [isPermissionsExpanded, setPermissionsExpanded] = useState(false);
+    const [expandedSection, setExpandedSection] = useState(null);
+    const location = useLocation();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-    const handlePermissionsClick = () => {
-        const permissionsSection = document.getElementById('permissions');
-        if (permissionsSection) {
-            permissionsSection.scrollIntoView({ behavior: 'smooth' });
+    // Efekt do odczytu hasha z URL i ustawienia rozwiniętej sekcji
+    useEffect(() => {
+        if (location.hash) {
+            const sectionId = location.hash.substring(1); // Usuń '#'
+            setExpandedSection(sectionId);
+        }
+    }, [location.hash]);
+
+    // Efekt do przewijania strony do rozwiniętej sekcji
+    useEffect(() => {
+        if (expandedSection) {
             setTimeout(() => {
-                setPermissionsExpanded(true);
+                const element = document.getElementById(expandedSection);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }, 300);
         }
+    }, [expandedSection]);
+
+    // Handler do zarządzania stanem rozwijanych kart
+    const handleToggleSection = (sectionId) => (isNowExpanded) => {
+        setExpandedSection(isNowExpanded ? sectionId : null);
     };
 
     return (
         <Box sx={{ pt: { xs: 8, md: 12 } }}>
-            <OfferNavigation />
+            <OfferNavigation navItems={navItems} />
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 5 }, px: { xs: 1, sm: 2, md: 3 }, mt: 5 }}>
                 {/* === Inwestycje === */}
                 <Box id="investments" sx={{ scrollMarginTop: "100px" }}>
@@ -160,10 +185,12 @@ const Offer = () => {
                         icon={<TbClipboardCheck />}
                         image={investmentsImage}
                         imagePosition="right"
-                        expandContent={<InvestmentsDetails onPermissionsClick={handlePermissionsClick} />}
+                        isInitiallyExpanded={expandedSection === 'investments'}
+                        onToggle={handleToggleSection('investments')}
+                        expandContent={<InvestmentsDetails onPermissionsClick={() => setExpandedSection('permissions')} />}
                     >
-                        {offerTexts.investments.sectionParagraph}
-                    </ExpandableContentCard>
+                    {offerTexts.investments.sectionParagraph}
+                </ExpandableContentCard>
                 </Box>
 
                 {/* === Serwis === */}
@@ -173,7 +200,9 @@ const Offer = () => {
                         icon={<FaWrench />}
                         image={serviceImage}
                         imagePosition="left"
-                        expandContent={<ServiceDetails onPermissionsClick={handlePermissionsClick} />}
+                        isInitiallyExpanded={expandedSection === 'service'}
+                        onToggle={handleToggleSection('service')}
+                        expandContent={<ServiceDetails onPermissionsClick={() => setExpandedSection('permissions')} />}
                     >
                         {offerTexts.service.sectionParagraph}
                     </ExpandableContentCard>
@@ -182,9 +211,8 @@ const Offer = () => {
                 {/* === Doradztwo === */}
                 <Box id="consulting" sx={{ scrollMarginTop: "100px" }}>
                     <ImageTextCard title={offerTexts.consulting.title} icon={<TbBrain />} image={consultingImage} imagePosition="right">
-                        {/* Wewnętrzny kontener flexbox do pozycjonowania przycisku */}
                         <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                            <Box sx={{ flexGrow: 1 }}> {/* Ten Box "rozpycha" się, aby wypchnąć przycisk */}
+                            <Box sx={{ flexGrow: 1 }}>
                                 {offerTexts.consulting.paragraph1}
                                 {offerTexts.consulting.paragraph2}
                             </Box>
@@ -200,9 +228,8 @@ const Offer = () => {
                 {/* === Projekty === */}
                 <Box id="project" sx={{ scrollMarginTop: "100px" }}>
                     <ImageTextCard title={offerTexts.project.title} icon={<TbRulerMeasure />} image={designImage} imagePosition="left">
-                        {/* Wewnętrzny kontener flexbox do pozycjonowania przycisku */}
                         <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                            <Box sx={{ flexGrow: 1 }}> {/* Ten Box "rozpycha" się, aby wypchnąć przycisk */}
+                            <Box sx={{ flexGrow: 1 }}>
                                 {offerTexts.project.paragraph1}
                                 {offerTexts.project.paragraph2}
                                 {offerTexts.project.paragraph3}
@@ -223,11 +250,11 @@ const Offer = () => {
                         icon={<FaCertificate />}
                         image={permissionsImage}
                         imagePosition="right"
-                        isInitiallyExpanded={isPermissionsExpanded}
-                        onToggle={setPermissionsExpanded}
+                        isInitiallyExpanded={expandedSection === 'permissions'}
+                        onToggle={handleToggleSection('permissions')}
                         expandContent={<PermissionsDetails />}
                     >
-                        {offerTexts.permissions.description}
+                        {offerTexts.permissions.sectionParagraph}
                     </ExpandableContentCard>
                 </Box>
 
@@ -236,8 +263,8 @@ const Offer = () => {
                     <Typography variant="h4" component="h2" sx={{ mb: 4 }}>
                         {offerTexts.additional.heading}
                     </Typography>
-                    <Grid container spacing={4} sx={{mb:4}}>
-                        <Grid size={{ xs: 12, md: 6}}>
+                    <Grid container spacing={4} sx={{ mb: 4 }}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <PromoLinkCard
                                 title={offerTexts.additional.features[0].title}
                                 image={logoImageSecurity}
@@ -246,13 +273,12 @@ const Offer = () => {
                                 animationDirection="right"
                             />
                         </Grid>
-                        <Grid size={{ xs: 12, md: 6}}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <PromoLinkCard
                                 title={offerTexts.additional.features[1].title}
                                 image={logoImageCleaning}
                                 href={offerTexts.additional.features[1].url}
                                 titleColor="#ea6c1e"
-                                // ZMIANA: Karta po prawej wjeżdża z prawej strony
                                 animationDirection="left"
                             />
                         </Grid>

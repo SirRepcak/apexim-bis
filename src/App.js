@@ -24,7 +24,7 @@ import ContactSecurity from './pages/contactSecurity/contactSecurity';
 const App = () => (
     // The outermost ThemeProvider can provide a default theme
     <ThemeProvider theme={lightTheme}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 {/* Route for the Landing Page (doesn't use the main layout) */}
                 <Route path="/" element={<LandingPage />} />

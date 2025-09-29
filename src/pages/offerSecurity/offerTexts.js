@@ -2,47 +2,66 @@
 
 const offerTexts = {
     investments: {
-        title: "Generalny Wykonawca Instalacji Niskoprądowych i Elektrycznych",
+        // Główny nagłówek sekcji
+        sectionTitle: "Nowoczesna Ochrona Fizyczna Osób i Mienia",
+        sectionParagraph: (
+            <>
+                Tworzymy skuteczne i niezawodne systemy bezpieczeństwa w oparciu o indywidualną analizę ryzyka i
+                potencjalnych zagrożeń. Naszym celem jest wypracowanie rozwiązań, które minimalizują ryzyko i gwarantują
+                realne poczucie bezpieczeństwa powierzonego nam mienia, życia i zdrowia. Wszystkie zadania realizujemy z
+                poszanowaniem prawa oraz z zachowaniem zasad etyki zawodowej.
+            </>
+        ),
+        // Nagłówek dla bloku poniżej
+        title: "Zintegrowane Wsparcie Technologiczne i Operacyjne",
         description: (
             <>
-                Bierzemy na siebie pełną odpowiedzialność za kluczowe systemy w Twoim obiekcie. Jako generalny wykonawca
-                w tym zakresie, zdejmujemy z barków inwestora ciężar sprawnej, kompleksowej koordynacji wielu różnych
-                partnerów podwykonawców.
-                <strong><br/>Dzięki posiadaniu własnych, wyspecjalizowanych zespołów elektryków i techników
-                    niskoprądowych, zapewniamy płynny przebieg prac i bezproblemową współpracę z innymi wykonawcami na
-                    budowie.</strong>
+                Ochronę fizyczną wspieramy najnowocześniejszymi systemami technicznymi oraz stałym nadzorem uzbrojonych
+                Patroli Interwencyjnych. Takie połączenie zapewnia niezwłoczną pomoc w sytuacjach kryzysowych oraz
+                umożliwia systematyczną kontrolę pracowników ochrony. Gwarantujemy niezawodną, całodobową łączność
+                bezprzewodową z naszym Centrum Monitorowania.
             </>
         ),
         competenciesTitle: "Nasze Kluczowe Kompetencje:",
         features: [
             {
-                title: "Instalacje Elektryczne i Odgromowe",
+                title: "Zaawansowane Systemy Kontroli Strażników",
                 content: (
-                    <>Projektujemy i wykonujemy kompletne instalacje siłowe, oświetleniowe oraz certyfikowane systemy
-                        odgromowe, które stanowią krwiobieg i tarczę ochronną każdego obiektu.</>
+                    <>
+                        Stosujemy nowoczesne systemy monitorowania obchodów, w tym wideoweryfikację. Elektroniczne
+                        czytniki punktów kontrolnych pozwalają nam na stałą kontrolę (on-line) czujności,
+                        dyspozycyjności oraz regularności pracy pracowników ochrony na terenie obiektu.
+                    </>
                 ),
             },
             {
-                title: "Systemy Ochrony Przeciwpożarowej",
+                title: "Kwalifikowani Pracownicy Ochrony",
                 content: (
-                    <>Wdrażamy zintegrowane Systemy Sygnalizacji Pożaru (SSP), które w połączeniu z systemami oddymiania
-                        i dźwiękowymi systemami ostrzegawczymi (DSO) zapewniają najwyższy poziom bezpieczeństwa życia i
-                        mienia.</>
+                    <>
+                        W obiektach szczególnie zagrożonych zadania wykonują kwalifikowani pracownicy ochrony,
+                        wyposażeni w środki przymusu bezpośredniego, zgodnie z obowiązującym prawem. Nasz zespół to
+                        gwarancja profesjonalizmu i skuteczności.
+                    </>
                 ),
             },
             {
-                title: "Systemy Bezpieczeństwa (Security)",
+                title: "Całodobowe Patrole Interwencyjne",
                 content: (
-                    <>Budujemy wielopoziomowe systemy ochrony oparte na wczesnej detekcji (SSWiN), inteligentnej
-                        kontroli dostępu (KD) i zaawansowanym monitoringu wizyjnym (CCTV).</>
+                    <>
+                        Nasze uzbrojone i zmotoryzowane Patrole Interwencyjne zapewniają natychmiastowe wsparcie w
+                        sytuacjach zagrożenia. Są w stałej łączności z pracownikami na obiekcie i naszym Centrum
+                        Monitorowania, gotowe do działania 24/7.
+                    </>
                 ),
             },
             {
-                title: "Infrastruktura Teletechniczna",
+                title: "Indywidualne Plany Ochrony i Procedury",
                 content: (
-                    <>Tworzymy stabilne i wydajne sieci komputerowe (LAN), które są fundamentem komunikacji i integracji
-                        wszystkich systemów w nowoczesnej firmie. <strong>Nasze okablowanie strukturalne to gwarancja
-                            niezawodności na lata.</strong></>
+                    <>
+                        Podstawą naszych działań jest szczegółowa analiza zagrożeń, na bazie której tworzymy
+                        dedykowane plany ochrony. Wdrażamy sprawdzone i skuteczne procedury, aby zapewnić najwyższy
+                        standard świadczonych usług.
+                    </>
                 ),
             },
         ],
@@ -50,76 +69,132 @@ const offerTexts = {
             permissions: "Nasze Uprawnienia",
             ask: "Zapytaj o Ofertę",
         },
-        sectionTitle: "Budujemy Bezpieczeństwo od Podstaw",
-        sectionParagraph: (
-            <>
-                Realizacja inwestycji to dla nas proces tworzenia. Przekształcamy koncepcje w działające, zintegrowane
-                systemy, które stają się fundamentem bezpieczeństwa i funkcjonalności Twojego obiektu. <strong>Od
-                projektu, przez wykonawstwo, aż po finalny odbiór</strong> – zarządzamy każdym etapem.
-            </>
-        ),
     },
     service: {
-        title: "Opieka nad Twoją Inwestycją",
-        description: (
-            <>Instalacja to dopiero początek. Zapewniamy profesjonalną opiekę serwisową dla wszystkich systemów, które
-                wdrażamy, jak i tych już istniejących w Twoim obiekcie. Naszym celem jest zapewnienie ich bezawaryjnej
-                pracy, maksymalnej wydajności i zgodności z przepisami przez cały cykl życia.</>
+        // Główny nagłówek rozwijanej sekcji
+        sectionTitle: "Twoje Bezpieczeństwo pod Stałą Kontrolą",
+        sectionParagraph: (
+            <>
+                Nasze nowoczesne Centrum Monitorowania Alarmów (CMA) czuwa nad Twoim obiektem 24/7. Dzięki stałej
+                analizie sygnałów i gotowości naszych Patroli Interwencyjnych, zapewniamy natychmiastową reakcję na
+                każde zagrożenie, dając Ci spokój i pewność ochrony.
+            </>
         ),
-        scopeTitle: "Zakres Usług Serwisowych:",
+
+        // Nagłówek dla głównego bloku po rozwinięciu
+        title: "Kompleksowy System Monitoringu i Reakcji",
+        description: (
+            <>
+                Łączymy zaawansowaną technologię monitoringu z błyskawicznym działaniem uzbrojonych Patroli
+                Interwencyjnych. Każdy sygnał z Twojego systemu alarmowego jest natychmiast analizowany przez
+                operatorów w naszym Centrum Monitorowania, co pozwala na podjęcie adekwatnych działań i skuteczną
+                ochronę mienia, zdrowia i życia.
+            </>
+        ),
+
+        // Podtytuł dla siatki kompetencji
+        scopeTitle: "Zakres Usług Monitoringu:",
+
+        // Bloki z kluczowymi kompetencjami
         features: [
             {
-                title: "Przeglądy i Konserwacja Systemów Security",
-                content: <>Regularne przeglądy i testy systemów <strong>SSWiN, KD i CCTV</strong> w celu weryfikacji
-                    poprawności działania, aktualizacji oprogramowania i utrzymania pełnej sprawności.</>,
+                title: "Centrum Monitorowania Alarmów 24/7",
+                content: (
+                    <>
+                        Nasi operatorzy przez całą dobę odbierają i weryfikują sygnały alarmowe. Wykorzystujemy
+                        nowoczesną <strong>wideoweryfikację</strong>, aby natychmiast potwierdzić realne zagrożenie,
+                        eliminując fałszywe alarmy i gwarantując precyzyjną reakcję.
+                    </>
+                ),
             },
             {
-                title: "Serwis Systemów SSP i Elektrycznych",
-                content: <>Kluczowe dla bezpieczeństwa przeglądy systemów <strong>SAP i instalacji odgromowych</strong>,
-                    a także diagnostyka instalacji elektrycznych i oświetleniowych.</>,
-            }
+                title: "Błyskawiczny Czas Reakcji Patroli",
+                content: (
+                    <>
+                        W momencie zagrożenia, dyżurny natychmiast wysyła najbliższy zmotoryzowany Patrol
+                        Interwencyjny. Nasi pracownicy to kwalifikowani agenci ochrony, wyposażeni w środki przymusu
+                        bezpośredniego, gotowi do podjęcia skutecznej interwencji.
+                    </>
+                ),
+            },
+            {
+                title: "Szeroki Zakres Monitorowanych Zdarzeń",
+                content: (
+                    <>
+                        Nasz system monitoruje szerokie spektrum zdarzeń: od <strong>włamania, napadu i
+                        pożaru</strong>, po sygnały o próbie sabotażu systemu czy potrzebie pomocy medycznej.
+                        Reagujemy również na alerty techniczne, jak zanik zasilania.
+                    </>
+                ),
+            },
         ],
-        responseTitle: "Dostępność i Szybki Czas Reakcji",
-        responseText: <>Rozumiemy, jak ważna jest ciągłość działania Twojego biznesu. Oferujemy elastyczne umowy
-            serwisowe i gwarantujemy szybki czas reakcji naszego zespołu technicznego w przypadku awarii.</>,
+
         buttons: {
             permissions: "Nasze Uprawnienia",
             ask: "Zapytaj o Ofertę",
         },
-        sectionTitle: "Dbamy o Ciągłość Twojego Biznesu",
+    },
+    cleaning: {
+        sectionTitle: "Perfekcyjna Czystość, Pełen Profesjonalizm",
         sectionParagraph: (
             <>
-                Nasz serwis to gwarancja, że Twoje instalacje działają z maksymalną sprawnością. Nie tylko naprawiamy
-                – <strong>zapobiegamy problemom, zanim się pojawią</strong>, poprzez regularne przeglądy, diagnostykę i
-                proaktywne działania.
+                Zapewniamy kompleksowe usługi sprzątania, łącząc wieloletnie doświadczenie z nowoczesnymi technologiami.
+                Nasz cel to stworzenie czystego, bezpiecznego i estetycznego środowiska, które wspiera komfort pracy i
+                pozytywny wizerunek Twojej firmy.
             </>
         ),
+        title: "Indywidualnie Dopasowane Rozwiązania Czystości",
+        description: (
+            <>
+                Każdy obiekt jest inny, dlatego nasze usługi zawsze dostosowujemy do specyfiki Twojej przestrzeni i
+                indywidualnych oczekiwań. Opracowujemy szczegółowy harmonogram prac i działamy dyskretnie, w dogodnych
+                dla Ciebie terminach, aby nie zakłócać rytmu pracy Twojego personelu.
+            </>
+        ),
+        scopeTitle: "Nasz Zakres Usług Obejmuje m.in.:",
+        features: [
+            {
+                title: "Kompleksowe Sprzątanie Wnętrz",
+                content: (
+                    <>
+                        Profesjonalne odkurzanie i czyszczenie podłóg, wykładzin i mebli. Dbamy o czystość powierzchni
+                        biurowych, korytarzy i hal, używając sprzętu dostosowanego do każdej powierzchni.
+                    </>
+                ),
+            },
+            {
+                title: "Higiena i Dezynfekcja Sanitariatów",
+                content: (
+                    <>
+                        Zapewniamy najwyższy standard czystości w łazienkach. Regularne mycie i dezynfekcja
+                        kluczowych powierzchni gwarantuje bezpieczeństwo i komfort wszystkich użytkowników.
+                    </>
+                ),
+            },
+            {
+                title: "Utrzymanie Terenów Zewnętrznych",
+                content: (
+                    <>
+                        Nasze usługi obejmują również dbałość o tereny przyległe do obiektu, w tym zamiatanie,
+                        porządkowanie chodników oraz profesjonalne odśnieżanie w sezonie zimowym.
+                    </>
+                ),
+            },
+            {
+                title: "Gwarancja Jakości i Nadzór",
+                content: (
+                    <>
+                        Nad realizacją usługi czuwa doświadczony zespół technologów. Systemowa kontrola czystości i
+                        stały nadzór nad personelem to nasza gwarancja niezawodności i najwyższej jakości.
+                    </>
+                ),
+            },
+        ],
+        buttons: {
+            ask: "Zapytaj o Ofertę",
+        },
     },
-    consulting: {
-        title: "Profesjonalne Doradztwo Techniczne",
-        paragraph1: <>Fundamentem każdej udanej inwestycji jest trafna diagnoza potrzeb i precyzyjny dobór technologii.
-            Nasz proces doradczy to nie tylko rozmowa, ale kompleksowy audyt, który pozwala zrozumieć Państwa cele
-            biznesowe i specyfikę obiektu.</>,
-        paragraph2: <>Na podstawie analizy ryzyka i Państwa oczekiwań, tworzymy <strong>szczegółową koncepcję
-            systemu</strong>. Rekomendujemy rozwiązania, które są nie tylko skuteczne, ale również skalowalne i
-            zoptymalizowane kosztowo. Zapewniamy pełną jasność co do możliwości i funkcjonalności, aby mogli Państwo
-            podjąć najlepszą decyzję.</>,
-        button: "Skonsultuj swój pomysł",
-    },
-    project: {
-        title: "Zarządzanie Procesem Projektowym",
-        paragraph1: <>Zdajemy sobie sprawę, że kluczem do sukcesu inwestycji jest profesjonalny i spójny projekt.
-            Dlatego oferujemy <strong>kompleksowe zarządzanie całym procesem projektowym</strong>, od koncepcji po
-            gotową dokumentację wykonawczą. </>,
-        paragraph2: <>Współpracujemy z zaufanymi biurami projektowymi i specjalistami branżowymi, aby dostarczyć
-            kompletne opracowania, idealnie dopasowane do potrzeb Twojej inwestycji. Naszą główną specjalizacją jest
-            koordynacja projektów <strong>systemów teletechnicznych</strong>, ale w ramach kompleksowej obsługi
-            zapewniamy również <strong>pełną dokumentację dla instalacji elektrycznych</strong>. </>,
-        paragraph3: <>Dzięki temu inwestor otrzymuje jeden, spójny i gotowy do realizacji projekt, bez konieczności
-            angażowania się w skomplikowane uzgodnienia międzybranżowe. <strong>To my bierzemy na siebie całą
-                komunikację i odpowiedzialność.</strong></>,
-        button: "Omów swój projekt",
-    },
+
     permissions: {
         title: "Uprawnienia i Certyfikaty – Gwarancja Bezpieczeństwa",
         description: <>Nasza działalność opiera się na solidnych fundamentach prawnych i certyfikowanych kompetencjach.
@@ -162,12 +237,12 @@ const offerTexts = {
         heading: "Poznaj Nasze Pozostałe Usługi",
         features: [
             {
-                title: "Ochrona Mienia",
-                url: "http://www.apexim-bis.com.pl/dzialalnosc/ochrona-fizyczna",
+                title: "Serwis Techniczny",
+                url: "/offer#service",
             },
             {
-                title: "Utrzymanie Czystości",
-                url: "http://www.apexim-bis.com.pl/dzialalnosc/uslugi-porzadkowe",
+                title: "Inwestycje",
+                url: "/offer#investments",
             }
         ]
     }
