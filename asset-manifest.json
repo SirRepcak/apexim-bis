@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/apexim-bis/static/css/main.21f84ebd.css",
-    "main.js": "/apexim-bis/static/js/main.5301de9d.js",
+    "main.js": "/apexim-bis/static/js/main.7c5ccdda.js",
     "static/js/453.6f4f59f4.chunk.js": "/apexim-bis/static/js/453.6f4f59f4.chunk.js",
     "static/media/logo.png": "/apexim-bis/static/media/logo.ca3716367cd00e8985ea.png",
     "static/media/11.jpg": "/apexim-bis/static/media/11.d45871339e7b734949eb.jpg",
@@ -45,11 +45,11 @@
     "static/media/5pul-artylerii.png": "/apexim-bis/static/media/5pul-artylerii.2c4e7598f85b59e9db4f.png",
     "index.html": "/apexim-bis/index.html",
     "main.21f84ebd.css.map": "/apexim-bis/static/css/main.21f84ebd.css.map",
-    "main.5301de9d.js.map": "/apexim-bis/static/js/main.5301de9d.js.map",
+    "main.7c5ccdda.js.map": "/apexim-bis/static/js/main.7c5ccdda.js.map",
     "453.6f4f59f4.chunk.js.map": "/apexim-bis/static/js/453.6f4f59f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.21f84ebd.css",
-    "static/js/main.5301de9d.js"
+    "static/js/main.7c5ccdda.js"
   ]
 }
