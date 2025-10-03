@@ -1,11 +1,11 @@
 import React from 'react';
 import ChoiceCard from '../../components/ChoiceCard/ChoiceCard';
 
-import logoSecurity from '../../assets/logo-sec-clean.png';
-import logoInvestments from '../../assets/logo-Inv-Ser.png';
-import securityBg from '../../assets/mainImg/10.jpg';
-import investmentsBg from '../../assets/mainImg/11.jpg';
-import landingLogo from '../../assets/landingLogo.png'; // IMPORT THE NEW LOGO
+import logoSecurity from '../../assets/logo-sec-clean.webp';
+import logoInvestments from '../../assets/logo-Inv-Ser.webp';
+import securityBg from '../../assets/mainImg/10.webp';
+import investmentsBg from '../../assets/mainImg/11.webp';
+import landingLogo from '../../assets/landingLogo.webp'; // IMPORT THE NEW LOGO
 
 // MODIFICATION: Import useMediaQuery to check screen size
 import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';

@@ -1,3 +1,5 @@
+// src/components/Timeline/Timeline.js
+
 import React from 'react';
 import {
     Timeline,
@@ -9,7 +11,6 @@ import {
     TimelineOppositeContent,
 } from '@mui/lab';
 import { useTheme, useMediaQuery, Typography, Fade, Slide } from '@mui/material';
-import { items } from './TimelineData';
 import TimelineCard from './TimelineCard';
 import useIntersectionObserver from './useIntersectionObserver';
 
@@ -19,13 +20,20 @@ const AnimatedTimelineItem = ({ item, index, activeItemIndex, setActiveIndex, on
 
     const combinedRef = (el) => {
         observerRef.current = el;
-        itemRef.current = el;
+        if(itemRef) {
+            itemRef.current = el;
+        }
     };
 
     const slideDirection = isMobile ? 'up' : (index % 2 === 0 ? 'right' : 'left');
 
     return (
-        <TimelineItem ref={combinedRef} sx={{ minHeight: isMobile ? 'auto' : '360px' }}>
+        <TimelineItem
+            ref={combinedRef}
+            sx={{
+                minHeight: isMobile ? 'auto' : '360px',
+            }}
+        >
             <TimelineOppositeContent
                 sx={{
                     m: 'auto 0',
@@ -66,32 +74,13 @@ const AnimatedTimelineItem = ({ item, index, activeItemIndex, setActiveIndex, on
                 <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
             </TimelineSeparator>
 
-            <TimelineContent sx={{ py: '12px', px: 2, height: isMobile ? 'auto' : '320px' }}>
-                {isMobile && (
-                    <Fade in={isVisible} timeout={800}>
-                        <Typography
-                            variant="h5"
-                            component="div"
-                            sx={{
-                                fontFamily: "'BankGothic', sans-serif",
-                                fontSize: '1.5rem',
-                                p: '0.5rem 1rem',
-                                mb: 1.5,
-                                backgroundColor: 'primary.main',
-                                color: 'primary.contrastText',
-                                display: 'inline-block',
-                            }}
-                        >
-                            {item.title}
-                        </Typography>
-                    </Fade>
-                )}
+            <TimelineContent sx={{ pt: '12px', pb: isMobile ? 4 : '12px', px: 2, height: isMobile ? 'auto' : '320px' }}>
                 <Fade in={isVisible} timeout={800}>
                     <Slide direction={slideDirection} in={isVisible} timeout={800}>
-                        {/* MODIFICATION: Added style={{ height: '100%' }} to this div */}
                         <div style={{ height: '100%' }}>
                             <TimelineCard
                                 item={item}
+                                mobileTitle={isMobile ? item.title : null}
                                 onClick={() => setActiveIndex(index)}
                                 onGalleryOpen={onGalleryOpen}
                                 isMobile={isMobile}
@@ -106,7 +95,7 @@ const AnimatedTimelineItem = ({ item, index, activeItemIndex, setActiveIndex, on
 };
 
 
-const MyTimeline = React.forwardRef(({ activeItemIndex, setActiveIndex, onGalleryOpen, itemRefs }, ref) => {
+const MyTimeline = React.forwardRef(({ items, activeItemIndex, setActiveIndex, onGalleryOpen, itemRefs }, ref) => {
     const isMobile = useMediaQuery(useTheme().breakpoints.down('sm'));
 
     return (
@@ -114,7 +103,7 @@ const MyTimeline = React.forwardRef(({ activeItemIndex, setActiveIndex, onGaller
             <Timeline position={isMobile ? 'right' : 'alternate'} sx={{ p: 0 }}>
                 {items.map((item, index) => (
                     <AnimatedTimelineItem
-                        key={index}
+                        key={item.cardTitle + index} // Use a more stable key
                         item={item}
                         index={index}
                         activeItemIndex={activeItemIndex}

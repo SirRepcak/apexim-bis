@@ -19,7 +19,7 @@ const PromoLinkCard = ({ title, image, href, titleColor = 'primary.main', animat
     });
 
     return (
-        <Box ref={ref} sx={{ height: '100%' }}>
+        <Box ref={ref} sx={{ height: '100%' , overflow:'hidden'}}>
             <Slide direction={animationDirection} in={inView} timeout={800}>
                 <Card
                     elevation={12}

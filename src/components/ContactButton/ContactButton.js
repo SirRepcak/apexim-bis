@@ -15,7 +15,7 @@ const ContactButton = ({ sx, children }) => {
     return (
         <Button
             component={Link}
-            href="tel:+48123456789"
+            href="tel:+48683270500"
             variant="contained"
             startIcon={<TbPhone />}
             sx={{

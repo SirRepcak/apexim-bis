@@ -1,3 +1,5 @@
+// src/components/Timeline/TimelineCard.js
+
 import React from 'react';
 import {
     Box,
@@ -9,20 +11,40 @@ import {
 } from '@mui/material';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 
-// MODIFICATION: Added isActive prop
-const TimelineCard = ({ item, onClick, onGalleryOpen, isMobile, isActive }) => {
+const TimelineCard = ({ item, onClick, onGalleryOpen, isMobile, isActive, mobileTitle }) => {
     const theme = useTheme();
     const hasGallery = item.galleryImages && item.galleryImages.length > 0;
 
     const handleMediaClick = (e) => {
         e.stopPropagation();
         if (hasGallery) {
+            // IMPORTANT: Pass the original paths, the parent will handle the PUBLIC_URL for the lightbox
             onGalleryOpen(item.galleryImages);
         }
     };
 
     return (
         <Box onClick={onClick} sx={{ height: '100%', cursor: 'pointer' }}>
+            {mobileTitle && (
+                <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{
+                        fontFamily: "'BankGothic', sans-serif",
+                        fontSize: '1.5rem',
+                        p: '0.5rem 1rem',
+                        mb: -1.5,
+                        backgroundColor: 'primary.main',
+                        color: 'primary.contrastText',
+                        display: 'inline-block',
+                        position: 'relative',
+                        zIndex: 1,
+                        borderRadius: '8px',
+                    }}
+                >
+                    {mobileTitle}
+                </Typography>
+            )}
             <Card
                 elevation={4}
                 sx={{
@@ -31,9 +53,8 @@ const TimelineCard = ({ item, onClick, onGalleryOpen, isMobile, isActive }) => {
                     height: '100%',
                     width: '100%',
                     borderRadius: "10px",
-                    overflow: 'hidden', // This is crucial for borderRadius to apply to child images
-                    boxSizing: 'border-box', // Ensures border is inside the element's dimensions
-                    // MODIFICATION: Add conditional border based on isActive prop
+                    overflow: 'hidden',
+                    boxSizing: 'border-box',
                     border: `3px solid ${isActive ? theme.palette.primary.main : 'transparent'}`,
                     transition: 'border-color 0.3s ease-in-out',
                 }}
@@ -55,10 +76,12 @@ const TimelineCard = ({ item, onClick, onGalleryOpen, isMobile, isActive }) => {
                         },
                     }}
                 >
+                    {/* === MODIFICATION IS HERE === */}
                     <CardMedia
                         className="media-image"
                         component="img"
-                        src={item.cover}
+                        // Prepend process.env.PUBLIC_URL to the image path
+                        src={`${process.env.PUBLIC_URL}${item.cover}`}
                         alt={item.cardTitle}
                         sx={{
                             width: '100%',

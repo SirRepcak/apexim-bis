@@ -10,10 +10,10 @@ import ContentCard from "../../components/ContentCard/ContentCard";
 import ImageTextCard from "../../components/ImageTextCard/ImageTextCard";
 
 // Import Images
-import handShake from '../../assets/mainImg/6.jpg';
-import counterImage from '../../assets/mainImg/1.jpg';
-import teamImage from '../../assets/mainImg/4.jpg';
-import historyImage from '../../assets/mainImg/5.jpg';
+import handShake from '../../assets/mainImg/6.webp';
+import counterImage from '../../assets/mainImg/1.webp';
+import teamImage from '../../assets/mainImg/4.webp';
+import historyImage from '../../assets/mainImg/5.webp';
 
 const date = new Date().getFullYear();
 const yearsOn = date-1996;
@@ -70,7 +70,7 @@ const About = () => {
                             title="NASZE DOŚWIADCZENIE"
                             titleColor="#0591c6"
                         >
-                            Nasze {yearsOn}-letnie doświadczenie to fundament kompetencji i zaufania. Patrząc wstecz na te 24 lata naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każdy zrealizowany projekt to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.
+                            Nasze {yearsOn}-letnie doświadczenie to fundament kompetencji i zaufania. Patrząc wstecz na te {yearsOn} lata naszej działalności, jesteśmy dumni z osiągnięć, które zdobyliśmy, ale to nie koniec naszej drogi. Każdy zrealizowany projekt to dla nas krok w stronę nowych wyzwań i innowacji, które napędzają naszą pasję do ciągłego rozwoju. Z nieustającym zaangażowaniem dążymy do doskonałości, aby nie tylko spełniać, ale i przewyższać oczekiwania naszych klientów.
                         </ContentCard>
                     </Grid>
 
@@ -154,7 +154,7 @@ const About = () => {
                             icon={<LuHistory />}
                             title="HISTORIA FIRMY"
                         >
-                            Od 24 lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.
+                            Od {yearsOn} lat naszą misją jest zapewnianie kompleksowego bezpieczeństwa i komfortu. Fundamentem naszej działalności są trzy filary: profesjonalna ochrona mienia, niezawodny serwis systemów bezpieczeństwa oraz kompleksowe usługi utrzymania czystości. To dzięki nim zdobyliśmy zaufanie setek Klientów.
                             <br/><br/>
                             Wraz z rozwojem rynku i rosnącymi potrzebami naszych partnerów, naturalnie poszerzaliśmy nasze kompetencje, realizując coraz więcej projektów inwestycyjnych. Dziś, aby sprostać największym wyzwaniom, otworzyliśmy nowy rozdział w naszej historii. Powołaliśmy dedykowany dział odpowiedzialny za kompleksową realizację dużych inwestycji – od projektu, przez wykonawstwo, aż po finalny odbiór. Łączymy dekady doświadczenia w bezpieczeństwie z nowoczesnym podejściem do zarządzania projektami.
                         </ImageTextCard>

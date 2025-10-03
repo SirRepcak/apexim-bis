@@ -20,8 +20,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 // Import BOTH logos
-import logoMain from '../../assets/logo.png';
-import logoSecurity from '../../assets/logo-sec-notext.png'; // Assuming you have a second logo
+import logoMain from '../../assets/logo.webp';
+import logoSecurity from '../../assets/logo-sec-notext.webp'; // Assuming you have a second logo
 import ContactButton from "../ContactButton/ContactButton";
 import SocialIcons from "../SocialIcons/SocialIcons";
 

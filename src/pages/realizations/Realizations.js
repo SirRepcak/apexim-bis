@@ -1,21 +1,38 @@
+// src/pages/Realizations/Realizations.js
+
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import MyTimeline from '../../components/Timeline/Timeline';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { Box } from '@mui/material';
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import { Box, CircularProgress } from '@mui/material';
 
 const Realizations = () => {
+    const [timelineItems, setTimelineItems] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [activeIndex, setActiveIndex] = useState(0);
     const [userSelectedIndex, setUserSelectedIndex] = useState(null);
-
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
     const [galleryImages, setGalleryImages] = useState([]);
     const timelineRef = useRef(null);
     const itemRefs = useRef([]);
+    const zoomRef = useRef(null); // Create a ref for the zoom plugin
 
-    // MODIFICATION 1: Moved the scroll logic into a useCallback hook
+    useEffect(() => {
+        fetch('/data/timeline.json')
+            .then(response => response.json())
+            .then(data => {
+                setTimelineItems(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error("Failed to fetch timeline data:", error);
+                setLoading(false);
+            });
+    }, []);
+
     const handleScroll = useCallback(() => {
         if (userSelectedIndex !== null) {
             const selectedEl = itemRefs.current[userSelectedIndex];
@@ -28,11 +45,9 @@ const Realizations = () => {
                 }
             }
         }
-
         const viewportCenter = window.innerHeight / 2;
         let closestIndex = 0;
         let minDistance = Infinity;
-
         itemRefs.current.forEach((el, index) => {
             if (el) {
                 const rect = el.getBoundingClientRect();
@@ -44,13 +59,11 @@ const Realizations = () => {
                 }
             }
         });
-
         if (activeIndex !== closestIndex) {
             setActiveIndex(closestIndex);
         }
     }, [activeIndex, userSelectedIndex]);
 
-    // This effect attaches the scroll listener
     useEffect(() => {
         let throttleTimeout = null;
         const throttledScrollHandler = () => {
@@ -61,25 +74,22 @@ const Realizations = () => {
                 }, 100);
             }
         };
-
         window.addEventListener('scroll', throttledScrollHandler);
         return () => window.removeEventListener('scroll', throttledScrollHandler);
     }, [handleScroll]);
 
-    // MODIFICATION 2: This new effect runs the scroll check on initial load
     useEffect(() => {
-        // Run once on mount after a short delay to allow the DOM to settle.
-        const timer = setTimeout(() => {
-            handleScroll();
-        }, 200); // 200ms delay
-
+        const timer = setTimeout(() => handleScroll(), 200);
         return () => clearTimeout(timer);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []); // Empty dependency array ensures this runs only once
+    }, [timelineItems]);
 
     const handleGalleryOpen = (images) => {
         if (images && images.length > 0) {
-            setGalleryImages(images.map(src => ({ src })));
+            const formattedImages = images.map(src => ({
+                src: `${process.env.PUBLIC_URL}${src}`
+            }));
+            setGalleryImages(formattedImages);
             setIsGalleryOpen(true);
         }
     };
@@ -91,11 +101,20 @@ const Realizations = () => {
         setUserSelectedIndex(index);
     };
 
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh' }}>
+                <CircularProgress />
+            </Box>
+        );
+    }
+
     return (
         <Box sx={{ pb: { xs: 8, sm: 4 } }}>
             <MyTimeline
                 ref={timelineRef}
                 itemRefs={itemRefs}
+                items={timelineItems}
                 activeItemIndex={activeIndex}
                 setActiveIndex={handleCardClick}
                 onGalleryOpen={handleGalleryOpen}
@@ -104,7 +123,12 @@ const Realizations = () => {
                 open={isGalleryOpen}
                 close={handleGalleryClose}
                 slides={galleryImages}
-                plugins={[Thumbnails]}
+                plugins={[Thumbnails, Zoom]}
+                // === MODIFICATION IS HERE ===
+                zoom={{
+                    ref: zoomRef,
+                    maxZoomPixelRatio: 5
+                }}
             />
         </Box>
     );

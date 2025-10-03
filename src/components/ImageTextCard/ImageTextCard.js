@@ -22,8 +22,8 @@ const ImageTextCard = ({
 
     const { ref, inView } = useInView({
         triggerOnce: true,
-        rootMargin: '0px 0px -150px 0px',
-        delay:100,
+        threshold: 0.1,
+        delay: 100,
     });
 
     const imageOrder = imagePosition === 'left' ? -1 : 1;
@@ -31,7 +31,7 @@ const ImageTextCard = ({
     const slideDirection = imagePosition === 'left' ? 'right' : 'left';
 
     return (
-        <Box ref={ref} sx={{ minHeight: minCardHeight, ...sx }}>
+        <Box ref={ref} sx={{ minHeight: minCardHeight, overflow: 'hidden', ...sx }}>
             <Slide direction={slideDirection} in={inView} timeout={1000}>
                 <Card
                     elevation={12}

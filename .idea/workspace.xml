@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="21bdeeca-45e0-4b6c-acef-97667526e0eb" name="Changes" comment="final before feedback">
+      <change afterPath="$PROJECT_DIR$/public/data/timeline.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/hand-shake.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/image-desk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/image-team.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invBURSA/cover.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invBURSA/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invBWA/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invMOK/mokCover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invPKP/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invRenoma/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSP/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSP/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSP/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSP/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSU/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSU/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSU/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSU/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSU/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invSU/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invStacjePKP/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invStacjePKP/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invStacjePKP/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invStacjePKP/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invStarostwo/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/invZDW/cover.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/Images/Realizations/invZDW/cover.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/landingLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo (Małe).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-Inv-Ser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-cleaning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-cleaning1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-inv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-sec-clean.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-sec-clean1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-security.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-security1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-serv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/all/pexels-thirdman-5582599.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImg/back/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImgSecurity/cctvGuard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImgSecurity/cctvOperator.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImgSecurity/cleaning-lady.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mainImgSecurity/guard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/17-zmech-wedrzyn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/2wog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/35-SdrOP-Skwierz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/43wog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/45wog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/4wog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/5pul-artylerii.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/RZI-zg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/WSZW-zg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/realization-logos/logo-blueSub.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/Images/Realizations/realization-logos/logo-blueSub.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactButton/ContactButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactButton/ContactButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ExpandableContentCard/ExpandableContentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExpandableContentCard/ExpandableContentCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ImageTextCard/ImageTextCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageTextCard/ImageTextCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavFooter/NavFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavFooter/NavFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavHeader/NavHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavHeader/NavHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PromoLinkCard/PromoLinkCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PromoLinkCard/PromoLinkCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline/Timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline/TimelineCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/TimelineCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline/TimelineData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LandingPage/LandingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/aboutSecurity/aboutSecurity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutSecurity/aboutSecurity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/offer/Offer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/offer/Offer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/offerSecurity/OfferSecurity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/offerSecurity/OfferSecurity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/realizations/Realizations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/realizations/Realizations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../apexim-bis\exportToHTML" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SirRepcak&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SirRepcak/apexim-bis.git&quot;,
+    &quot;accountId&quot;: &quot;ff1b290a-b08a-43d6-b091-203a3ce08444&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="334BoIo8bV33lbViTvqNGAT3uYo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.Timeline.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Apexim/strona/apexim-bis/src/assets/mainImgSecurity&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.deploy.executor&quot;: &quot;Run&quot;,
+    &quot;npm.predeploy.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\InteliJi Kotlin\\IntelliJ IDEA 2025.1.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Apexim\strona\apexim-bis\src\assets\mainImgSecurity" />
+      <recent name="D:\Apexim\strona\apexim-bis\src\pages\aboutSecurity" />
+      <recent name="D:\Apexim\strona\apexim-bis\src\pages\offerSecurity" />
+      <recent name="D:\Apexim\strona\apexim-bis\src\components\ContactCard" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Apexim\strona\apexim-bis\public\Images\Realizations" />
+      <recent name="D:\Apexim\strona\apexim-bis\src\assets\mainImg" />
+      <recent name="D:\Apexim\strona\apexim-bis\src\assets\mainImgSecurity" />
+      <recent name="D:\Apexim\strona\apexim-bis\src\assets" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="predeploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="predeploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.predeploy" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21bdeeca-45e0-4b6c-acef-97667526e0eb" name="Changes" comment="" />
+      <created>1758566639884</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758566639884</updated>
+      <workItem from="1758566643307" duration="3591000" />
+      <workItem from="1758653908965" duration="8796000" />
+      <workItem from="1758740578912" duration="6878000" />
+      <workItem from="1758868001777" duration="18612000" />
+      <workItem from="1759091209948" duration="9229000" />
+      <workItem from="1759126515581" duration="15158000" />
+      <workItem from="1759171306824" duration="490000" />
+      <workItem from="1759213406198" duration="4127000" />
+      <workItem from="1759319154855" duration="9914000" />
+      <workItem from="1759473770151" duration="1133000" />
+    </task>
+    <task id="LOCAL-00001" summary="Działajacy Timeline">
+      <option name="closed" value="true" />
+      <created>1758663704084</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758663704084</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Poprawiony Kontak i zależne komponenty">
+      <option name="closed" value="true" />
+      <created>1758747555473</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758747555473</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dodana podstrona O firmie dla ochrony kontakt dal ochrony, i oferta dla ochrony( ta czesc tylko skopiownaa), gotowy w pełni działający timeline, wyrzucony chrono użyty mui/lab timeline, dodanie nowych formatów dla theme dopasowujących strone ochrony">
+      <option name="closed" value="true" />
+      <created>1758893880646</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758893880647</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Cleanup, ready to go investment subsite">
+      <option name="closed" value="true" />
+      <created>1759100545234</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759100545234</updated>
+    </task>
+    <task id="LOCAL-00005" summary="final before feedback">
+      <option name="closed" value="true" />
+      <created>1759171737848</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759171737848</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Działajacy Timeline" />
+    <MESSAGE value="Poprawiony Kontak i zależne komponenty" />
+    <MESSAGE value="Dodana podstrona O firmie dla ochrony kontakt dal ochrony, i oferta dla ochrony( ta czesc tylko skopiownaa), gotowy w pełni działający timeline, wyrzucony chrono użyty mui/lab timeline, dodanie nowych formatów dla theme dopasowujących strone ochrony" />
+    <MESSAGE value="Cleanup, ready to go investment subsite" />
+    <MESSAGE value="final before feedback" />
+    <option name="LAST_COMMIT_MESSAGE" value="final before feedback" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Timeline/Timeline.js</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/aboutSecurity/aboutSecurity.js</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

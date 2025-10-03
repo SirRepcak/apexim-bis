@@ -12,7 +12,7 @@ const NavFooter = ({ variant = 'main' }) => {
 
     // You can define variant-specific content here if needed
     const companyName = variant === 'security' ? "Apexim BIS sp. z o.o." : "Apexim BIS sp. z o.o.";
-    const address = variant === 'security' ? "ul. Ochrony 1, 65-225 Zielona Góra" : "ul. Lwowska 25, 65-225 Zielona Góra";
+    const address = variant === 'security' ? "ul. Lwowska 25, 65-225 Zielona Góra" : "ul. Lwowska 25, 65-225 Zielona Góra";
 
 
     return (

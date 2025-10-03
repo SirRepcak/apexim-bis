@@ -11,10 +11,10 @@ import ContentCard from "../../components/ContentCard/ContentCard";
 import ImageTextCard from "../../components/ImageTextCard/ImageTextCard";
 
 // Import Images
-import cctvOperator from '../../assets/mainImgSecurity/cctvOperator.png';
-import counterImage from '../../assets/mainImg/1.jpg';
-import teamImage from '../../assets/mainImg/4.jpg';
-import historyImage from '../../assets/mainImg/5.jpg';
+import cctvOperator from '../../assets/mainImg/mainImgSecurity/cctvOperator.webp';
+import counterImage from '../../assets/mainImg/1.webp';
+import teamImage from '../../assets/mainImg/4.webp';
+import historyImage from '../../assets/mainImg/5.webp';
 
 const date = new Date().getFullYear();
 const yearsOn = date-1996;

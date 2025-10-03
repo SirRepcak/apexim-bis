@@ -39,12 +39,12 @@ import OfferNavigation from "../../components/OfferNavigation/OfferNavigation";
 import offerTexts from "./offerTexts";
 
 // Zasoby
-import securityGuardImage from "../../assets/mainImgSecurity/guard.png";
-import CMAImage from "../../assets/mainImgSecurity/cctvGuard.png";
-import cleaningImage from "../../assets/mainImgSecurity/cleaning-lady.png"; // Placeholder
-import permissionsImage from "../../assets/mainImg/9.jpg";
-import logoImageService from "../../assets/logo-serv.png";
-import logoImageInvestments from "../../assets/logo-inv.png";
+import securityGuardImage from "../../assets/mainImg/mainImgSecurity/guard.webp";
+import CMAImage from "../../assets/mainImg/mainImgSecurity/cctvGuard.webp";
+import cleaningImage from "../../assets/mainImg/mainImgSecurity/cleaning-lady.webp"; // Placeholder
+import permissionsImage from "../../assets/mainImg/9.webp";
+import logoImageService from "../../assets/logo-serv.webp";
+import logoImageInvestments from "../../assets/logo-inv.webp";
 
 // ===SEKCJA PRZYCISKÓW PODMENU ===
 const navItems = [
