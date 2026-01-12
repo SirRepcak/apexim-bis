@@ -197,7 +197,12 @@ const Offer = () => {
         setExpandedSection(isNowExpanded ? sectionId : null);
     };
 
-    return (
+    return (<>
+            <title>Oferta: Ochrona i Czystość | Apexim Bis</title>
+        <meta name="description" content="Poznaj ofertę Działu Ochrony. Zapewniamy profesjonalną ochronę fizyczną,
+        monitoring 24/7 z patrolami interwencyjnymi oraz kompleksowe usługi sprzątania." />
+            <link rel="canonical" href="https://apeximbis.pl/offerSecurity" />
+
         <Box sx={{ pt: { xs: 8, md: 12 } }}>
             <OfferNavigation navItems={navItems} />
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 5 }, px: { xs: 1, sm: 2, md: 3 }, mt: 5 }}>
@@ -289,6 +294,7 @@ const Offer = () => {
                 </Box>
             </Box>
         </Box>
+        </>
     );
 };
 

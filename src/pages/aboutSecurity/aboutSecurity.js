@@ -30,7 +30,10 @@ const About = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <>
+        <><title>O nas: Ochrona i Czystość | Apexim Bis</title>
+            <meta name="description" content="Dowiedz się więcej o Dziale Ochrony Apexim Bis. Jesteśmy licencjonowaną
+             agencją ochrony (MSWiA) i świadczymy profesjonalne usługi porządkowe w Zielonej Górze." />
+            <link rel="canonical" href="https://apeximbis.pl/aboutSecurity" />
             {/* 1. HERO/OVERLAY SECTION - Now a simple Box */}
             <Box
                 sx={{

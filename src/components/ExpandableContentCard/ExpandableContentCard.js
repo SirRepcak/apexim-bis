@@ -51,7 +51,7 @@ const ExpandableContentCard = ({
 
     return (
         // ZMIANA: Dodajemy zewnętrzny Box dla ref i owijamy wszystko w <Slide>
-        <Box ref={ref} sx={{ height: '100%', overflow:'hidden' }}>
+        <Box ref={ref} sx={{ height: '100%' }}>
             <Slide direction={slideDirection} in={inView} timeout={1000}>
                 <Paper
                     elevation={12}

@@ -16,6 +16,11 @@ const LandingPage = () => {
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
+        <>
+            <title>Apexim Bis | Ochrona Mienia, Instalacje, Serwis</title>
+        <meta name="description" content="Apexim Bis - lider w branży ochrony osób i mienia oraz generalny wykonawca instalacji
+         niskoprądowych i elektrycznych w Zielonej Górze. Wybierz interesujący Cię dział." />
+            <link rel="canonical" href="https://apeximbis.pl" />
         <Box sx={{
             position: 'relative',
             width: '100vw',
@@ -129,6 +134,7 @@ const LandingPage = () => {
                 </Typography>
             </Box>
         </Box>
+    </>
     );
 };
 

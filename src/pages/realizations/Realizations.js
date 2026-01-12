@@ -110,6 +110,12 @@ const Realizations = () => {
     }
 
     return (
+        <>
+            <title>Realizacje Instalacji | Apexim Bis</title>
+            <meta name="description" content="Zobacz nasze portfolio zrealizowanych inwestycji. Prezentujemy projekty
+            instalacji niskoprądowych i elektrycznych dla wojska, firm i instytucji." />
+            <link rel="canonical" href="https://apeximbis.pl/realizations" />
+
         <Box sx={{ pb: { xs: 8, sm: 4 } }}>
             <MyTimeline
                 ref={timelineRef}
@@ -131,6 +137,7 @@ const Realizations = () => {
                 }}
             />
         </Box>
+            </>
     );
 };
 

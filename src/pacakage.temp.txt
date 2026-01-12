@@ -1,3 +1,0 @@
-/*"homepage": "https://apeximbis.pl",*/
-
-package.json values for main deploy

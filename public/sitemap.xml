@@ -1,33 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Strona Główna (Najwyższy priorytet) -->
     <url>
         <loc>https://apeximbis.pl/</loc>
-        <priority>1.0</priority>
+        <lastmod>2025-10-04</lastmod>
         <changefreq>monthly</changefreq>
-        <lastmod>2025-08-08</lastmod>
+        <priority>1.0</priority>
     </url>
-    <url>
-        <loc>https://apeximbis.pl/realizations</loc>
-        <priority>0.7</priority>
-        <changefreq>weekly</changefreq>
-        <lastmod>2025-08-08</lastmod>
-    </url>
+
+    <!-- Główne podstrony sekcji "Main" -->
     <url>
         <loc>https://apeximbis.pl/about</loc>
-        <priority>0.9</priority>
+        <lastmod>2025-10-04</lastmod>
         <changefreq>monthly</changefreq>
-        <lastmod>2025-08-08</lastmod>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://apeximbis.pl/offer</loc>
-        <priority>0.8</priority>
+        <lastmod>2025-10-04</lastmod>
         <changefreq>monthly</changefreq>
-        <lastmod>2025-08-08</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://apeximbis.pl/realizations</loc>
+        <lastmod>2025-10-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://apeximbis.pl/contact</loc>
+        <lastmod>2025-10-04</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
-        <changefreq>monthly</changefreq>
-        <lastmod>2025-08-08</lastmod>
     </url>
+
+    <url>
+        <loc>https://apeximbis.pl/aboutSecurity</loc>
+        <lastmod>2025-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://apeximbis.pl/offerSecurity</loc>
+        <lastmod>2025-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://apeximbis.pl/contactSecurity</loc>
+        <lastmod>2025-10-04</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
 </urlset>

@@ -213,7 +213,7 @@ const offerTexts = {
             },
             {
                 title: "Kancelaria Niejawna",
-                content: <>Dysponujemy kancelarią do przetwarzania materiałów o klauzuli „Zastrzeżone”, zapewniając
+                content: <>Dysponujemy kancelarią do przetwarzania materiałów o klauzuli „Poufne”, zapewniając
                     pełne bezpieczeństwo proceduralne.</>
             },
             {
@@ -222,7 +222,7 @@ const offerTexts = {
                     przetwarzanie informacji niejawnych.</>
             },
             {
-                title: "Pełnomocnik ds. Ochrony",
+                title: "Pełnomocnik ds. Ochrony Informacji Niejawnych",
                 content: <>Zatrudniamy pełnomocnika ds. ochrony informacji niejawnych, który nadzoruje i zarządza
                     bezpieczeństwem danych w naszej firmie.</>
             },

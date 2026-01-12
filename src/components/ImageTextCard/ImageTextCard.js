@@ -31,7 +31,7 @@ const ImageTextCard = ({
     const slideDirection = imagePosition === 'left' ? 'right' : 'left';
 
     return (
-        <Box ref={ref} sx={{ minHeight: minCardHeight, overflow: 'hidden', ...sx }}>
+        <Box ref={ref} sx={{ minHeight: minCardHeight, ...sx }}>
             <Slide direction={slideDirection} in={inView} timeout={1000}>
                 <Card
                     elevation={12}

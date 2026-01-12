@@ -38,7 +38,10 @@ const ContactSecurity = () => {
     const departmentIdToOpen = params.get('open');
 
     return (
-        // Use a Box for layout and spacing with the sx prop
+        <><title>Kontakt: Ochrona i Czystość | Apexim Bis</title>
+            <meta name="description" content="Potrzebujesz ochrony obiektu lub usług sprzątania?
+            Skontaktuj się z naszym Działem Ochrony w Zielonej Górze. Jesteśmy dostępni 24/7." />
+            <link rel="canonical" href="https://apeximbis.pl/contactSecurity" />
         <Box sx={{ my: 4 }}>
             <ContactList departmentIdToOpen={departmentIdToOpen} />
             <Box sx={{ mt: 5 }}>
@@ -58,6 +61,7 @@ const ContactSecurity = () => {
                 </Grid>
             </Grid>
         </Box>
+            </>
     );
 };
 

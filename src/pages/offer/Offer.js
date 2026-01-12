@@ -57,6 +57,7 @@ const navItems = [
 const InvestmentsDetails = ({ onPermissionsClick }) => {
     const icons = [<TbBulb />, <TbShieldCheck />, <TbVideo />, <TbNetwork />];
     return (
+
         <Box>
             <ContentCard title={offerTexts.investments.title} icon={<TbClipboardCheck />}>
                 {offerTexts.investments.description}
@@ -175,6 +176,11 @@ const Offer = () => {
     };
 
     return (
+        <>
+            <title>Oferta: Inwestycje i Serwis | Apexim Bis</title>
+            <meta name="description" content="Sprawdź ofertę Działu Inwestycji. Jesteśmy generalnym wykonawcą instalacji elektrycznych,
+            systemów bezpieczeństwa (CCTV, SSWiN), SSP oraz prowadzimy usługi serwisu technicznego." />
+            <link rel="canonical" href="https://apeximbis.pl/offer" />
         <Box sx={{ pt: { xs: 8, md: 12 } }}>
             <OfferNavigation navItems={navItems} />
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 5 }, px: { xs: 1, sm: 2, md: 3 }, mt: 5 }}>
@@ -286,6 +292,7 @@ const Offer = () => {
                 </Box>
             </Box>
         </Box>
+    </>
     );
 };
 

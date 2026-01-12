@@ -1,54 +1,81 @@
-import React from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
-// MODIFICATION: Import all themes
-import { lightTheme, securityLightTheme } from './Theme';
+import { lightTheme } from './Theme';
 import './App.css';
 
-// Import the layout
+// Import the layout and pages
 import MainLayout from './components/MainLayout/MainLayout';
-
-// Import your pages
 import LandingPage from "./pages/LandingPage/LandingPage";
 import About from './pages/about/About';
 import Offer from './pages/offer/Offer';
 import Realizations from './pages/realizations/Realizations';
 import Contact from './pages/contact/Contact';
-
-// NEW: Import your security pages (assuming you'll create them)
 import AboutSecurity from './pages/aboutSecurity/aboutSecurity';
 import OfferSecurity from './pages/offerSecurity/OfferSecurity';
 import ContactSecurity from './pages/contactSecurity/contactSecurity';
 
+// Import our new Banner
+import CookieConsentBanner from './components/CookieConsentBanner/CookieConsentBanner';
 
-const App = () => (
-    // The outermost ThemeProvider can provide a default theme
-    <ThemeProvider theme={lightTheme}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <Routes>
-                {/* Route for the Landing Page (doesn't use the main layout) */}
-                <Route path="/" element={<LandingPage />} />
+// 1. Create a Context to share the consent state
+export const CookieConsentContext = createContext(null);
 
-                {/* Parent route for the MAIN section (blue theme) */}
-                <Route element={<MainLayout variant="main" />}>
-                    <Route path="/about" element={<About />} />
-                    <Route path="/offer" element={<Offer />} />
-                    <Route path="/realizations" element={<Realizations />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Route>
+// Helper functions to manage localStorage
+const getConsentStatus = () => localStorage.getItem('cookie_consent');
+const setConsentStatus = (status) => localStorage.setItem('cookie_consent', status);
 
-                {/* NEW: Parent route for the SECURITY section (orange theme) */}
-                <Route element={<MainLayout variant="security" />}>
-                    {/* These paths should be unique */}
-                    <Route path="/aboutSecurity" element={<AboutSecurity />} />
-                    <Route path="/offerSecurity" element={<OfferSecurity />} />
-                    <Route path="/contactSecurity" element={<ContactSecurity />} />
-                    {/* Add other security routes here */}
-                </Route>
+const App = () => {
+    // 2. State to hold the user's choice. 'pending' means they haven't chosen yet.
+    const [consent, setConsent] = useState('pending');
 
-            </Routes>
-        </BrowserRouter>
-    </ThemeProvider>
-);
+    // 3. On initial load, check if a choice has already been saved in localStorage
+    useEffect(() => {
+        const savedStatus = getConsentStatus();
+        if (savedStatus) {
+            setConsent(savedStatus);
+        }
+    }, []);
+
+    // 4. Functions to handle the user's decision
+    const grantConsent = () => {
+        setConsentStatus('granted');
+        setConsent('granted');
+    };
+
+    const declineConsent = () => {
+        setConsentStatus('denied');
+        setConsent('denied');
+    };
+
+    return (
+        <ThemeProvider theme={lightTheme}>
+            {/* 5. Provide the consent status and grant function to all child components */}
+            <CookieConsentContext.Provider value={{ consent, grantConsent }}>
+                <BrowserRouter basename={process.env.PUBLIC_URL}>
+                    <Routes>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route element={<MainLayout variant="main" />}>
+                            <Route path="/about" element={<About />} />
+                            <Route path="/offer" element={<Offer />} />
+                            <Route path="/realizations" element={<Realizations />} />
+                            <Route path="/contact" element={<Contact />} />
+                        </Route>
+                        <Route element={<MainLayout variant="security" />}>
+                            <Route path="/aboutSecurity" element={<AboutSecurity />} />
+                            <Route path="/offerSecurity" element={<OfferSecurity />} />
+                            <Route path="/contactSecurity" element={<ContactSecurity />} />
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+
+                {/* 6. If the user hasn't made a choice yet, show the banner */}
+                {consent === 'pending' && (
+                    <CookieConsentBanner onAccept={grantConsent} onDecline={declineConsent} />
+                )}
+            </CookieConsentContext.Provider>
+        </ThemeProvider>
+    );
+};
 
 export default App;

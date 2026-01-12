@@ -38,7 +38,11 @@ const Contact = () => {
     const departmentIdToOpen = params.get('open');
 
     return (
-        // Use a Box for layout and spacing with the sx prop
+        <>
+            <title>Kontakt: Inwestycje i Serwis | Apexim Bis</title>
+            <meta name="description" content="Skontaktuj się z naszymi inżynierami i specjalistami od serwisu.
+            Zapytaj o wycenę projektu lub instalacji. Zielona Góra, ul. Lwowska 25." />
+            <link rel="canonical" href="https://apeximbis.pl/contact" />
         <Box sx={{ my: 4 }}>
             <ContactList departmentIdToOpen={departmentIdToOpen} />
             <Box sx={{ mt: 5 }}>
@@ -58,6 +62,7 @@ const Contact = () => {
                 </Grid>
             </Grid>
         </Box>
+            </>
     );
 };
 

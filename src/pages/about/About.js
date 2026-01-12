@@ -30,7 +30,10 @@ const About = () => {
 
     return (
         <>
-            {/* 1. HERO/OVERLAY SECTION - Now a simple Box */}
+            <title>O nas: Inwestycje i Serwis | Apexim Bis</title>
+            <meta name="description" content="Poznaj historię i zespół Działu Inwestycji Apexim Bis.
+             Od 1996 roku specjalizujemy się w projektowaniu i wykonawstwie instalacji niskoprądowych i elektrycznych." />
+            <link rel="canonical" href="https://apeximbis.pl/about" />
             <Box
                 sx={{
                     height: '60vh',

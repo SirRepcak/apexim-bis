@@ -4,12 +4,12 @@
     "cardTitle": "Szkoła Podstawowa nr 2 we Wschowie",
     "coverType": "photo",
     "cardSubtitle": "Modernizacja i wymiana instalacji elektyrcznej i teletechnicznej, w ramach kolejengo etapu współpracy..",
-    "cover": "/images/realizations/invSP2/cover.webp",
+    "cover": "/Images/Realizations/invSP2/cover.webp",
     "galleryImages": [
-      "/images/realizations/invSP2/1.webp",
-      "/images/realizations/invSP2/2.webp",
-      "/images/realizations/invSP2/3.webp",
-      "/images/realizations/invSP2/4.webp"
+      "/Images/Realizations/invSP2/1.webp",
+      "/Images/Realizations/invSP2/2.webp",
+      "/Images/Realizations/invSP2/3.webp",
+      "/Images/Realizations/invSP2/4.webp"
     ]
   },
   {
@@ -17,18 +17,18 @@
     "cardTitle": "C.H. Renoma \"Ace of Space\"",
     "coverType": "photo",
     "cardSubtitle": "Kompleksowa realizacja instalacji niskoprądowych i elektrycznych, w tym oświetlenia, LAN, CCTV i systemów kontroli dostępu.",
-    "cover": "/images/realizations/invRenoma/cover.webp",
+    "cover": "/Images/Realizations/invRenoma/cover.webp",
     "galleryImages": [
-      "/images/realizations/invRenoma/1.webp",
-      "/images/realizations/invRenoma/2.webp",
-      "/images/realizations/invRenoma/3.webp",
-      "/images/realizations/invRenoma/4.webp",
-      "/images/realizations/invRenoma/5.webp",
-      "/images/realizations/invRenoma/6.webp",
-      "/images/realizations/invRenoma/7.webp",
-      "/images/realizations/invRenoma/8.webp",
-      "/images/realizations/invRenoma/9.webp",
-      "/images/realizations/invRenoma/10.webp"
+      "/Images/Realizations/invRenoma/1.webp",
+      "/Images/Realizations/invRenoma/2.webp",
+      "/Images/Realizations/invRenoma/3.webp",
+      "/Images/Realizations/invRenoma/4.webp",
+      "/Images/Realizations/invRenoma/5.webp",
+      "/Images/Realizations/invRenoma/6.webp",
+      "/Images/Realizations/invRenoma/7.webp",
+      "/Images/Realizations/invRenoma/8.webp",
+      "/Images/Realizations/invRenoma/9.webp",
+      "/Images/Realizations/invRenoma/10.webp"
     ]
   },
   {
@@ -36,7 +36,7 @@
     "cardTitle": "45 WOG Wędrzyn",
     "coverType": "logo",
     "cardSubtitle": "Zapewnienie ciągłości działania i bezpieczeństwa kluczowych systemów: SSWiN, CCTV i kontroli dostępu (KD).",
-    "cover": "/images/realizations/realization-logos/45wog.webp",
+    "cover": "/Images/Realizations/realization-logos/45wog.webp",
     "galleryImages": []
   },
   {
@@ -44,7 +44,7 @@
     "cardTitle": "43 WOG Świętoszów",
     "coverType": "logo",
     "cardSubtitle": "Długoterminowa obsługa i konserwacja zintegrowanych systemów bezpieczeństwa, w tym SSWiN, CCTV oraz KD.",
-    "cover": "/images/realizations/realization-logos/43wog.webp",
+    "cover": "/Images/Realizations/realization-logos/43wog.webp",
     "galleryImages": []
   },
   {
@@ -52,7 +52,7 @@
     "cardTitle": "4 WOG Gliwice",
     "coverType": "logo",
     "cardSubtitle": "Długoterminowa obsługa i konserwacja zintegrowanych systemów bezpieczeństwa, w tym SSWiN, CCTV oraz KD.",
-    "cover": "/images/realizations/realization-logos/4wog.webp",
+    "cover": "/Images/Realizations/realization-logos/4wog.webp",
     "galleryImages": []
   },
   {
@@ -60,7 +60,7 @@
     "cardTitle": "2 WOG Wrocław",
     "coverType": "logo",
     "cardSubtitle": "Stała opieka serwisowa nad systemem sygnalizacji pożarowej (SSP), gwarantująca bezpieczeństwo obiektu.",
-    "cover": "/images/realizations/realization-logos/2wog.webp",
+    "cover": "/Images/Realizations/realization-logos/2wog.webp",
     "galleryImages": []
   },
   {
@@ -68,7 +68,7 @@
     "cardTitle": "MOK Międzyrzecz",
     "coverType": "photo",
     "cardSubtitle": "Modernizacja systemu sygnalizacji pożarowej (SSP).",
-    "cover": "/images/realizations/invMOK/mokCover.webp",
+    "cover": "/Images/Realizations/invMOK/mokCover.webp",
     "galleryImages": []
   },
   {
@@ -76,11 +76,11 @@
     "cardTitle": "Szkoła Podstawowa nr 2 we Wschowie",
     "coverType": "photo",
     "cardSubtitle": "Modernizacja infrastruktury zasilania, obejmująca wymianę WLZ oraz montaż nowych rozdzielnic piętrowych.",
-    "cover": "/images/realizations/invSP/cover.webp",
+    "cover": "/Images/Realizations/invSP/cover.webp",
     "galleryImages": [
-      "/images/realizations/invSP/1.webp",
-      "/images/realizations/invSP/2.webp",
-      "/images/realizations/invSP/3.webp"
+      "/Images/Realizations/invSP/1.webp",
+      "/Images/Realizations/invSP/2.webp",
+      "/Images/Realizations/invSP/3.webp"
     ]
   },
   {
@@ -88,7 +88,7 @@
     "cardTitle": "Zarząd Dróg Wojewódzkich w Zielonej Górze",
     "coverType": "photo",
     "cardSubtitle": "Modernizacja sieci IT – nowa serwerownia oraz wymiana centralnej szafy dystrybucyjnej.",
-    "cover": "/images/realizations/invZDW/cover.webp",
+    "cover": "/Images/Realizations/invZDW/cover.webp",
     "galleryImages": []
   },
   {
@@ -96,16 +96,16 @@
     "cardTitle": "Dworce PKP w: Świebodzinie, Babimoście, Rzepinie",
     "coverType": "photo",
     "cardSubtitle": "Modernizacja infrastruktury teletechnicznej i elektrycznej w budynkach dworców.",
-    "cover": "/images/realizations/invPKP/cover.webp",
+    "cover": "/Images/Realizations/invPKP/cover.webp",
     "galleryImages": [
-      "/images/realizations/invPKP/1.webp",
-      "/images/realizations/invPKP/2.webp",
-      "/images/realizations/invPKP/3.webp",
-      "/images/realizations/invPKP/4.webp",
-      "/images/realizations/invPKP/5.webp",
-      "/images/realizations/invPKP/6.webp",
-      "/images/realizations/invPKP/7.webp",
-      "/images/realizations/invPKP/8.webp"
+      "/Images/Realizations/invPKP/1.webp",
+      "/Images/Realizations/invPKP/2.webp",
+      "/Images/Realizations/invPKP/3.webp",
+      "/Images/Realizations/invPKP/4.webp",
+      "/Images/Realizations/invPKP/5.webp",
+      "/Images/Realizations/invPKP/6.webp",
+      "/Images/Realizations/invPKP/7.webp",
+      "/Images/Realizations/invPKP/8.webp"
     ]
   },
   {
@@ -113,14 +113,14 @@
     "cardTitle": "Szpital Uniwersytecki w Zielonej Górze",
     "coverType": "photo",
     "cardSubtitle": "Montaż instalacji elektrycznej oraz systemu SSP w nowo powstałym budynku szpitalnym.",
-    "cover": "/images/realizations/invSU/cover.webp",
+    "cover": "/Images/Realizations/invSU/cover.webp",
     "galleryImages": [
-      "/images/realizations/invSU/cover.webp",
-      "/images/realizations/invSU/1.webp",
-      "/images/realizations/invSU/2.webp",
-      "/images/realizations/invSU/3.webp",
-      "/images/realizations/invSU/4.webp",
-      "/images/realizations/invSU/5.webp"
+      "/Images/Realizations/invSU/cover.webp",
+      "/Images/Realizations/invSU/1.webp",
+      "/Images/Realizations/invSU/2.webp",
+      "/Images/Realizations/invSU/3.webp",
+      "/Images/Realizations/invSU/4.webp",
+      "/Images/Realizations/invSU/5.webp"
     ]
   },
   {
@@ -128,7 +128,7 @@
     "cardTitle": "Starostwo Powiatowe w Zielonej Górze",
     "coverType": "photo",
     "cardSubtitle": "Etapowa rozbudowa systemu SSP.",
-    "cover": "/images/realizations/invStarostwo/cover.webp",
+    "cover": "/Images/Realizations/invStarostwo/cover.webp",
     "galleryImages": []
   },
   {
@@ -136,7 +136,7 @@
     "cardTitle": "Sinevia",
     "coverType": "logo",
     "cardSubtitle": "Kompleksowy montaż systemów bezpieczeństwa wraz z wykonaniem instalacji elektrycznej i odgromowej w J.W. Sulechów.",
-    "cover": "/images/realizations/realization-logos/5pul-artylerii.webp",
+    "cover": "/Images/Realizations/realization-logos/5pul-artylerii.webp",
     "galleryImages": []
   },
   {
@@ -144,7 +144,7 @@
     "cardTitle": "BWA w Zielonej Górze",
     "coverType": "photo",
     "cardSubtitle": "Wykonanie systemu monitoringu wizyjnego CCTV.",
-    "cover": "/images/realizations/invBWA/cover.webp",
+    "cover": "/Images/Realizations/invBWA/cover.webp",
     "galleryImages": []
   },
   {
@@ -152,7 +152,7 @@
     "cardTitle": "Urząd Skarbowy w Zielonej Górze",
     "coverType": "logo",
     "cardSubtitle": "Modernizacja sieci strukturalnej oraz dedykowanej infrastruktury zasilającej.",
-    "cover": "/images/realizations/realization-logos/logo-blueSub.png",
+    "cover": "/Images/Realizations/realization-logos/logo-blueSub.png",
     "galleryImages": []
   },
   {
@@ -160,7 +160,7 @@
     "cardTitle": "ZUS Oleśnica",
     "coverType": "logo",
     "cardSubtitle": "Zabezpieczenie obiektu poprzez instalację zintegrowanego systemu alarmowego (SSWiN) i monitoringu wizyjnego (CCTV).",
-    "cover": "/images/realizations/realization-logos/logo-blueSub.png",
+    "cover": "/Images/Realizations/realization-logos/logo-blueSub.png",
     "galleryImages": []
   },
   {
@@ -168,7 +168,7 @@
     "cardTitle": "RZI w Zielonej Górze",
     "coverType": "logo",
     "cardSubtitle": "Montaż systemów ochrony mienia: SSWiN oraz CCTV.",
-    "cover": "/images/realizations/realization-logos/RZI-zg.webp",
+    "cover": "/Images/Realizations/realization-logos/RZI-zg.webp",
     "galleryImages": []
   },
   {
@@ -176,7 +176,7 @@
     "cardTitle": "Prokuratury Rejonowe: Głogów, Lubin, Złotoryja",
     "coverType": "logo",
     "cardSubtitle": "Wykonanie certyfikowanej sieci strukturalnej LAN.",
-    "cover": "/images/realizations/realization-logos/logo-blueSub.png",
+    "cover": "/Images/Realizations/realization-logos/logo-blueSub.png",
     "galleryImages": []
   },
   {
@@ -184,7 +184,7 @@
     "cardTitle": "JW. Wędrzyn",
     "coverType": "logo",
     "cardSubtitle": "Montaż i uruchomienie systemów bezpieczeństwa: SSP, CCTV, KD i LAN.",
-    "cover": "/images/realizations/realization-logos/17-zmech-wedrzyn.webp",
+    "cover": "/Images/Realizations/realization-logos/17-zmech-wedrzyn.webp",
     "galleryImages": []
   },
   {
@@ -192,7 +192,7 @@
     "cardTitle": "Izba Celna w Zgorzelcu",
     "coverType": "logo",
     "cardSubtitle": "Wykonanie systemów bezpieczeństwa: SSP, CCTV, KD, SSWiN oraz systemu oddymiania.",
-    "cover": "/images/realizations/realization-logos/logo-blueSub.png",
+    "cover": "/Images/Realizations/realization-logos/logo-blueSub.png",
     "galleryImages": []
   },
   {
@@ -200,7 +200,7 @@
     "cardTitle": "WSZW Zielona Góra",
     "coverType": "logo",
     "cardSubtitle": "Instalacja systemu SSWiN, SSP, KD i CCTV.",
-    "cover": "/images/realizations/realization-logos/WSZW-zg.webp",
+    "cover": "/Images/Realizations/realization-logos/WSZW-zg.webp",
     "galleryImages": []
   },
   {
@@ -208,7 +208,7 @@
     "cardTitle": "SP 2 w Kożuchowie",
     "coverType": "logo",
     "cardSubtitle": "Montaż infrastruktury teletechnicznej i elektrycznej, w tym LAN, BMS, CCTV, SSWiN oraz zasilania.",
-    "cover": "/images/realizations/realization-logos/logo-blueSub.png",
+    "cover": "/Images/Realizations/realization-logos/logo-blueSub.png",
     "galleryImages": []
   },
   {
@@ -216,7 +216,7 @@
     "cardTitle": "BURSA w Zielonej Górze",
     "coverType": "photo",
     "cardSubtitle": "Wykonanie systemu sygnalizacji pożarowej SSP.",
-    "cover": "/images/realizations/invBURSA/cover.webp",
+    "cover": "/Images/Realizations/invBURSA/cover.webp",
     "galleryImages": []
   },
   {
@@ -224,7 +224,7 @@
     "cardTitle": "JW. Międzyrzecz",
     "coverType": "logo",
     "cardSubtitle": "Instalacja systemu alarmowego SSWiN i monitoringu CCTV.",
-    "cover": "/images/realizations/realization-logos/17-zmech-wedrzyn.webp",
+    "cover": "/Images/Realizations/realization-logos/17-zmech-wedrzyn.webp",
     "galleryImages": []
   },
   {
@@ -232,7 +232,7 @@
     "cardTitle": "JW. Skwierzyna",
     "coverType": "logo",
     "cardSubtitle": "Wykonanie instalacji elektrycznej, odgromowej, LAN i systemu monitoringu CCTV.",
-    "cover": "/images/realizations/realization-logos/skwierzyna.webp",
+    "cover": "/Images/Realizations/realization-logos/skwierzyna.webp",
     "galleryImages": []
   },
   {
@@ -240,7 +240,7 @@
     "cardTitle": "Komisariat Policji w Szprotawie",
     "coverType": "logo",
     "cardSubtitle": "Realizacja wszystkich instalacji niskoprądowych (LAN, CCTV, KD, SSP) oraz elektrycznych, w tym zasilania awaryjnego 40 kVA, oraz systemu nagrywania przesłuchań.",
-    "cover": "/images/realizations/realization-logos/logo-blueSub.png",
+    "cover": "/Images/Realizations/realization-logos/logo-blueSub.png",
     "galleryImages": []
   },
   {
@@ -248,7 +248,7 @@
     "cardTitle": "Elektrownia Wodna Grajówka",
     "coverType": "logo",
     "cardSubtitle": "Zabezpieczenie obiektu infrastruktury krytycznej przez wykonanie systemów SSWiN, CCTV, SSP oraz kontroli dostępu.",
-    "cover": "/images/realizations/realization-logos/logo-blueSub.png",
+    "cover": "/Images/Realizations/realization-logos/logo-blueSub.png",
     "galleryImages": []
   }
 ]

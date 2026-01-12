@@ -33,7 +33,8 @@ const MainLayout = ({ variant = 'main' }) => {
     return (
         // NEW: Wrap the entire layout in a ThemeProvider with the chosen theme
         <ThemeProvider theme={theme}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: theme.palette.background.default }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: theme.palette.background.default, width: '100%',
+                overflowX: 'hidden' }}>
                 <ScrollToTop />
                 {/* MODIFICATION: Pass the variant to the Header */}
                 <Header variant={variant} />
