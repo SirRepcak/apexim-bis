@@ -4,41 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21bdeeca-45e0-4b6c-acef-97667526e0eb" name="Changes" comment="final optimized before feedback">
-      <change afterPath="$PROJECT_DIR$/public/admin-panel/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin-panel/generate-sitemap.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin-panel/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin-panel/sitemap-generator-core.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin-panel/upload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CookieConsentBanner/CookieConsentBanner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PersonalData/PersonalData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_09_2025_22_33_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_09_2025_22_33__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/data/timeline.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/data/timeline.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ExpandableContentCard/ExpandableContentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExpandableContentCard/ExpandableContentCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImageTextCard/ImageTextCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageTextCard/ImageTextCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LocationMap/LocationMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationMap/LocationMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainLayout/MainLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainLayout/MainLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavFooter/NavFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavFooter/NavFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PromoLinkCard/PromoLinkCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PromoLinkCard/PromoLinkCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacakage.temp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LandingPage/LandingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/about/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/aboutSecurity/aboutSecurity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutSecurity/aboutSecurity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contact/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contact/Contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contactSecurity/contactSecurity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contactSecurity/contactSecurity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/offer/Offer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/offer/Offer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/offer/offerTexts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/offer/offerTexts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/offerSecurity/OfferSecurity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/offerSecurity/OfferSecurity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/offerSecurity/offerTexts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/offerSecurity/offerTexts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/realizations/Realizations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/realizations/Realizations.js" afterDir="false" />
-    </list>
+    <list default="true" id="21bdeeca-45e0-4b6c-acef-97667526e0eb" name="Changes" comment="final optimized before feedback" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,6 +166,7 @@
       <workItem from="1762373055171" duration="2033000" />
       <workItem from="1767814949600" duration="513000" />
       <workItem from="1767815898695" duration="174000" />
+      <workItem from="1768212855007" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="Działajacy Timeline">
       <option name="closed" value="true" />
@@ -249,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759475428990</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="final optimized before feedback">
+      <option name="closed" value="true" />
+      <created>1768212947876</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1768212947876</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
